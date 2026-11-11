@@ -1,86 +1,86 @@
 # 🚀 CV Alto Impacto (Bilingual Strategic Resume Builder)
 
-> Generador web de currículums de alto impacto con arquitectura a doble columna, diseñado para que estudiantes y profesionales de TI creen CVs de clase mundial en **Español e Inglés** con exportación directa a PDF.
+> Generador web de currículums de alto impacto con arquitectura a doble columna, diseñado para que estudiantes y profesionistas creen CVs de clase mundial en **Español e Inglés** con exportación directa a PDF y formato optimizado para filtros ATS.
 
-Inspirado en las metodologías de reclutamiento de alto rendimiento (la regla de los 6 segundos de escaneo, formulación de logros cuantificables y jerarquía visual estratégica).
+Inspirado en la **Metodología de Creación de CV de Platzi** y los estándares de reclutamiento técnico internacional (la regla de los 6 segundos de escaneo, formulación de logros cuantificables y jerarquía visual estratégica).
+
+---
+
+## 🌐 Demo en Vivo
+
+Puedes acceder a la aplicación en producción de manera totalmente gratuita:
+👉 **[https://cv-alto-impacto-production.up.railway.app](https://cv-alto-impacto-production.up.railway.app)**
+
+---
+
+## 🎯 ¿Para quién es esta herramienta?
+
+La aplicación incluye **3 plantillas y arquetipos pedagógicos** basados en la enseñanza de Platzi, además de una plantilla limpia en blanco:
+
+1. 🎓 **Estudiante / Primer Empleo / Prácticas Profesionales**:
+   - Ideal para estudiantes universitarios o recién egresados sin amplia experiencia laboral formal.
+   - Enfatiza proyectos académicos de titulación, hackatones, retos de código, promedio escolar y habilidades de aprendizaje autónomo.
+2. 💻 **Desarrollador de Software / Tech & AI**:
+   - Diseñado para ingenieros y programadores (Frontend, Backend, Full Stack, Cloud o Data).
+   - Enfatiza el stack tecnológico categorizado, proyectos en producción, optimización de latencia/costos, uptime y métricas cuantificables.
+3. 🔄 **Cambio de Carrera / Perfil Híbrido Multidisciplinario**:
+   - Orientado a profesionistas que transicionan desde otras áreas (Finanzas, Administración, Psicología, Leyes, Diseño, Docencia) hacia el sector tecnológico.
+   - Conecta la experiencia previa con las nuevas habilidades técnicas a través de una narrativa sólida en "Sobre Mí" y habilidades transferibles.
+4. 📝 **Plantilla en Blanco**:
+   - Para iniciar desde cero con guías de ayuda en cada campo.
 
 ---
 
 ## ✨ Características Principales
 
-- 🎯 **Estructura Estratégica a Doble Columna**:
-  - **Columna Lateral (30%)**: Datos de contacto esenciales, habilidades técnicas categorizadas, competencias clave transferibles, formación de vanguardia, idiomas y comunidad/hobbies con propósito.
-  - **Columna Principal (70%)**: Título profesional de alto impacto, narrativa "Sobre Mí", experiencia profesional redactada en primera persona con verbos de acción y métricas, hackatones/retos de innovación y educación formal con cédulas/promedios.
-- 🌐 **Exportación Bilingüe Instantánea**:
-  - Generación y alternancia de vistas en **Español (ES)** e **Inglés (EN)** con un solo clic.
-  - Endpoint inteligente con soporte para traducción automática (heurística nativa o impulsada por Google Gemini API si se configura `GEMINI_API_KEY`).
+- 📐 **Estructura Estratégica a Doble Columna**:
+  - **Columna Lateral (30%)**: Contacto profesional directo (LinkedIn, GitHub), habilidades técnicas (*Hard Skills*) clasificadas, competencias clave (*Soft Skills*) acompañadas de evidencia práctica, formación continua, idiomas y proyectos comunitarios.
+  - **Columna Principal (70%)**: Titular profesional de alto impacto (*Headline*), narrativa "Sobre Mí" (5-7 líneas), experiencia laboral y proyectos redactados con la fórmula Platzi, hackatones y educación formal.
+- 💡 **Fórmula del Logro Cuantificable**:
+  - Guía integrada para redactar viñetas con la estructura: `[Verbo de Acción Potente] + [Herramienta o Contexto] + [Impacto Cuantificable (% / $ / tiempo / usuarios)]`.
+- 🌐 **Soporte Bilingüe Instantáneo**:
+  - Alterna entre **Español (ES)** e **Inglés (EN)** con un solo clic.
 - 🖨️ **Exportación Directa a PDF**:
-  - Hoja de estilos `@media print` calibrada al milímetro para hoja tamaño Carta (US Letter).
-  - Cero desbordes, márgenes limpios y tipografía nítida para entrevistas presenciales o envío digital.
-- 💾 **Persistencia y Portabilidad**:
-  - Guarda tu borrador completo en formato JSON para actualizarlo en el futuro.
-  - Carga borradores existentes en segundos.
-  - Exporta como HTML independiente o copia en formato Markdown para Notion/GitHub.
-- ⚡ **Perfil de Ejemplo Integrado**:
-  - Botón *"Cargar Ejemplo"* para que tus compañeros vean de inmediato cómo se redacta un CV de un perfil tecnológico multidisciplinario.
-
----
-
-## 🛠️ Tecnologías
-
-- **Backend**: Node.js & Express (ultraligero, inicio en <50ms, ideal para planes gratuitos).
-- **Frontend**: HTML5 semántico, Tailwind CSS y Vanilla JavaScript reactivo.
-- **Despliegue**: Optimizado para **Railway** (Nixpacks / Dockerfile / Procfile) y **GitHub**.
-
----
-
-## 🚀 Despliegue en Railway (Paso a Paso)
-
-### Opción 1: Despliegue Automático con Railway CLI
-1. Clona o entra a la carpeta del proyecto:
-   ```bash
-   cd cv-alto-impacto
-   ```
-2. Inicializa o vincula tu proyecto en Railway:
-   ```bash
-   railway init
-   ```
-3. Despliega la aplicación:
-   ```bash
-   railway up
-   ```
-4. Genera tu dominio público gratuito:
-   ```bash
-   railway domain
-   ```
-
-### Opción 2: Conectar desde GitHub a Railway
-1. Sube este repositorio a tu cuenta de GitHub (ej. `MetaNetMx/cv-alto-impacto`).
-2. En tu panel de [Railway.app](https://railway.com), haz clic en **New Project** > **Deploy from GitHub repo**.
-3. Selecciona el repositorio `cv-alto-impacto`.
-4. Railway detectará automáticamente el archivo `Procfile` o `railway.json` y desplegará la aplicación en segundos.
-5. En la pestaña **Settings** > **Networking**, haz clic en **Generate Domain** para obtener tu enlace público gratuito (ej. `https://cv-alto-impacto.up.railway.app`).
+  - Estilos de impresión `@media print` calibrados al milímetro para hoja tamaño Carta (US Letter). Cero desbordes y márgenes limpios.
+- 💾 **Persistencia y Privacidad**:
+  - Exporta y carga tus borradores en archivos **JSON** locales. Tus datos nunca se almacenan en servidores de terceros.
+- 📥 **Exportaciones Múltiples**:
+  - Descarga como archivo **HTML independiente** con estilos integrados.
+  - Copia la versión en texto plano **Markdown optimizado para ATS**.
+- ⚡ **Cero Dependencias Externas (Zero-Dependency)**:
+  - Servidor construido con módulos nativos de Node.js (`http`, `fs`, `path`). Inicia en <10ms, consume menos de 15MB de RAM y no requiere `npm install` de librerías pesadas.
 
 ---
 
 ## 💻 Ejecución Local
 
-1. Asegúrate de tener instalado [Node.js](https://nodejs.org/) (versión 18 o superior).
-2. Instala las dependencias:
+1. Clona el repositorio:
    ```bash
-   npm install
+   git clone https://github.com/MetaNetMx/cv-alto-impacto.git
+   cd cv-alto-impacto
    ```
-3. Inicia el servidor:
+2. Inicia el servidor con Node.js (v18 o superior):
    ```bash
-   npm start
+   node server.js
    ```
-4. Abre en tu navegador:
+3. Abre tu navegador en:
    ```
    http://localhost:3000
    ```
 
 ---
 
+## 🚀 Despliegue en Railway
+
+El proyecto incluye configuración lista para producción (`Dockerfile`, `railway.json`, `Procfile`):
+
+1. En tu panel de [Railway.app](https://railway.com), crea un nuevo proyecto: **Deploy from GitHub repo**.
+2. Selecciona tu repositorio.
+3. Railway compilará e iniciará el servicio en segundos.
+4. En **Settings > Networking**, genera un dominio público gratuito.
+
+---
+
 ## 📄 Licencia
 
-Distribuido bajo la Licencia MIT. Libre para uso personal, educativo y comunitario.
+Distribuido bajo la Licencia MIT. Libre y gratuito para estudiantes, universidades, comunidades tech y desarrolladores.

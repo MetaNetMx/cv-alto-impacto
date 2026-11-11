@@ -12,9 +12,9 @@
 
   <!-- TOP NAVBAR (NO-PRINT) -->
   <header class="no-print bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-40 shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-3">
       
-      <!-- Brand -->
+      <!-- Brand & Title -->
       <div class="flex items-center gap-3">
         <div class="w-8 h-8 rounded-lg bg-sky-500 flex items-center justify-center font-black text-white text-base shadow">
           CV
@@ -22,51 +22,67 @@
         <div>
           <h1 class="text-sm font-bold tracking-tight text-white flex items-center gap-2">
             CV Alto Impacto
-            <span class="text-[10px] bg-sky-950 text-sky-400 border border-sky-800 px-1.5 py-0.5 rounded font-mono">Bilingüe</span>
+            <span class="text-[10px] bg-sky-950 text-sky-400 border border-sky-800 px-1.5 py-0.5 rounded font-mono">Bilingüe · ES / EN</span>
           </h1>
           <p class="text-[11px] text-slate-400">Generador estratégico con diseño a doble columna y escaneo de alto impacto</p>
         </div>
       </div>
 
-      <!-- Global Actions -->
-      <div class="flex items-center flex-wrap gap-2">
+      <!-- Archetype Selector & Language Switcher -->
+      <div class="flex items-center flex-wrap gap-2.5">
         
+        <!-- Archetype Selector -->
+        <div class="flex items-center gap-1.5 bg-slate-800 px-2 py-1 rounded-lg border border-slate-700">
+          <label for="select-archetype" class="text-[11px] text-slate-400 font-medium">Plantilla:</label>
+          <select id="select-archetype" class="bg-slate-900 text-white text-xs font-semibold py-1 px-2 rounded border border-slate-700 focus:outline-none focus:ring-1 focus:ring-sky-500 cursor-pointer">
+            <option value="student">🎓 Estudiante / Primer Empleo</option>
+            <option value="tech">💻 Desarrollador / Tech & AI</option>
+            <option value="career_change">🔄 Cambio de Carrera / Híbrido</option>
+            <option value="blank">📝 Plantilla en Blanco</option>
+          </select>
+        </div>
+
         <!-- Language Switcher -->
         <div class="flex bg-slate-800 p-0.5 rounded-lg border border-slate-700">
-          <button id="btn-lang-es" class="px-3 py-1.5 text-xs font-bold rounded-md bg-sky-600 text-white shadow-sm">
+          <button id="btn-lang-es" class="px-3 py-1.5 text-xs font-bold rounded-md bg-sky-600 text-white shadow-sm" title="Cambiar a Español">
             🇪🇸 ES
           </button>
-          <button id="btn-lang-en" class="px-3 py-1.5 text-xs font-medium rounded-md text-slate-300 hover:text-white">
+          <button id="btn-lang-en" class="px-3 py-1.5 text-xs font-medium rounded-md text-slate-300 hover:text-white" title="Switch to English">
             🇺🇸 EN
           </button>
         </div>
 
-        <!-- Sample Load Button -->
-        <button id="btn-load-sample" class="px-3 py-1.5 text-xs font-semibold rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 flex items-center gap-1.5 transition">
-          <span>✨</span> Cargar Ejemplo
+        <!-- Platzi Guide Modal Trigger -->
+        <button id="btn-platzi-guide" class="px-2.5 py-1.5 text-xs font-bold rounded-md bg-amber-500/10 border border-amber-500/30 text-amber-300 hover:bg-amber-500/20 transition flex items-center gap-1">
+          <span>💡</span> Guía Platzi
         </button>
 
         <!-- Save / Load JSON -->
-        <button id="btn-save-json" class="px-2.5 py-1.5 text-xs font-medium rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300" title="Guardar borrador en archivo JSON">
-          💾 Guardar
-        </button>
-        <label class="px-2.5 py-1.5 text-xs font-medium rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 cursor-pointer" title="Cargar archivo JSON">
-          📂 Cargar
-          <input type="file" id="input-load-json" accept=".json" class="hidden">
-        </label>
+        <div class="flex items-center gap-1">
+          <button id="btn-save-json" class="px-2.5 py-1.5 text-xs font-medium rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 transition" title="Guardar borrador en archivo JSON">
+            💾 Guardar
+          </button>
+          <label class="px-2.5 py-1.5 text-xs font-medium rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 cursor-pointer transition" title="Cargar archivo JSON">
+            📂 Cargar
+            <input type="file" id="input-load-json" accept=".json" class="hidden">
+          </label>
+        </div>
 
         <!-- Print PDF Button -->
         <button id="btn-print" class="px-3.5 py-1.5 text-xs font-bold rounded-md bg-emerald-600 hover:bg-emerald-500 text-white shadow flex items-center gap-1.5 transition">
           <span>🖨️</span> Imprimir / PDF
         </button>
 
-        <!-- HTML / MD Exports -->
+        <!-- Export Buttons (HTML & Markdown) -->
         <div class="flex items-center gap-1">
-          <button id="btn-download-html" class="px-2.5 py-1.5 text-xs font-medium rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300" title="Descargar como archivo HTML independiente">
+          <button id="btn-download-html" class="px-2.5 py-1.5 text-xs font-medium rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 transition" title="Descargar como archivo HTML independiente">
             📥 HTML
           </button>
-          <button id="btn-copy-md" class="px-2.5 py-1.5 text-xs font-medium rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300" title="Copiar en Markdown">
+          <button id="btn-copy-md" class="px-2.5 py-1.5 text-xs font-medium rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 transition" title="Copiar en Markdown optimizado para ATS">
             📋 MD
+          </button>
+          <button id="btn-reset-form" class="px-2 py-1.5 text-xs text-rose-300 hover:bg-rose-900/30 border border-rose-800/40 rounded-md transition" title="Limpiar formulario">
+            🧹
           </button>
         </div>
 
@@ -75,117 +91,107 @@
     </div>
   </header>
 
-  <!-- MAIN APP CONTAINER (TWO PANELS: EDITOR & PREVIEW) -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex-1 w-full grid grid-cols-1 lg:grid-cols-12 gap-6 no-print">
+  <!-- MAIN APP CONTAINER (TWO PANELS: FORM EDITOR & PREVIEW) -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex-1 w-full grid grid-cols-1 lg:grid-cols-12 gap-6 no-print">
 
     <!-- LEFT PANEL: FORM EDITOR (5 COLS) -->
-    <div class="lg:col-span-5 flex flex-col gap-4 max-h-[calc(100vh-100px)] overflow-y-auto pr-1">
+    <div class="lg:col-span-5 flex flex-col gap-3.5 max-h-[calc(100vh-90px)] overflow-y-auto pr-1">
 
-      <div class="bg-sky-50 border border-sky-200 rounded-lg p-3 text-xs text-sky-900 leading-relaxed">
-        <strong>💡 Metodología de Alto Rendimiento:</strong> Completa tus datos o modifica el ejemplo. La estructura está calibrada para superar el escaneo visual de 6 segundos y filtros ATS mediante logros cuantificables y jerarquía visual.
+      <!-- BANNER PEDAGÓGICO PLATZI -->
+      <div class="bg-sky-50 border border-sky-200 rounded-lg p-3 text-xs text-sky-900 leading-relaxed flex items-start gap-2.5 shadow-sm">
+        <span class="text-lg">🎯</span>
+        <div>
+          <strong class="font-bold text-sky-950">Metodología Platzi de Alto Rendimiento:</strong>
+          <p class="mt-0.5 text-slate-700 text-[11.5px]">
+            Estructurado para superar el escaneo inicial de 6 segundos y filtros ATS. Elige una plantilla base o edita los campos. Usa la fórmula: <span class="font-semibold text-sky-800">[Verbo de Acción] + [Herramienta] + [Métrica de Impacto]</span>.
+          </p>
+        </div>
       </div>
 
-      <!-- ACCORDION: DATOS PERSONALES -->
+      <!-- 1. DATOS PERSONALES & REDES -->
       <details open class="bg-white border border-slate-200 rounded-lg shadow-sm group">
-        <summary class="p-3.5 text-xs font-bold text-slate-800 cursor-pointer flex justify-between items-center select-none bg-slate-50 border-b border-slate-200 rounded-t-lg">
+        <summary class="p-3 text-xs font-bold text-slate-800 cursor-pointer flex justify-between items-center select-none bg-slate-50 border-b border-slate-200 rounded-t-lg">
           <span class="flex items-center gap-2">👤 1. Datos Personales & Contacto</span>
           <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
         </summary>
         <div class="p-3.5 space-y-2.5 text-xs">
           <div>
             <label class="block font-semibold text-slate-700 mb-0.5">Nombre Completo</label>
-            <input type="text" id="field-fullName" class="w-full p-2 border border-slate-300 rounded focus:ring-1 focus:ring-sky-500 font-semibold text-slate-900">
+            <input type="text" id="field-fullName" placeholder="Ej. Sofía Valeria Morales" class="w-full p-2 border border-slate-300 rounded focus:ring-1 focus:ring-sky-500 font-semibold text-slate-900">
           </div>
           <div>
             <label class="block font-semibold text-slate-700 mb-0.5">Título Profesional / Headline (Declaración de Marca)</label>
-            <input type="text" id="field-headline" class="w-full p-2 border border-slate-300 rounded focus:ring-1 focus:ring-sky-500 text-sky-700 font-medium">
-            <span class="text-[10px] text-slate-500">Ejemplo: Profesión Principal · Especialidad en Demanda · Rol Objetivo</span>
+            <input type="text" id="field-headline" placeholder="Ej. Estudiante de Ing. de Software · Desarrollo Web & Cloud" class="w-full p-2 border border-slate-300 rounded focus:ring-1 focus:ring-sky-500 text-sky-700 font-medium">
+            <span class="text-[10px] text-slate-500">Fórmula Platzi: Profesión Principal · Especialidad en Demanda · Rol Objetivo</span>
           </div>
           <div class="grid grid-cols-2 gap-2">
             <div>
               <label class="block font-semibold text-slate-700 mb-0.5">Ciudad & País</label>
-              <input type="text" id="field-location" class="w-full p-1.5 border border-slate-300 rounded">
+              <input type="text" id="field-location" placeholder="Guadalajara, Jalisco, México" class="w-full p-1.5 border border-slate-300 rounded">
             </div>
             <div>
               <label class="block font-semibold text-slate-700 mb-0.5">Teléfono (con lada)</label>
-              <input type="text" id="field-phone" class="w-full p-1.5 border border-slate-300 rounded">
+              <input type="text" id="field-phone" placeholder="+52 33 1234 5678" class="w-full p-1.5 border border-slate-300 rounded">
             </div>
           </div>
           <div class="grid grid-cols-2 gap-2">
             <div>
               <label class="block font-semibold text-slate-700 mb-0.5">Correo Electrónico</label>
-              <input type="email" id="field-email" class="w-full p-1.5 border border-slate-300 rounded">
+              <input type="email" id="field-email" placeholder="tu.correo@ejemplo.com" class="w-full p-1.5 border border-slate-300 rounded">
             </div>
             <div>
               <label class="block font-semibold text-slate-700 mb-0.5">Perfil de LinkedIn (URL)</label>
-              <input type="text" id="field-linkedin" class="w-full p-1.5 border border-slate-300 rounded">
+              <input type="text" id="field-linkedin" placeholder="https://linkedin.com/in/tu-perfil" class="w-full p-1.5 border border-slate-300 rounded">
             </div>
           </div>
           <div>
             <label class="block font-semibold text-slate-700 mb-0.5">GitHub / Portafolio Web (URL)</label>
-            <input type="text" id="field-github" class="w-full p-1.5 border border-slate-300 rounded">
+            <input type="text" id="field-github" placeholder="https://github.com/tu-usuario" class="w-full p-1.5 border border-slate-300 rounded">
           </div>
         </div>
       </details>
 
-      <!-- ACCORDION: SOBRE MÍ -->
+      <!-- 2. SOBRE MÍ / PERFIL PROFESIONAL -->
       <details open class="bg-white border border-slate-200 rounded-lg shadow-sm group">
-        <summary class="p-3.5 text-xs font-bold text-slate-800 cursor-pointer flex justify-between items-center select-none bg-slate-50 border-b border-slate-200 rounded-t-lg">
-          <span class="flex items-center gap-2">✍️ 2. Sobre Mí / Objetivo Profesional</span>
+        <summary class="p-3 text-xs font-bold text-slate-800 cursor-pointer flex justify-between items-center select-none bg-slate-50 border-b border-slate-200 rounded-t-lg">
+          <span class="flex items-center gap-2">✍️ 2. Sobre Mí / Perfil Profesional</span>
           <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
         </summary>
         <div class="p-3.5 space-y-2 text-xs">
           <p class="text-[11px] text-slate-500 leading-relaxed">
-            Redacta en primera persona (5 a 7 líneas). Explica quién eres, tu combinación de fortalezas y qué valor aportas al equipo o empresa.
+            Redacta en primera persona (5 a 7 líneas). Explica quién eres, tu combinación de fortalezas y qué valor aportas al equipo al que aplicas.
           </p>
-          <textarea id="field-about" rows="6" class="w-full p-2.5 border border-slate-300 rounded focus:ring-1 focus:ring-sky-500 leading-relaxed text-slate-800 text-xs"></textarea>
+          <textarea id="field-about" rows="5" class="w-full p-2.5 border border-slate-300 rounded focus:ring-1 focus:ring-sky-500 leading-relaxed text-slate-800 text-xs"></textarea>
         </div>
       </details>
 
-      <!-- ACCORDION: EXPERIENCIA & EMPRENDIMIENTO -->
+      <!-- 3. EXPERIENCIA & PROYECTOS -->
       <details open class="bg-white border border-slate-200 rounded-lg shadow-sm group">
-        <summary class="p-3.5 text-xs font-bold text-slate-800 cursor-pointer flex justify-between items-center select-none bg-slate-50 border-b border-slate-200 rounded-t-lg">
-          <span class="flex items-center gap-2">💼 3. Experiencia Profesional & Emprendimiento</span>
+        <summary class="p-3 text-xs font-bold text-slate-800 cursor-pointer flex justify-between items-center select-none bg-slate-50 border-b border-slate-200 rounded-t-lg">
+          <span class="flex items-center gap-2">💼 3. Experiencia Profesional & Proyectos</span>
           <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
         </summary>
         <div class="p-3.5 space-y-3 text-xs">
           <div class="flex justify-between items-center">
             <span class="text-[11px] text-slate-500">Orden cronológico inverso (lo más reciente arriba).</span>
-            <button type="button" id="btn-add-exp" class="px-2.5 py-1 bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-200 font-bold rounded text-[11px] flex items-center gap-1">
-              + Agregar Puesto
+            <button type="button" id="btn-add-exp" class="px-2.5 py-1 bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-200 font-bold rounded text-[11px] flex items-center gap-1 transition">
+              + Agregar Puesto / Proyecto
             </button>
           </div>
           <div id="exp-list-container"></div>
         </div>
       </details>
 
-      <!-- ACCORDION: HACKATONES & INNOVACIÓN -->
-      <details class="bg-white border border-slate-200 rounded-lg shadow-sm group">
-        <summary class="p-3.5 text-xs font-bold text-slate-800 cursor-pointer flex justify-between items-center select-none bg-slate-50 border-b border-slate-200 rounded-t-lg">
-          <span class="flex items-center gap-2">🚀 4. Hackatones, Retos & Comunidades Dev</span>
+      <!-- 4. EDUCACIÓN FORMAL -->
+      <details open class="bg-white border border-slate-200 rounded-lg shadow-sm group">
+        <summary class="p-3 text-xs font-bold text-slate-800 cursor-pointer flex justify-between items-center select-none bg-slate-50 border-b border-slate-200 rounded-t-lg">
+          <span class="flex items-center gap-2">🎓 4. Educación Formal</span>
           <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
         </summary>
         <div class="p-3.5 space-y-3 text-xs">
           <div class="flex justify-between items-center">
-            <span class="text-[11px] text-slate-500">Participación en retos, hackatones o meetups técnicos.</span>
-            <button type="button" id="btn-add-hack" class="px-2.5 py-1 bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-200 font-bold rounded text-[11px]">
-              + Agregar Reto
-            </button>
-          </div>
-          <div id="hack-list-container"></div>
-        </div>
-      </details>
-
-      <!-- ACCORDION: EDUCACIÓN FORMAL -->
-      <details class="bg-white border border-slate-200 rounded-lg shadow-sm group">
-        <summary class="p-3.5 text-xs font-bold text-slate-800 cursor-pointer flex justify-between items-center select-none bg-slate-50 border-b border-slate-200 rounded-t-lg">
-          <span class="flex items-center gap-2">🎓 5. Educación Formal & Cédulas</span>
-          <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
-        </summary>
-        <div class="p-3.5 space-y-3 text-xs">
-          <div class="flex justify-between items-center">
-            <span class="text-[11px] text-slate-500">Licenciaturas, maestrías o títulos técnicos.</span>
-            <button type="button" id="btn-add-edu" class="px-2.5 py-1 bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-200 font-bold rounded text-[11px]">
+            <span class="text-[11px] text-slate-500">Licenciaturas, ingenierías o grados técnicos.</span>
+            <button type="button" id="btn-add-edu" class="px-2.5 py-1 bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-200 font-bold rounded text-[11px] transition">
               + Agregar Educación
             </button>
           </div>
@@ -193,20 +199,105 @@
         </div>
       </details>
 
-      <!-- ACCORDION: HABILIDADES TÉCNICAS -->
+      <!-- 5. HABILIDADES TÉCNICAS (HARD SKILLS) -->
       <details class="bg-white border border-slate-200 rounded-lg shadow-sm group">
-        <summary class="p-3.5 text-xs font-bold text-slate-800 cursor-pointer flex justify-between items-center select-none bg-slate-50 border-b border-slate-200 rounded-t-lg">
-          <span class="flex items-center gap-2">🛠️ 6. Habilidades Técnicas (Hard Skills)</span>
+        <summary class="p-3 text-xs font-bold text-slate-800 cursor-pointer flex justify-between items-center select-none bg-slate-50 border-b border-slate-200 rounded-t-lg">
+          <span class="flex items-center gap-2">🛠️ 5. Habilidades Técnicas (Hard Skills)</span>
           <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
         </summary>
         <div class="p-3.5 space-y-3 text-xs">
           <div class="flex justify-between items-center">
-            <span class="text-[11px] text-slate-500">Categorías de herramientas tangibles.</span>
-            <button type="button" id="btn-add-skill" class="px-2.5 py-1 bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-200 font-bold rounded text-[11px]">
+            <span class="text-[11px] text-slate-500">Categorías de herramientas tangibles (Frontend, Backend, etc.).</span>
+            <button type="button" id="btn-add-skill" class="px-2.5 py-1 bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-200 font-bold rounded text-[11px] transition">
               + Agregar Categoría
             </button>
           </div>
           <div id="skills-list-container"></div>
+        </div>
+      </details>
+
+      <!-- 6. COMPETENCIAS CLAVE (SOFT SKILLS) -->
+      <details class="bg-white border border-slate-200 rounded-lg shadow-sm group">
+        <summary class="p-3 text-xs font-bold text-slate-800 cursor-pointer flex justify-between items-center select-none bg-slate-50 border-b border-slate-200 rounded-t-lg">
+          <span class="flex items-center gap-2">🤝 6. Competencias Clave (Soft Skills con Evidencia)</span>
+          <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+        </summary>
+        <div class="p-3.5 space-y-3 text-xs">
+          <div class="flex justify-between items-center">
+            <span class="text-[11px] text-slate-500">Acompaña cada habilidad con un ejemplo o contexto tangible.</span>
+            <button type="button" id="btn-add-soft" class="px-2.5 py-1 bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-200 font-bold rounded text-[11px] transition">
+              + Agregar Competencia
+            </button>
+          </div>
+          <div id="soft-list-container"></div>
+        </div>
+      </details>
+
+      <!-- 7. IDIOMAS -->
+      <details class="bg-white border border-slate-200 rounded-lg shadow-sm group">
+        <summary class="p-3 text-xs font-bold text-slate-800 cursor-pointer flex justify-between items-center select-none bg-slate-50 border-b border-slate-200 rounded-t-lg">
+          <span class="flex items-center gap-2">🌐 7. Idiomas</span>
+          <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+        </summary>
+        <div class="p-3.5 space-y-3 text-xs">
+          <div class="flex justify-between items-center">
+            <span class="text-[11px] text-slate-500">Indica tu nivel en el marco europeo (B1, B2, C1, Nativo).</span>
+            <button type="button" id="btn-add-lang" class="px-2.5 py-1 bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-200 font-bold rounded text-[11px] transition">
+              + Agregar Idioma
+            </button>
+          </div>
+          <div id="lang-list-container"></div>
+        </div>
+      </details>
+
+      <!-- 8. FORMACIÓN CONTINUA & CERTIFICACIONES -->
+      <details class="bg-white border border-slate-200 rounded-lg shadow-sm group">
+        <summary class="p-3 text-xs font-bold text-slate-800 cursor-pointer flex justify-between items-center select-none bg-slate-50 border-b border-slate-200 rounded-t-lg">
+          <span class="flex items-center gap-2">📜 8. Formación Continua & Certificaciones</span>
+          <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+        </summary>
+        <div class="p-3.5 space-y-3 text-xs">
+          <div class="flex justify-between items-center">
+            <span class="text-[11px] text-slate-500">Cursos de Platzi, AWS, Google, Harvard Online, etc.</span>
+            <button type="button" id="btn-add-training" class="px-2.5 py-1 bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-200 font-bold rounded text-[11px] transition">
+              + Agregar Certificación
+            </button>
+          </div>
+          <div id="training-list-container"></div>
+        </div>
+      </details>
+
+      <!-- 9. HACKATONES, RETOS & INNOVACIÓN -->
+      <details class="bg-white border border-slate-200 rounded-lg shadow-sm group">
+        <summary class="p-3 text-xs font-bold text-slate-800 cursor-pointer flex justify-between items-center select-none bg-slate-50 border-b border-slate-200 rounded-t-lg">
+          <span class="flex items-center gap-2">🚀 9. Hackatones & Retos de Innovación</span>
+          <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+        </summary>
+        <div class="p-3.5 space-y-3 text-xs">
+          <div class="flex justify-between items-center">
+            <span class="text-[11px] text-slate-500">Participación en hackathons, datathons o retos de programación.</span>
+            <button type="button" id="btn-add-hack" class="px-2.5 py-1 bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-200 font-bold rounded text-[11px] transition">
+              + Agregar Reto
+            </button>
+          </div>
+          <div id="hack-list-container"></div>
+        </div>
+      </details>
+
+      <!-- 10. COMUNIDAD & VOLUNTARIADO -->
+      <details class="bg-white border border-slate-200 rounded-lg shadow-sm group">
+        <summary class="p-3 text-xs font-bold text-slate-800 cursor-pointer flex justify-between items-center select-none bg-slate-50 border-b border-slate-200 rounded-t-lg">
+          <span class="flex items-center gap-2">🌱 10. Comunidad, Voluntariado & Hobbies Estratégicos</span>
+          <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+        </summary>
+        <div class="p-3.5 space-y-3 text-xs">
+          <div class="flex justify-between items-center">
+            <span class="text-[11px] text-slate-500">Clubs estudiantiles, voluntariado social o grupos técnicos.</span>
+            <button type="button" id="btn-add-comm" class="px-2.5 py-1 bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-200 font-bold rounded text-[11px] transition">
+              + Agregar Comunidad
+            </button>
+          </div>
+          <div id="comm-list-container"></div>
         </div>
       </details>
 
@@ -218,9 +309,9 @@
       <div class="w-full flex justify-between items-center mb-3 px-2 text-xs text-slate-600">
         <span class="font-bold flex items-center gap-1.5">
           <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
-          Vista Previa en Vivo (Formato Doble Columna)
+          Vista Previa en Vivo (Formato Estratégico a Doble Columna)
         </span>
-        <span class="text-[11px] text-slate-500">Calibrado para Hoja Carta (Letter)</span>
+        <span class="text-[11px] text-slate-500">Calibrado para Hoja Carta (US Letter)</span>
       </div>
 
       <!-- THE RENDERED SHEET -->
@@ -232,12 +323,81 @@
 
   </div>
 
-  <!-- PRINT ONLY RENDER (HIDDEN ON SCREEN, VISIBLE ON PRINT) -->
-  <div id="cv-print-render" class="hidden print:block"></div>
+  <!-- MODAL: GUÍA PLATZI -->
+  <div id="platzi-modal" class="hidden fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl max-w-2xl w-full p-6 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-between items-center border-b border-slate-200 pb-3 mb-4">
+        <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+          <span>💡</span> Metodología Platzi: La Fórmula de un CV Ganador
+        </h3>
+        <button id="btn-close-modal" class="text-slate-400 hover:text-slate-600 text-lg font-bold">✕</button>
+      </div>
+
+      <div class="space-y-4 text-xs text-slate-700 leading-relaxed">
+        
+        <div class="bg-amber-50 border border-amber-200 p-3 rounded-lg text-amber-900">
+          <strong>⏱️ La Regla de los 6 Segundos:</strong>
+          Los reclutadores tardan un promedio de 6 segundos en escanear un CV. Si no ven inmediatamente tu título profesional, tus fortalezas técnicas y métricas claras, pasarán al siguiente candidato.
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 text-sm mb-1">1. La Fórmula del Logro Cuantificable</h4>
+          <p class="mb-2">Evita describir responsabilidades pasivas. Describe lo que <strong>hiciste, cómo lo hiciste y qué resultado obtuviste</strong>:</p>
+          <div class="bg-slate-100 p-3 rounded font-mono text-[11px] text-sky-800 border border-slate-300">
+            [Verbo de Acción Potente] + [Herramienta o Metodología] + [Resultado Cuantificable (% / $ / tiempo / usuarios)]
+          </div>
+          <div class="grid grid-cols-2 gap-2 mt-2">
+            <div class="p-2 bg-rose-50 border border-rose-200 rounded text-rose-900">
+              <span class="font-bold">❌ Evita esto:</span>
+              <p>"Responsable de atender la base de datos y hacer reportes."</p>
+            </div>
+            <div class="p-2 bg-emerald-50 border border-emerald-200 rounded text-emerald-900">
+              <span class="font-bold">✅ Aplica esto:</span>
+              <p>"Automaticé consultas analíticas en PostgreSQL con Python, reduciendo los tiempos de reportería en un 60%."</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 text-sm mb-1">2. Banco de Verbos de Acción Recomendados</h4>
+          <ul class="grid grid-cols-3 gap-2 mt-1">
+            <li class="bg-slate-50 p-2 rounded border border-slate-200">
+              <strong class="text-sky-700 block mb-0.5">Creación:</strong>
+              Diseñé, Desarrollé, Construí, Arquitecté, Implementé, Fundé.
+            </li>
+            <li class="bg-slate-50 p-2 rounded border border-slate-200">
+              <strong class="text-emerald-700 block mb-0.5">Optimización:</strong>
+              Automaticé, Reduje, Incrementé, Aceleré, Refactoricé, Simplifiqué.
+            </li>
+            <li class="bg-slate-50 p-2 rounded border border-slate-200">
+              <strong class="text-purple-700 block mb-0.5">Liderazgo:</strong>
+              Coordiné, Lideré, Estandaricé, Capacité, Negocié, Gestioné.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 text-sm mb-1">3. ¿Cómo adaptar tu CV según tu perfil?</h4>
+          <ul class="space-y-1.5 list-disc pl-4 text-slate-600">
+            <li><strong>Estudiantes / Sin Experiencia Formal:</strong> Prioriza tus proyectos de clase, proyectos personales en GitHub, participación en hackatones y tu promedio o materias avanzadas.</li>
+            <li><strong>Desarrolladores con Experiencia:</strong> Enfócate en la arquitectura, tecnologías de demanda (cloud, testing, CI/CD) y métricas de escala o disponibilidad.</li>
+            <li><strong>Cambio de Carrera:</strong> Explica en el "Sobre Mí" cómo tu bagaje previo potencia tu nueva vocación tecnológica, destacando tus habilidades transferibles.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-5 pt-3 border-t border-slate-200 flex justify-end">
+        <button onclick="document.getElementById('platzi-modal').classList.add('hidden')" class="px-4 py-1.5 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded text-xs transition">
+          Entendido, ¡a crear mi CV!
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER (NO-PRINT) -->
   <footer class="no-print bg-white border-t border-slate-200 py-3 text-center text-xs text-slate-500">
-    Desarrollado para la comunidad universitaria y de desarrolladores · Inspirado en las enseñanzas de alto rendimiento en reclutamiento técnico.
+    Desarrollado para la comunidad universitaria y de desarrolladores · Diseñado bajo la metodología Platzi de alto rendimiento.
   </footer>
 
   <!-- Application script -->
