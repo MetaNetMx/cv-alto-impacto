@@ -1,0 +1,20 @@
+{
+  "name": "cv-alto-impacto",
+  "version": "1.0.0",
+  "description": "Generador de CV de alto impacto con metodología estratégica a doble columna y soporte bilingüe (ES / EN).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "cv",
+    "resume",
+    "cv-builder",
+    "bilingual",
+    "career",
+    "ats"
+  ],
+  "author": "José Ernesto Ramírez García",
+  "license": "MIT"
+}
