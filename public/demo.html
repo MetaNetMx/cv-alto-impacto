@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Demo Interactivo · CV Alto Impacto</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    
+    /* Simulated mouse cursor */
+    #virtual-cursor {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      pointer-events: none;
+      z-index: 100;
+      transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+      transform: translate(-2px, -2px);
+    }
+    .cursor-clicking {
+      transform: scale(0.8) translate(-2px, -2px) !important;
+    }
+
+    /* Pulse effect on interactive elements */
+    .highlight-focus {
+      outline: 2px solid #38bdf8 !important;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5) !important;
+      animation: pulse-ring 1s infinite alternate;
+    }
+    @keyframes pulse-ring {
+      from { transform: scale(1); }
+      to { transform: scale(1.02); }
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col items-center justify-between p-3 sm:p-6 antialiased selection:bg-sky-500 selection:text-white">
+
+  <!-- TOP HEADER -->
+  <header class="w-full max-w-5xl flex items-center justify-between py-3 border-b border-slate-800">
+    <div class="flex items-center gap-3">
+      <a href="index.html" class="flex items-center gap-2 text-white hover:text-sky-400 transition group">
+        <div class="w-8 h-8 rounded-lg bg-sky-500 flex items-center justify-center font-black text-white text-base shadow group-hover:scale-105 transition">
+          CV
+        </div>
+        <div>
+          <h1 class="text-sm font-bold tracking-tight text-white flex items-center gap-1.5">
+            CV Alto Impacto
+            <span class="text-[9px] bg-purple-950 text-purple-400 border border-purple-800 px-1.5 py-0.5 rounded font-mono uppercase font-bold">Video Demo</span>
+          </h1>
+          <p class="text-[11px] text-slate-400">Guía audiovisual interactiva para crear un currículum ganador</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <a href="index.html" class="px-3.5 py-1.5 text-xs font-bold rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white shadow transition flex items-center gap-1.5">
+        <span>🚀</span> <span class="hidden sm:inline">Abrir</span> Generador Gratis
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN VIDEO THEATER CONTAINER -->
+  <main class="w-full max-w-5xl my-4 sm:my-6 flex flex-col items-center">
+    
+    <!-- Video Screen Mockup -->
+    <div id="video-stage" class="relative w-full aspect-video bg-slate-900 rounded-2xl border border-slate-800 shadow-2xl overflow-hidden flex flex-col">
+      
+      <!-- Virtual Animated Mouse Cursor -->
+      <div id="virtual-cursor" class="top-10 left-10">
+        <svg viewBox="0 0 24 24" class="w-6 h-6 filter drop-shadow-md fill-sky-400 stroke-slate-950 stroke-[1.5]">
+          <path d="M4 0l16 12.279-6.951 1.17 4.325 8.817-3.596 1.734-4.35-8.879-5.428 5.879v-21z"/>
+        </svg>
+      </div>
+
+      <!-- SIMULATED APP HEADER IN VIDEO -->
+      <div class="bg-slate-900 border-b border-slate-800 px-4 py-2.5 flex items-center justify-between text-xs select-none">
+        <div class="flex items-center gap-2">
+          <div class="flex gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
+          </div>
+          <span class="text-slate-400 font-mono text-[10px] ml-2">app.cv-alto-impacto.up.railway.app</span>
+        </div>
+        <div class="flex items-center gap-2 text-[10px] text-slate-400">
+          <span id="sim-save-status" class="flex items-center gap-1 text-emerald-400 font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Guardado local
+          </span>
+          <span class="text-slate-500">|</span>
+          <span>🛡️ 100% Privado</span>
+        </div>
+      </div>
+
+      <!-- SIMULATED APP BODY IN VIDEO -->
+      <div class="flex-1 grid grid-cols-12 p-3 sm:p-5 gap-4 overflow-hidden relative bg-slate-900/60">
+
+        <!-- LEFT PANEL: SIMULATED FORM -->
+        <div class="col-span-5 bg-slate-800/80 rounded-xl border border-slate-700/80 p-3 flex flex-col gap-2.5 text-xs select-none overflow-hidden relative shadow-inner">
+          
+          <!-- Simulated Score Widget -->
+          <div id="sim-score-card" class="bg-slate-900/90 rounded-lg p-2.5 border border-slate-700 flex items-center justify-between gap-2 transition duration-500">
+            <div class="flex items-center gap-2.5">
+              <div class="relative w-9 h-9">
+                <svg class="w-9 h-9 transform -rotate-90" viewBox="0 0 36 36">
+                  <path class="stroke-slate-700 stroke-[3.5] fill-none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  <path id="sim-circle-bar" class="stroke-sky-500 stroke-[3.5] fill-none transition-all duration-700" stroke-dasharray="100, 100" stroke-dashoffset="65" stroke-linecap="round" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                </svg>
+                <div id="sim-score-text" class="absolute inset-0 flex items-center justify-center font-black text-[10px] text-white">35%</div>
+              </div>
+              <div>
+                <span id="sim-score-badge" class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-500/20 text-amber-300 uppercase">En Construcción</span>
+                <p class="text-[10px] text-slate-400 mt-0.5">Salud de tu CV</p>
+              </div>
+            </div>
+            <span id="sim-score-trophy" class="text-sm">⚡</span>
+          </div>
+
+          <!-- Simulated Next Action Prompt -->
+          <div id="sim-next-action" class="bg-sky-950/40 border border-sky-800/60 rounded-lg p-2 text-[10.5px] text-sky-200 transition duration-500 flex items-start gap-1.5">
+            <span>🎯</span>
+            <span id="sim-action-text" class="leading-tight">Siguiente: Agrega 2 logros con números (% o $) en tu experiencia.</span>
+          </div>
+
+          <!-- Simulated Section Form Accordions -->
+          <div class="space-y-1.5 text-[11px] font-medium text-slate-300">
+            <div id="sim-acc-role" class="p-2 bg-slate-700/50 rounded border border-slate-600 flex justify-between items-center transition">
+              <span class="flex items-center gap-1.5"><span>🎓</span> Plantilla de Rol:</span>
+              <span id="sim-val-role" class="font-bold text-sky-400">Estudiante</span>
+            </div>
+            <div id="sim-acc-theme" class="p-2 bg-slate-700/50 rounded border border-slate-600 flex justify-between items-center transition">
+              <span class="flex items-center gap-1.5"><span>🎨</span> Tema Visual:</span>
+              <span id="sim-val-theme" class="font-bold text-slate-300">Azul Corporativo</span>
+            </div>
+            <div id="sim-acc-exp" class="p-2 bg-slate-700/50 rounded border border-slate-600 space-y-1 transition">
+              <div class="flex justify-between items-center">
+                <span class="flex items-center gap-1.5"><span>💼</span> Experiencia Laboral</span>
+                <span id="sim-val-exp-count" class="text-[10px] bg-slate-800 px-1.5 rounded text-slate-400">1 puesto</span>
+              </div>
+              <div id="sim-bullet-preview" class="text-[9.5px] text-slate-400 italic truncate bg-slate-900/50 p-1 rounded">
+                "Diseñé e implementé APIs RESTful en Node.js..."
+              </div>
+            </div>
+            <div id="sim-acc-ats" class="p-2 bg-slate-700/50 rounded border border-slate-600 flex justify-between items-center transition">
+              <span class="flex items-center gap-1.5"><span>🔍</span> Analizador ATS:</span>
+              <span id="sim-val-ats" class="font-bold text-emerald-400">88% Coincidencia</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT PANEL: SIMULATED LIVE CV SHEET -->
+        <div class="col-span-7 bg-slate-950/80 rounded-xl border border-slate-800 p-2.5 flex justify-center items-center overflow-hidden relative shadow-inner">
+          
+          <!-- THE MINI SHEET SIMULATION -->
+          <div id="sim-cv-sheet" class="w-[300px] h-[390px] bg-white text-slate-800 rounded shadow-2xl grid grid-cols-12 overflow-hidden text-[7px] leading-tight transition-all duration-700 transform scale-95 sm:scale-100">
+            
+            <!-- Sheet Sidebar -->
+            <div id="sim-sheet-sidebar" class="col-span-4 bg-slate-50 border-r border-slate-200 p-2.5 flex flex-col gap-2 transition duration-500">
+              <div class="font-black uppercase tracking-wider text-[6.5px] text-slate-900 border-b border-sky-600 pb-0.5">Contacto</div>
+              <div class="space-y-0.5 text-slate-600 text-[6px]">
+                <p>📍 Guadalajara, MX</p>
+                <p>✉️ correo@ejemplo.com</p>
+                <p>🔗 linkedin.com/in/perfil</p>
+              </div>
+
+              <div class="font-black uppercase tracking-wider text-[6.5px] text-slate-900 border-b border-sky-600 pb-0.5 mt-1">Habilidades</div>
+              <div class="space-y-0.5 text-[6px]">
+                <p class="font-bold text-slate-900">Frontend</p>
+                <p class="text-slate-500">React, Tailwind, JS</p>
+                <p class="font-bold text-slate-900">Backend</p>
+                <p class="text-slate-500">Node.js, PostgreSQL</p>
+              </div>
+
+              <!-- Mini QR in sidebar -->
+              <div id="sim-mini-qr" class="mt-auto pt-1 border-t border-slate-200 flex flex-col items-center gap-0.5 opacity-0 transition duration-500">
+                <div class="w-8 h-8 bg-slate-900 text-white flex items-center justify-center font-mono text-[5px] rounded">
+                  QR
+                </div>
+                <span class="text-[5px] text-slate-400 font-bold">Escanear</span>
+              </div>
+            </div>
+
+            <!-- Sheet Main Content -->
+            <div class="col-span-8 p-3 flex flex-col gap-2 bg-white">
+              <div class="border-b border-slate-900 pb-1">
+                <h2 id="sim-sheet-name" class="font-black text-[10px] text-slate-900 uppercase tracking-tight">Sofía Valeria Morales</h2>
+                <p id="sim-sheet-headline" class="font-bold text-[7px] text-sky-700">Desarrolladora Full Stack · React & Node.js</p>
+              </div>
+
+              <div>
+                <h3 class="font-black uppercase text-[6.5px] text-slate-900 border-b border-slate-200 pb-0.5 mb-1">Perfil Profesional</h3>
+                <p class="text-[6px] text-slate-600 text-justify">
+                  Ingeniera apasionada por el desarrollo de software y computación distribuida con enfoque en resultados medibles y buenas prácticas ágiles.
+                </p>
+              </div>
+
+              <div>
+                <h3 class="font-black uppercase text-[6.5px] text-slate-900 border-b border-slate-200 pb-0.5 mb-1">Experiencia & Proyectos</h3>
+                <div class="space-y-1">
+                  <div>
+                    <div class="flex justify-between font-bold text-[6.5px] text-slate-900">
+                      <span id="sim-job-title">Software Developer</span>
+                      <span class="text-slate-400">2024 – Presente</span>
+                    </div>
+                    <ul id="sim-job-bullets" class="list-disc pl-2 text-[5.5px] text-slate-600 space-y-0.5 mt-0.5">
+                      <li>Diseñé arquitectura web reduciendo tiempos de carga en un 35%.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- FLOATING OVERLAY: NARRATOR SUBTITLE CARD -->
+        <div id="narrator-card" class="absolute bottom-3 left-4 right-4 bg-slate-900/95 backdrop-blur-md border border-slate-700/80 rounded-xl p-3 shadow-2xl flex items-center justify-between gap-4 transition-all duration-500">
+          <div class="flex items-center gap-3">
+            <div id="narrator-step-badge" class="w-8 h-8 rounded-full bg-sky-500 text-white font-black text-xs flex items-center justify-center flex-shrink-0 shadow">
+              1
+            </div>
+            <div>
+              <h4 id="narrator-step-title" class="font-bold text-xs text-white">1. Elige tu Arquetipo de Rol</h4>
+              <p id="narrator-step-desc" class="text-[11px] text-slate-300">
+                Selecciona entre 9 profesiones modelo (Tech, Estudiante, Ventas, Salud, etc.) o inicia en blanco.
+              </p>
+            </div>
+          </div>
+          <div class="hidden sm:flex items-center gap-2">
+            <span class="text-[10px] text-slate-400 font-mono" id="time-display">0:00 / 1:15</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- VIDEO CONTROLS TIMELINE BAR -->
+      <div class="bg-slate-950 px-4 py-3 flex flex-col gap-2 border-t border-slate-800">
+        
+        <!-- Scrubber Progress Bar -->
+        <div id="progress-container" class="relative w-full h-1.5 bg-slate-800 rounded-full cursor-pointer overflow-hidden group">
+          <div id="progress-bar" class="h-full bg-gradient-to-r from-sky-500 to-indigo-500 w-0 transition-all duration-300"></div>
+        </div>
+
+        <!-- Buttons Controls -->
+        <div class="flex items-center justify-between text-xs">
+          <div class="flex items-center gap-3">
+            <button id="btn-play-pause" class="w-8 h-8 rounded-full bg-sky-600 hover:bg-sky-500 text-white flex items-center justify-center shadow transition font-bold">
+              ▶
+            </button>
+            <button id="btn-restart" class="text-slate-400 hover:text-white transition text-sm" title="Reiniciar demo">
+              ↺
+            </button>
+            <div class="flex items-center gap-1.5 text-xs text-slate-400">
+              <span id="current-scene-label" class="font-semibold text-slate-300">Paso 1 de 6</span>
+            </div>
+          </div>
+
+          <!-- Step navigation shortcuts -->
+          <div class="hidden md:flex items-center gap-1 text-[11px]">
+            <button onclick="jumpToScene(0)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300">1. Rol</button>
+            <button onclick="jumpToScene(1)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300">2. Color</button>
+            <button onclick="jumpToScene(2)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300">3. Score</button>
+            <button onclick="jumpToScene(3)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300">4. Viñetas</button>
+            <button onclick="jumpToScene(4)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300">5. ATS & QR</button>
+            <button onclick="jumpToScene(5)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300">6. PDF</button>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button id="btn-toggle-sound" class="text-slate-400 hover:text-white text-xs px-2 py-1 rounded bg-slate-900 border border-slate-800">
+              🔊 Audio UI: On
+            </button>
+            <a href="index.html" class="px-3 py-1 font-bold text-xs bg-emerald-600 hover:bg-emerald-500 text-white rounded transition shadow">
+              Crear Mi CV ➔
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- BENEFIT CARDS UNDER VIDEO -->
+    <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 text-xs">
+      <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl space-y-1">
+        <strong class="text-sky-400 font-bold block text-sm">🎯 6 Segundos de Escaneo</strong>
+        <p class="text-slate-400 leading-relaxed">
+          Diseñado a dos columnas con jerarquía visual calculada para que los reclutadores identifiquen tus fortalezas en el primer vistazo.
+        </p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl space-y-1">
+        <strong class="text-emerald-400 font-bold block text-sm">💡 Fórmula Platzi Integrada</strong>
+        <p class="text-slate-400 leading-relaxed">
+          Logros cuantificables con la estructura: Verbo de Acción + Herramienta + Métrica (% / $ / tiempo).
+        </p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl space-y-1">
+        <strong class="text-purple-400 font-bold block text-sm">🛡️ Privacidad & Sin Costo</strong>
+        <p class="text-slate-400 leading-relaxed">
+          Tus datos se procesan en tu navegador en tiempo real. Sin servidores, sin bases de datos ajenas, 100% tuyo.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="w-full max-w-5xl text-center py-4 text-xs text-slate-600 border-t border-slate-900">
+    CV Alto Impacto v2.0 · Plataforma gratuita de código abierto para estudiantes y profesionales.
+  </footer>
+
+  <!-- DEMO ANIMATION SCRIPT -->
+  <script>
+    // Audio synthesizer for subtle realistic clicks without external assets
+    let soundEnabled = true;
+    let audioCtx = null;
+    function playUiBeep(freq = 440, type = 'sine', duration = 0.08) {
+      if (!soundEnabled) return;
+      try {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    // Toggle sound
+    document.getElementById('btn-toggle-sound').addEventListener('click', (e) => {
+      soundEnabled = !soundEnabled;
+      e.target.textContent = soundEnabled ? '🔊 Audio UI: On' : '🔇 Audio UI: Off';
+    });
+
+    // SCENES DEFINITION (Timeline)
+    const SCENES = [
+      {
+        id: 0,
+        title: "1. Selección de Arquetipo de Rol",
+        desc: "Selecciona entre 9 profesiones modelo (Tech, Estudiante, Ventas, Salud, Oficios) para empezar con datos estructurados.",
+        duration: 12, // seconds
+        action: () => {
+          moveCursor(140, 160);
+          highlightEl('sim-acc-role');
+          playUiBeep(600);
+          setTimeout(() => {
+            document.getElementById('sim-val-role').textContent = 'Desarrollador Tech';
+            document.getElementById('sim-sheet-headline').textContent = 'Full Stack Software Engineer · Node.js & React';
+            document.getElementById('sim-score-text').textContent = '45%';
+            document.getElementById('sim-circle-bar').style.strokeDashoffset = '55';
+            playUiBeep(750);
+          }, 1500);
+        }
+      },
+      {
+        id: 1,
+        title: "2. Personalización Visual en Vivo",
+        desc: "Cambia entre 8 temas de color profesionales (Verde Ejecutivo, Grafito, Borgoña) y 4 fuentes tipográficas con un clic.",
+        duration: 12,
+        action: () => {
+          moveCursor(140, 200);
+          highlightEl('sim-acc-theme');
+          playUiBeep(550);
+          setTimeout(() => {
+            document.getElementById('sim-val-theme').textContent = 'Verde Ejecutivo';
+            document.getElementById('sim-sheet-sidebar').style.backgroundColor = '#f0fdf4';
+            document.getElementById('sim-sheet-sidebar').style.borderRightColor = '#bbf7d0';
+            document.getElementById('sim-sheet-headline').style.color = '#059669';
+            playUiBeep(850);
+          }, 1500);
+        }
+      },
+      {
+        id: 2,
+        title: "3. Score Gamificado & 'Next Best Action'",
+        desc: "El medidor analiza tu CV en tiempo real. La caja dinámica te indica la acción exacta para pasar de Borrador a Alto Impacto.",
+        duration: 12,
+        action: () => {
+          moveCursor(100, 90);
+          highlightEl('sim-score-card');
+          playUiBeep(500);
+          setTimeout(() => {
+            document.getElementById('sim-score-text').textContent = '75%';
+            document.getElementById('sim-score-text').className = 'absolute inset-0 flex items-center justify-center font-black text-[10px] text-emerald-400';
+            document.getElementById('sim-circle-bar').style.strokeDashoffset = '25';
+            document.getElementById('sim-circle-bar').style.stroke = '#10b981';
+            document.getElementById('sim-score-badge').textContent = 'Competitivo';
+            document.getElementById('sim-score-badge').className = 'px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-500/20 text-emerald-300 uppercase';
+            document.getElementById('sim-action-text').textContent = 'Siguiente: ¡Inserta viñetas con la fórmula Platzi para llegar a 95%!';
+            playUiBeep(920);
+          }, 1500);
+        }
+      },
+      {
+        id: 3,
+        title: "4. Biblioteca de Viñetas de Alto Rendimiento",
+        desc: "Abre la biblioteca con más de 60 viñetas pre-redactadas con métricas cuantificables e insértalas directamente.",
+        duration: 14,
+        action: () => {
+          moveCursor(140, 250);
+          highlightEl('sim-acc-exp');
+          playUiBeep(650);
+          setTimeout(() => {
+            document.getElementById('sim-val-exp-count').textContent = '2 puestos';
+            document.getElementById('sim-job-bullets').innerHTML = `
+              <li><strong>Arquitecté microservicios</strong> en NestJS reduciendo latencia en un 40%.</li>
+              <li>Automaticé CI/CD acortando entregas de 45 a 12 minutos.</li>
+            `;
+            document.getElementById('sim-score-text').textContent = '95%';
+            document.getElementById('sim-circle-bar').style.strokeDashoffset = '5';
+            document.getElementById('sim-score-badge').textContent = 'Alto Impacto 🌟';
+            document.getElementById('sim-score-trophy').textContent = '🎉';
+            playUiBeep(1100);
+          }, 1500);
+        }
+      },
+      {
+        id: 4,
+        title: "5. Analizador ATS y Código QR Integrado",
+        desc: "Compara tu CV contra cualquier vacante laboral y activa un código QR para que los reclutadores escaneen tu LinkedIn.",
+        duration: 12,
+        action: () => {
+          moveCursor(140, 290);
+          highlightEl('sim-acc-ats');
+          playUiBeep(700);
+          setTimeout(() => {
+            document.getElementById('sim-mini-qr').style.opacity = '1';
+            document.getElementById('sim-val-ats').textContent = '94% Coincidencia';
+            playUiBeep(950);
+          }, 1500);
+        }
+      },
+      {
+        id: 5,
+        title: "6. Exportación Directa a PDF en Tamaño Carta",
+        desc: "Presiona 'Imprimir / PDF' y obtén un documento impecable, calibrado al milímetro para entrevistas presenciales o envío digital.",
+        duration: 12,
+        action: () => {
+          moveCursor(480, 20);
+          playUiBeep(800);
+          setTimeout(() => {
+            document.getElementById('sim-cv-sheet').classList.add('ring-4', 'ring-emerald-400');
+            playUiBeep(1200);
+            setTimeout(() => {
+              document.getElementById('sim-cv-sheet').classList.remove('ring-4', 'ring-emerald-400');
+            }, 1000);
+          }, 1200);
+        }
+      }
+    ];
+
+    // PLAYBACK CONTROLLER
+    let isPlaying = true;
+    let currentSceneIdx = 0;
+    let sceneTimer = null;
+    let progressTimer = null;
+    let elapsedSeconds = 0;
+    const totalDuration = SCENES.reduce((acc, s) => acc + s.duration, 0);
+
+    const cursor = document.getElementById('virtual-cursor');
+
+    function moveCursor(x, y) {
+      cursor.classList.add('cursor-clicking');
+      cursor.style.left = `${x}px`;
+      cursor.style.top = `${y}px`;
+      setTimeout(() => cursor.classList.remove('cursor-clicking'), 300);
+    }
+
+    function highlightEl(elId) {
+      document.querySelectorAll('.highlight-focus').forEach(el => el.classList.remove('highlight-focus'));
+      const el = document.getElementById(elId);
+      if (el) {
+        el.classList.add('highlight-focus');
+        setTimeout(() => el.classList.remove('highlight-focus'), 3000);
+      }
+    }
+
+    function renderScene(idx) {
+      if (idx >= SCENES.length) {
+        idx = 0; // Loop or finish
+      }
+      currentSceneIdx = idx;
+      const scene = SCENES[idx];
+
+      // Update subtitle UI
+      document.getElementById('narrator-step-badge').textContent = scene.id + 1;
+      document.getElementById('narrator-step-title').textContent = scene.title;
+      document.getElementById('narrator-step-desc').textContent = scene.desc;
+      document.getElementById('current-scene-label').textContent = `Paso ${scene.id + 1} de ${SCENES.length}`;
+
+      scene.action();
+
+      // Schedule next scene if playing
+      clearTimeout(sceneTimer);
+      if (isPlaying) {
+        sceneTimer = setTimeout(() => {
+          renderScene(currentSceneIdx + 1);
+        }, scene.duration * 1000);
+      }
+    }
+
+    function jumpToScene(idx) {
+      clearTimeout(sceneTimer);
+      renderScene(idx);
+    }
+
+    // Play / Pause Toggle
+    document.getElementById('btn-play-pause').addEventListener('click', () => {
+      isPlaying = !isPlaying;
+      document.getElementById('btn-play-pause').textContent = isPlaying ? '⏸' : '▶';
+      if (isPlaying) {
+        renderScene(currentSceneIdx);
+      } else {
+        clearTimeout(sceneTimer);
+      }
+    });
+
+    // Restart Button
+    document.getElementById('btn-restart').addEventListener('click', () => {
+      elapsedSeconds = 0;
+      jumpToScene(0);
+    });
+
+    // Progress Bar Animation Loop
+    setInterval(() => {
+      if (isPlaying) {
+        elapsedSeconds = (elapsedSeconds + 0.5) % totalDuration;
+        const pct = (elapsedSeconds / totalDuration) * 100;
+        document.getElementById('progress-bar').style.width = `${pct}%`;
+
+        const curMin = Math.floor(elapsedSeconds / 60);
+        const curSec = Math.floor(elapsedSeconds % 60).toString().padStart(2, '0');
+        const totMin = Math.floor(totalDuration / 60);
+        const totSec = Math.floor(totalDuration % 60).toString().padStart(2, '0');
+        document.getElementById('time-display').textContent = `${curMin}:${curSec} / ${totMin}:${totSec}`;
+      }
+    }, 500);
+
+    // Initial Start
+    window.addEventListener('load', () => {
+      renderScene(0);
+    });
+  </script>
+</body>
+</html>
