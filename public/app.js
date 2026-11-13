@@ -1239,8 +1239,15 @@ let currentLang = 'es';
 let currentTheme = 'corporate';
 let currentFont = 'inter';
 let qrEnabled = true;
-let qrTarget = 'linkedin';
+let qrTarget = 'portal';
 let customQrUrl = '';
+
+let currentCvId = localStorage.getItem('current_cv_id') || '';
+let currentEditToken = localStorage.getItem('current_cv_edit_token') || '';
+let publicCvUrl = currentCvId ? `${window.location.origin}/cv/${currentCvId}` : '';
+let editCvUrl = currentCvId && currentEditToken ? `${window.location.origin}/?edit=${currentCvId}&key=${currentEditToken}` : '';
+let isCloudSyncing = false;
+let cloudSaveTimeout = null;
 
 let state = {
   lang: currentLang,
@@ -1254,8 +1261,23 @@ let state = {
 // 4. INICIALIZACIÓN
 // ==========================================
 
-document.addEventListener('DOMContentLoaded', () => {
-  loadFromLocalStorage();
+document.addEventListener('DOMContentLoaded', async () => {
+  // 1. Check for URL query params: ?edit=<id>&key=<token>
+  const urlParams = new URLSearchParams(window.location.search);
+  const editId = urlParams.get('edit');
+  const editKey = urlParams.get('key');
+
+  if (editId && editKey) {
+    currentCvId = editId;
+    currentEditToken = editKey;
+    localStorage.setItem('current_cv_id', editId);
+    localStorage.setItem('current_cv_edit_token', editKey);
+    localStorage.setItem(`cv_edit_token_${editId}`, editKey);
+    await loadFromCloud(editId);
+  } else {
+    loadFromLocalStorage();
+  }
+
   setupArchetypeSelector();
   setupThemeSelector();
   setupFontSelector();
@@ -1265,11 +1287,193 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCompletenessScore();
   filterSnippets('tech');
   setupConfettiCanvas();
+  setupCloudShareModal();
+
+  // If already has cvId, update modal URLs
+  if (currentCvId) {
+    updateCloudModalInfo();
+    updateCloudIndicator('saved');
+  }
 });
 
 // ==========================================
-// 5. LOCAL STORAGE & PERSISTENCIA
+// 5. LOCAL STORAGE & PERSISTENCIA CLOUD
 // ==========================================
+
+async function loadFromCloud(id) {
+  try {
+    updateCloudIndicator('syncing');
+    const res = await fetch(`/api/cv/${encodeURIComponent(id)}`);
+    if (res.ok) {
+      const data = await res.json();
+      if (data.success && data.cv) {
+        const cv = data.cv;
+        if (cv.profileData) {
+          state.profile = cv.profileData;
+        }
+        if (cv.visualConfig) {
+          if (cv.visualConfig.colorScheme) {
+            currentTheme = cv.visualConfig.colorScheme;
+            state.theme = currentTheme;
+            applyTheme(currentTheme);
+            const themeSel = document.getElementById('select-theme');
+            if (themeSel) themeSel.value = currentTheme;
+          }
+          if (cv.visualConfig.fontPairing) {
+            currentFont = cv.visualConfig.fontPairing;
+            state.font = currentFont;
+            applyFont(currentFont);
+            const fontSel = document.getElementById('select-font');
+            if (fontSel) fontSel.value = currentFont;
+          }
+        }
+        if (cv.qrSettings) {
+          qrEnabled = cv.qrSettings.enabled !== false;
+          qrTarget = cv.qrSettings.target || 'portal';
+          customQrUrl = cv.qrSettings.customUrl || '';
+          const qrCheck = document.getElementById('check-enable-qr');
+          if (qrCheck) qrCheck.checked = qrEnabled;
+          const qrSelect = document.getElementById('select-qr-target');
+          if (qrSelect) qrSelect.value = qrTarget;
+        }
+
+        publicCvUrl = `${window.location.origin}/cv/${cv.slug || id}`;
+        editCvUrl = `${window.location.origin}/?edit=${id}&key=${currentEditToken}`;
+        updateCloudModalInfo();
+        updateCloudIndicator('saved');
+        populateFormFromState();
+        showToast('☁️ Perfil sincronizado desde Railway');
+        return;
+      }
+    }
+  } catch (err) {
+    console.warn('Could not load from cloud:', err);
+  }
+  // Fallback to local
+  loadFromLocalStorage();
+}
+
+async function saveToCloud() {
+  if (isCloudSyncing) return;
+  readFormIntoState();
+
+  if (!state.profile || !state.profile.fullName || state.profile.fullName.trim() === '') {
+    return;
+  }
+
+  isCloudSyncing = true;
+  updateCloudIndicator('syncing');
+
+  try {
+    const payload = {
+      cvId: currentCvId || undefined,
+      editToken: currentEditToken || undefined,
+      profile: state.profile,
+      visualConfig: {
+        colorScheme: currentTheme,
+        fontPairing: currentFont,
+        lang: currentLang,
+        archetype: currentArchetype
+      },
+      qrSettings: {
+        enabled: qrEnabled,
+        target: qrTarget,
+        customUrl: customQrUrl
+      }
+    };
+
+    const res = await fetch('/api/cv/save', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      currentCvId = data.cvId;
+      currentEditToken = data.editToken;
+      publicCvUrl = data.publicUrl;
+      editCvUrl = data.editUrl;
+
+      localStorage.setItem('current_cv_id', currentCvId);
+      localStorage.setItem('current_cv_edit_token', currentEditToken);
+      localStorage.setItem(`cv_edit_token_${currentCvId}`, currentEditToken);
+
+      if (!window.location.search.includes(currentCvId)) {
+        window.history.replaceState({}, '', `/?edit=${encodeURIComponent(currentCvId)}&key=${encodeURIComponent(currentEditToken)}`);
+      }
+
+      updateCloudModalInfo();
+      updateCloudIndicator('saved');
+
+      // Update preview if QR is set to portal
+      if (qrTarget === 'portal') {
+        renderPreview();
+      }
+    } else {
+      updateCloudIndicator('error');
+    }
+  } catch (err) {
+    console.warn('Error saving to cloud:', err);
+    updateCloudIndicator('error');
+  } finally {
+    isCloudSyncing = false;
+  }
+}
+
+function triggerCloudSaveDebounced() {
+  clearTimeout(cloudSaveTimeout);
+  cloudSaveTimeout = setTimeout(() => {
+    saveToCloud();
+  }, 1200);
+}
+
+function updateCloudIndicator(status) {
+  const icon = document.getElementById('cloud-status-icon');
+  const text = document.getElementById('cloud-status-text');
+  if (!icon || !text) return;
+
+  if (status === 'syncing') {
+    icon.textContent = '⏳';
+    text.textContent = 'Guardando...';
+  } else if (status === 'saved') {
+    icon.textContent = '🟢';
+    text.textContent = 'En la Nube';
+  } else if (status === 'error') {
+    icon.textContent = '⚠️';
+    text.textContent = 'Reintentar';
+  }
+}
+
+function updateCloudModalInfo() {
+  const publicInput = document.getElementById('share-public-url');
+  const editInput = document.getElementById('share-edit-url');
+  const publicBtn = document.getElementById('share-public-link-btn');
+  const qrImg = document.getElementById('share-qr-img');
+  const downloadQrBtn = document.getElementById('btn-download-qr');
+
+  const pubUrl = publicCvUrl || (currentCvId ? `${window.location.origin}/cv/${currentCvId}` : `${window.location.origin}/cv/`);
+  const edUrl = editCvUrl || (currentCvId && currentEditToken ? `${window.location.origin}/?edit=${currentCvId}&key=${currentEditToken}` : '');
+
+  if (publicInput) publicInput.value = pubUrl;
+  if (editInput) editInput.value = edUrl;
+  if (publicBtn) publicBtn.href = pubUrl;
+
+  const qrSrc = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(pubUrl)}&margin=2`;
+  if (qrImg) qrImg.src = qrSrc;
+  if (downloadQrBtn) downloadQrBtn.href = qrSrc;
+}
+
+function setupCloudShareModal() {
+  document.getElementById('btn-cloud-share')?.addEventListener('click', () => {
+    updateCloudModalInfo();
+    document.getElementById('share-links-modal')?.classList.remove('hidden');
+    // Ensure saved
+    if (!currentCvId) {
+      saveToCloud();
+    }
+  });
+}
 
 function saveToLocalStorage() {
   readFormIntoState();
@@ -1309,7 +1513,7 @@ function loadFromLocalStorage() {
       const fontSelect = document.getElementById('select-font');
       if (fontSelect) fontSelect.value = currentFont;
 
-      showToast('⚡ Borrador guardado restaurado automáticamente');
+      showToast('⚡ Borrador local restaurado');
     }
   } catch (e) {
     console.warn('Could not restore draft:', e);
@@ -1321,7 +1525,7 @@ function updateSaveIndicator(saved) {
   if (!textEl) return;
   const now = new Date();
   const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  textEl.textContent = saved ? `Guardado local (${timeStr})` : 'Guardando...';
+  textEl.textContent = saved ? `Guardado (${timeStr})` : 'Guardando...';
 }
 
 // Debounce helper
@@ -1330,6 +1534,7 @@ function debouncedSave() {
   clearTimeout(saveTimeout);
   saveTimeout = setTimeout(() => {
     saveToLocalStorage();
+    triggerCloudSaveDebounced();
   }, 400);
 }
 
@@ -2003,14 +2208,31 @@ window.addKeywordToSkills = function(word) {
 // ==========================================
 
 function getQrCodeUrl() {
+  if (qrTarget === 'portal') {
+    if (publicCvUrl) return publicCvUrl;
+    if (currentCvId) return `${window.location.origin}/cv/${currentCvId}`;
+    return `${window.location.origin}/cv/mi-cv`;
+  }
   if (qrTarget === 'custom' && customQrUrl.trim().length > 0) {
     return customQrUrl.trim();
   }
   if (qrTarget === 'github' && state.profile.contact?.github) {
     return state.profile.contact.github;
   }
-  return state.profile.contact?.linkedin || state.profile.contact?.github || 'https://cv-alto-impacto-production.up.railway.app';
+  return state.profile.contact?.linkedin || state.profile.contact?.github || `${window.location.origin}`;
 }
+
+window.copyToClipboard = function(elementId, successMsg) {
+  const el = document.getElementById(elementId);
+  if (!el) return;
+  navigator.clipboard.writeText(el.value).then(() => {
+    showToast(`✓ ${successMsg}`);
+  }).catch(() => {
+    el.select();
+    document.execCommand('copy');
+    showToast(`✓ ${successMsg}`);
+  });
+};
 
 function renderQrSvgMarkup(url) {
   // Uses QuickChart or Google Chart public QR image API without heavy dependencies

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Digital | CV Alto Impacto</title>
+  <meta name="description" content="Currículum vitae profesional de alto impacto optimizado para reclutadores.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@300;400;700&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; padding: 0 !important; }
+      .cv-card-container { box-shadow: none !important; margin: 0 !important; max-width: 100% !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-sky-500 selection:text-white">
+
+  <!-- TOP NAV BAR (NO-PRINT) -->
+  <header class="no-print sticky top-0 z-40 bg-slate-950/85 backdrop-blur-md border-b border-slate-800 px-4 py-3 flex items-center justify-between shadow-lg">
+    <div class="flex items-center gap-3">
+      <a href="/" class="flex items-center gap-2 group">
+        <span class="text-xl group-hover:scale-110 transition-transform">🚀</span>
+        <span class="font-extrabold text-sm md:text-base tracking-tight bg-gradient-to-r from-sky-400 via-indigo-300 to-emerald-400 bg-clip-text text-transparent">CV Alto Impacto</span>
+      </a>
+      <span class="hidden sm:inline-block text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+        ✓ Perfil Verificado
+      </span>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="flex items-center gap-2">
+      <!-- Print / Download PDF -->
+      <button onclick="window.print()" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition flex items-center gap-1.5">
+        <span>📥</span> <span class="hidden sm:inline">Descargar</span> PDF
+      </button>
+
+      <!-- Share -->
+      <button id="btn-share" onclick="shareProfile()" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-1.5">
+        <span>🔗</span> <span class="hidden sm:inline">Compartir</span>
+      </button>
+
+      <!-- Edit CV -->
+      <button id="btn-edit-owner" onclick="handleEditOwner()" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 transition flex items-center gap-1.5" title="Modificar este CV">
+        <span>✏️</span> <span class="hidden sm:inline">Editar</span>
+      </button>
+
+      <!-- Create your own CV -->
+      <a href="/" class="hidden md:flex px-3 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 hover:opacity-90 text-white shadow-sm transition items-center gap-1">
+        <span>✨</span> Crear mi CV gratis
+      </a>
+    </div>
+  </header>
+
+  <!-- LOADING STATE -->
+  <div id="loading-spinner" class="flex-1 flex flex-col items-center justify-center p-8">
+    <div class="w-12 h-12 border-4 border-sky-500/30 border-t-sky-400 rounded-full animate-spin mb-4"></div>
+    <p class="text-sm text-slate-400">Cargando currículum digital...</p>
+  </div>
+
+  <!-- ERROR / NOT FOUND STATE -->
+  <div id="error-box" class="hidden flex-1 flex flex-col items-center justify-center p-8 text-center max-w-md mx-auto">
+    <span class="text-5xl mb-4">🔍</span>
+    <h2 class="text-xl font-bold text-slate-200 mb-2">Currículum no encontrado</h2>
+    <p class="text-xs text-slate-400 mb-6">El perfil que buscas no existe o el enlace ha cambiado. Puedes crear tu propio CV de alto impacto en pocos minutos.</p>
+    <a href="/" class="px-5 py-2.5 bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold rounded-lg shadow-lg transition">
+      🚀 Crear mi CV de Alto Impacto
+    </a>
+  </div>
+
+  <!-- CV CONTAINER -->
+  <main id="cv-wrapper" class="hidden flex-1 py-6 px-3 sm:px-6 flex justify-center">
+    <div id="cv-preview-card" class="cv-card-container w-full max-w-[850px] bg-white text-slate-900 rounded-xl shadow-2xl overflow-hidden transition-all duration-200">
+      <!-- Dynamic CV Content Injected Here -->
+    </div>
+  </main>
+
+  <!-- MODAL: EDIT TOKEN AUTH (NO-PRINT) -->
+  <div id="edit-auth-modal" class="no-print hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 rounded-xl max-w-sm w-full p-5 shadow-2xl text-slate-200">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="font-bold text-sm text-white flex items-center gap-2">
+          <span>🔐</span> Clave de Edición
+        </h3>
+        <button onclick="document.getElementById('edit-auth-modal').classList.add('hidden')" class="text-slate-400 hover:text-white font-bold">✕</button>
+      </div>
+      <p class="text-xs text-slate-400 mb-4">
+        Este perfil está protegido contra modificaciones no autorizadas. Ingresa tu clave secreta de edición (o el enlace que recibiste al guardar tu CV):
+      </p>
+      <input type="password" id="input-edit-token" placeholder="Ej. a8f7c9e12..." class="w-full p-2.5 bg-slate-950 border border-slate-700 rounded-lg text-xs text-white mb-2 focus:ring-2 focus:ring-sky-500 focus:outline-none">
+      <div id="auth-error-msg" class="text-rose-400 text-[11px] mb-3 hidden">Clave incorrecta. Por favor verifica.</div>
+      <div class="flex justify-end gap-2">
+        <button onclick="document.getElementById('edit-auth-modal').classList.add('hidden')" class="px-3 py-1.5 text-xs text-slate-400 hover:text-white">Cancelar</button>
+        <button onclick="submitEditToken()" class="px-4 py-1.5 text-xs font-semibold bg-sky-600 hover:bg-sky-500 text-white rounded-lg transition">Desbloquear y Editar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="no-print fixed bottom-5 right-5 z-50 bg-slate-800 border border-slate-700 text-white px-4 py-2.5 rounded-lg text-xs shadow-xl transform translate-y-12 opacity-0 transition-all duration-300 flex items-center gap-2">
+    <span id="toast-icon">✓</span>
+    <span id="toast-msg">Enlace copiado</span>
+  </div>
+
+  <script>
+    let cvData = null;
+    let cvId = '';
+
+    // Extract ID from pathname: /cv/:id
+    function getCvIdFromPath() {
+      const parts = window.location.pathname.split('/').filter(Boolean);
+      return parts[parts.length - 1] || '';
+    }
+
+    async function loadCv() {
+      cvId = getCvIdFromPath();
+      if (!cvId) {
+        showError();
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/cv/${encodeURIComponent(cvId)}`);
+        if (!res.ok) {
+          showError();
+          return;
+        }
+        const data = await res.json();
+        if (!data.success || !data.cv) {
+          showError();
+          return;
+        }
+
+        cvData = data.cv;
+        renderCv(cvData);
+      } catch (err) {
+        showError();
+      }
+    }
+
+    function showError() {
+      document.getElementById('loading-spinner').classList.add('hidden');
+      document.getElementById('cv-wrapper').classList.add('hidden');
+      document.getElementById('error-box').classList.remove('hidden');
+    }
+
+    function renderCv(cv) {
+      document.getElementById('loading-spinner').classList.add('hidden');
+      document.getElementById('error-box').classList.add('hidden');
+      const wrapper = document.getElementById('cv-wrapper');
+      wrapper.classList.remove('hidden');
+
+      const card = document.getElementById('cv-preview-card');
+      const profile = cv.profileData || {};
+      const visual = cv.visualConfig || {};
+      const qrSettings = cv.qrSettings || {};
+
+      // Set Document Title
+      if (profile.fullName) {
+        document.title = `${profile.fullName} | CV de Alto Impacto`;
+      }
+
+      // Apply theme & font
+      const themeClass = `cv-theme-${visual.colorScheme || 'corporativo'}`;
+      const fontClass = `cv-font-${visual.fontPairing || 'inter'}`;
+      card.className = `cv-card-container w-full max-w-[850px] bg-white text-slate-900 rounded-xl shadow-2xl overflow-hidden ${themeClass} ${fontClass}`;
+
+      // Build Sidebar QR Markup
+      const currentUrl = window.location.href;
+      let targetUrl = currentUrl;
+      if (qrSettings.target === 'linkedin' && profile.contact?.linkedin) {
+        targetUrl = profile.contact.linkedin.startsWith('http') ? profile.contact.linkedin : `https://${profile.contact.linkedin}`;
+      } else if (qrSettings.target === 'github' && profile.contact?.github) {
+        targetUrl = profile.contact.github.startsWith('http') ? profile.contact.github : `https://${profile.contact.github}`;
+      } else if (qrSettings.target === 'custom' && qrSettings.customUrl) {
+        targetUrl = qrSettings.customUrl;
+      }
+      const encodedUrl = encodeURIComponent(targetUrl);
+      const qrMarkup = `
+        <div class="cv-qr-box mt-4 pt-3 border-t border-slate-200/50 flex flex-col items-center">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=${encodedUrl}&margin=2" alt="QR CV" class="w-20 h-20 rounded border border-slate-200 shadow-xs mb-1">
+          <span class="cv-qr-label text-[10px] text-slate-500 font-semibold tracking-wide">Escanear Perfil Digital</span>
+        </div>
+      `;
+
+      // Build HTML Structure
+      card.innerHTML = `
+        <div class="cv-alto-impacto-root">
+          <!-- CV HEADER -->
+          <header class="cv-header p-6 pb-4 border-b border-slate-200">
+            <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900">${profile.fullName || 'Tu Nombre'}</h1>
+            <p class="text-base font-semibold text-sky-600 mt-0.5">${profile.title || 'Título Profesional'}</p>
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-600 mt-2">
+              ${profile.contact?.location ? `<span>📍 ${profile.contact.location}</span>` : ''}
+              ${profile.contact?.email ? `<span>✉️ <a href="mailto:${profile.contact.email}" class="hover:underline">${profile.contact.email}</a></span>` : ''}
+              ${profile.contact?.phone ? `<span>📞 <a href="tel:${profile.contact.phone}" class="hover:underline">${profile.contact.phone}</a></span>` : ''}
+              ${profile.contact?.linkedin ? `<span>💼 <a href="${profile.contact.linkedin.startsWith('http') ? profile.contact.linkedin : 'https://' + profile.contact.linkedin}" target="_blank" class="text-sky-600 hover:underline">LinkedIn</a></span>` : ''}
+              ${profile.contact?.github ? `<span>🐙 <a href="${profile.contact.github.startsWith('http') ? profile.contact.github : 'https://' + profile.contact.github}" target="_blank" class="text-slate-800 hover:underline">GitHub</a></span>` : ''}
+            </div>
+          </header>
+
+          <!-- 2-COLUMN BODY -->
+          <div class="cv-body-grid grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+            <!-- MAIN CONTENT (2 cols) -->
+            <div class="md:col-span-2 space-y-5">
+              <!-- SUMMARY -->
+              ${profile.summary ? `
+                <section>
+                  <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5 flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span> Resumen Profesional
+                  </h2>
+                  <p class="text-xs text-slate-700 leading-relaxed">${profile.summary}</p>
+                </section>
+              ` : ''}
+
+              <!-- EXPERIENCE -->
+              ${(profile.experience || []).length > 0 ? `
+                <section>
+                  <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span> Experiencia Laboral
+                  </h2>
+                  <div class="space-y-3.5">
+                    ${profile.experience.map(exp => `
+                      <div class="border-l-2 border-slate-200 pl-3">
+                        <div class="flex justify-between items-baseline">
+                          <h3 class="text-xs font-bold text-slate-800">${exp.role || 'Puesto'}</h3>
+                          <span class="text-[11px] text-slate-500">${exp.period || ''}</span>
+                        </div>
+                        <div class="text-[11px] font-semibold text-sky-700 mb-1">${exp.company || ''} ${exp.location ? `· ${exp.location}` : ''}</div>
+                        <ul class="list-disc list-outside ml-3.5 text-[11.5px] text-slate-600 space-y-1">
+                          ${(exp.bullets || []).map(b => `<li>${b}</li>`).join('')}
+                        </ul>
+                      </div>
+                    `).join('')}
+                  </div>
+                </section>
+              ` : ''}
+
+              <!-- PROJECTS -->
+              ${(profile.projects || []).length > 0 ? `
+                <section>
+                  <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span> Proyectos Destacados
+                  </h2>
+                  <div class="space-y-2.5">
+                    ${profile.projects.map(prj => `
+                      <div class="bg-slate-50 p-2.5 rounded border border-slate-100">
+                        <div class="flex justify-between items-baseline mb-0.5">
+                          <h3 class="text-xs font-bold text-slate-800">${prj.name || 'Proyecto'}</h3>
+                          ${prj.url ? `<a href="${prj.url}" target="_blank" class="text-[10px] text-sky-600 font-semibold hover:underline">Ver Demo ↗</a>` : ''}
+                        </div>
+                        <p class="text-[11px] text-slate-600 mb-1">${prj.description || ''}</p>
+                        ${prj.technologies ? `<div class="text-[10px] font-medium text-slate-500">Tecnologías: ${prj.technologies}</div>` : ''}
+                      </div>
+                    `).join('')}
+                  </div>
+                </section>
+              ` : ''}
+            </div>
+
+            <!-- SIDEBAR (1 col) -->
+            <div class="space-y-4 md:border-l md:border-slate-100 md:pl-5">
+              <!-- SKILLS -->
+              ${(profile.skills || []).length > 0 ? `
+                <section>
+                  <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Habilidades</h2>
+                  <div class="flex flex-wrap gap-1">
+                    ${profile.skills.map(s => `<span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-[10.5px] font-medium border border-slate-200/60">${s}</span>`).join('')}
+                  </div>
+                </section>
+              ` : ''}
+
+              <!-- EDUCATION -->
+              ${(profile.education || []).length > 0 ? `
+                <section>
+                  <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Educación</h2>
+                  <div class="space-y-2">
+                    ${profile.education.map(edu => `
+                      <div>
+                        <div class="text-xs font-bold text-slate-800">${edu.degree || 'Grado'}</div>
+                        <div class="text-[11px] text-slate-600">${edu.institution || ''}</div>
+                        <div class="text-[10px] text-slate-400">${edu.year || ''}</div>
+                      </div>
+                    `).join('')}
+                  </div>
+                </section>
+              ` : ''}
+
+              <!-- CERTIFICATIONS -->
+              ${(profile.certifications || []).length > 0 ? `
+                <section>
+                  <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Certificaciones</h2>
+                  <div class="space-y-1.5 text-[11px] text-slate-600">
+                    ${profile.certifications.map(c => `<div>✓ ${c}</div>`).join('')}
+                  </div>
+                </section>
+              ` : ''}
+
+              <!-- LANGUAGES -->
+              ${(profile.languages || []).length > 0 ? `
+                <section>
+                  <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Idiomas</h2>
+                  <div class="space-y-1 text-[11px] text-slate-600">
+                    ${profile.languages.map(l => `<div>🌐 ${l.language || l}: <span class="font-semibold text-slate-700">${l.level || ''}</span></div>`).join('')}
+                  </div>
+                </section>
+              ` : ''}
+
+              <!-- SIDEBAR QR CODE -->
+              ${qrMarkup}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function shareProfile() {
+      if (navigator.share) {
+        navigator.share({
+          title: document.title,
+          url: window.location.href
+        }).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(window.location.href);
+        showToast('✓ Enlace del CV copiado al portapapeles');
+      }
+    }
+
+    function handleEditOwner() {
+      // 1. Check if token is already in localStorage
+      const localToken = localStorage.getItem(`cv_edit_token_${cvId}`) || localStorage.getItem('current_cv_edit_token');
+      const localId = localStorage.getItem('current_cv_id');
+
+      if (localToken && (localId === cvId || localStorage.getItem(`cv_edit_token_${cvId}`))) {
+        // Direct redirect to editor with token
+        window.location.href = `/?edit=${encodeURIComponent(cvId)}&key=${encodeURIComponent(localToken)}`;
+        return;
+      }
+
+      // 2. Open auth modal
+      document.getElementById('edit-auth-modal').classList.remove('hidden');
+      document.getElementById('input-edit-token').focus();
+    }
+
+    async function submitEditToken() {
+      const token = document.getElementById('input-edit-token').value.trim();
+      const errorMsg = document.getElementById('auth-error-msg');
+      if (!token) {
+        errorMsg.textContent = 'Por favor ingresa tu clave secreta de edición.';
+        errorMsg.classList.remove('hidden');
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/cv/verify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ cvId, editToken: token })
+        });
+        const data = await res.json();
+        if (data.valid) {
+          // Store token in localStorage for next time
+          localStorage.setItem(`cv_edit_token_${cvId}`, token);
+          localStorage.setItem('current_cv_id', cvId);
+          localStorage.setItem('current_cv_edit_token', token);
+          window.location.href = `/?edit=${encodeURIComponent(cvId)}&key=${encodeURIComponent(token)}`;
+        } else {
+          errorMsg.textContent = 'Clave incorrecta. Por favor verifica.';
+          errorMsg.classList.remove('hidden');
+        }
+      } catch (err) {
+        errorMsg.textContent = 'Error al verificar la clave. Inténtalo nuevamente.';
+        errorMsg.classList.remove('hidden');
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-msg');
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-12', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-12', 'opacity-0');
+      }, 3000);
+    }
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', loadCv);
+  </script>
+</body>
+</html>

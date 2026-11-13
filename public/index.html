@@ -120,6 +120,12 @@
           <span>📱</span> QR
         </button>
 
+        <!-- Cloud Sync & Share Button -->
+        <button id="btn-cloud-share" class="px-2.5 py-1.5 text-xs font-semibold rounded-md bg-sky-500/10 border border-sky-500/30 text-sky-300 hover:bg-sky-500/20 transition flex items-center gap-1.5" title="Guardado en la Nube & Enlaces Públicos">
+          <span id="cloud-status-icon">☁️</span>
+          <span id="cloud-status-text" class="hidden sm:inline font-medium">Nube</span>
+        </button>
+
         <!-- Save / Load JSON -->
         <div class="flex items-center gap-0.5">
           <button id="btn-save-json" class="px-2 py-1.5 text-xs font-medium rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 transition" title="Guardar borrador en archivo JSON">
@@ -624,6 +630,7 @@
         <div>
           <label class="block font-semibold text-slate-700 mb-1">Enlace de Destino del QR</label>
           <select id="select-qr-target" class="w-full p-2 border border-slate-300 rounded mb-1 text-xs">
+            <option value="portal" selected>🌟 Mi CV Digital en este Portal (Recomendado)</option>
             <option value="linkedin">Perfil de LinkedIn (automático)</option>
             <option value="github">GitHub / Portafolio (automático)</option>
             <option value="custom">URL personalizada</option>
@@ -633,6 +640,67 @@
 
         <div class="flex justify-end pt-2 border-t border-slate-100">
           <button onclick="document.getElementById('qr-modal').classList.add('hidden')" class="px-4 py-1.5 bg-slate-900 text-white font-semibold rounded text-xs">Guardar y Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: CLOUD SYNC & SHARE LINKS -->
+  <div id="share-links-modal" class="hidden fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl max-w-md w-full p-5 shadow-2xl border border-slate-200">
+      <div class="flex justify-between items-center border-b border-slate-200 pb-2 mb-3">
+        <h3 class="text-sm font-bold text-slate-900 flex items-center gap-1.5">
+          <span>🌐</span> Tu CV en la Nube de Railway
+        </h3>
+        <button onclick="document.getElementById('share-links-modal').classList.add('hidden')" class="text-slate-400 hover:text-slate-600 text-lg font-bold">✕</button>
+      </div>
+
+      <div class="space-y-4 text-xs">
+        <div class="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 flex items-center gap-2">
+          <span class="text-base">🐘</span>
+          <div>
+            <div class="font-bold">Base de Datos PostgreSQL Activa</div>
+            <div class="text-[11px] text-emerald-700">Tus cambios se guardan automáticamente en la nube.</div>
+          </div>
+        </div>
+
+        <!-- PUBLIC LINK -->
+        <div>
+          <label class="block font-bold text-slate-800 mb-1">🔗 Enlace Público (Para Reclutadores):</label>
+          <div class="flex gap-1.5">
+            <input type="text" id="share-public-url" readonly class="flex-1 p-2 bg-slate-50 border border-slate-300 rounded text-xs text-slate-700 font-mono select-all">
+            <button onclick="copyToClipboard('share-public-url', 'Enlace público copiado')" class="px-3 py-1.5 bg-sky-600 hover:bg-sky-500 text-white font-semibold rounded text-xs transition">Copiar</button>
+            <a id="share-public-link-btn" href="#" target="_blank" class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded text-xs border border-slate-300 transition flex items-center">↗</a>
+          </div>
+          <p class="text-[11px] text-slate-500 mt-1">Este es el enlace que se genera en el código QR de tu CV impreso.</p>
+        </div>
+
+        <!-- SECRET EDIT LINK -->
+        <div>
+          <label class="block font-bold text-slate-800 mb-1">🔑 Enlace Privado de Edición (Solo para ti):</label>
+          <div class="flex gap-1.5">
+            <input type="text" id="share-edit-url" readonly class="flex-1 p-2 bg-slate-50 border border-slate-300 rounded text-xs text-slate-700 font-mono select-all">
+            <button onclick="copyToClipboard('share-edit-url', 'Enlace de edición copiado')" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded text-xs transition">Copiar</button>
+          </div>
+          <p class="text-[11px] text-amber-700 mt-1">⚠️ Guarda este enlace para poder regresar a modificar tu CV en el futuro desde cualquier computadora o teléfono.</p>
+        </div>
+
+        <!-- LIVE QR PREVIEW -->
+        <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img id="share-qr-img" src="" alt="Código QR" class="w-16 h-16 rounded border border-slate-200 bg-white shadow-xs">
+            <div>
+              <div class="font-bold text-slate-800 text-xs">Código QR Listo</div>
+              <div class="text-[11px] text-slate-500">Escaneable desde cualquier cámara</div>
+            </div>
+          </div>
+          <a id="btn-download-qr" href="#" download="mi-cv-qr.png" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 border border-slate-300 rounded text-slate-700 font-semibold text-xs transition">
+            Descargar QR
+          </a>
+        </div>
+
+        <div class="flex justify-end pt-2 border-t border-slate-100">
+          <button onclick="document.getElementById('share-links-modal').classList.add('hidden')" class="px-4 py-1.5 bg-slate-900 text-white font-semibold rounded text-xs">Listo</button>
         </div>
       </div>
     </div>
