@@ -1,19 +1,19 @@
 /**
- * CV Alto Impacto - Application Engine
- * Generador Estratégico de CVs Bilingües (ES / EN) basado en la Metodología Platzi.
- * Flexible, configurable y adaptado para diversos perfiles estudiantiles y profesionales.
+ * CV Alto Impacto - Application Engine v2.0
+ * Generador Estratégico de CVs Bilingües (ES / EN) basado en Metodologías de Alto Impacto.
+ * 100% Gratuito, Local-first, Privacy-first (Zero datos enviados al servidor).
  */
 
 // ==========================================
-// ARQUETIPOS PEDAGÓGICOS (SIN DATOS PERSONALES)
+// 1. ARQUETIPOS PEDAGÓGICOS (SIN DATOS PERSONALES)
 // ==========================================
 
 const ARCHETYPES = {
-  // ARQUETIPO 1: ESTUDIANTE / PRIMER EMPLEO / PRÁCTICAS
+  // 1. ESTUDIANTE / PRIMER EMPLEO
   student: {
     es: {
       fullName: "Sofía Valeria Morales",
-      headline: "Estudiante de Ingeniería de Software · Desarrollo Web & Cloud · Prácticas Profesionales",
+      headline: "Estudiante de Ingeniería de Software · Desarrollo Web & Cloud · Búsqueda de Prácticas",
       contact: {
         location: "Guadalajara, Jalisco, México",
         email: "sofia.morales.dev@email.com",
@@ -23,60 +23,56 @@ const ARCHETYPES = {
         github: "https://github.com/sofiamorales-dev",
         githubUser: "github.com/sofiamorales-dev"
       },
-      about: "Estudiante destacada de 7° semestre de Ingeniería de Software con alto rendimiento académico. Apasionada por el desarrollo de aplicaciones web full-stack, arquitecturas cloud y computación distribuida. Experiencia práctica en proyectos universitarios interdisciplinarios y retos hackathon aplicando metodologías ágiles (Scrum), control de versiones con Git y pruebas unitarias. Mi objetivo es integrarme a un equipo dinámico como becaria o practicante de desarrollo de software, donde pueda aplicar mis bases en JavaScript, Python y bases de datos para resolver problemas reales mientras acelero mi crecimiento técnico.",
+      about: "Estudiante de 7° semestre de Ingeniería de Software con alto rendimiento académico. Apasionada por el desarrollo de aplicaciones web full-stack, arquitecturas cloud y computación distribuida. Experiencia práctica en proyectos universitarios y retos hackathon aplicando Scrum, control de versiones con Git y pruebas unitarias. Mi objetivo es integrarme a un equipo dinámico como practicante de desarrollo de software, donde pueda aplicar mis bases en JavaScript, Python y bases de datos para resolver problemas reales mientras acelero mi crecimiento técnico.",
       skills: [
-        { title: "Frontend & UI", desc: "HTML5 semántico, CSS3, JavaScript moderno (ES6+), React.js, Tailwind CSS, Responsive Design." },
+        { title: "Frontend & UI", desc: "HTML5 semántico, CSS3, JavaScript (ES6+), React.js, Tailwind CSS, Responsive Design." },
         { title: "Backend & APIs", desc: "Node.js, Express, Python (FastAPI), Creación y consumo de RESTful APIs, JWT Auth." },
-        { title: "Bases de Datos", desc: "PostgreSQL, MySQL, MongoDB, Modelado Entidad-Relación, Consultas optimizadas con SQL." },
+        { title: "Bases de Datos", desc: "PostgreSQL, MySQL, MongoDB, Modelado Entidad-Relación, Consultas SQL optimizadas." },
         { title: "Herramientas & DevOps", desc: "Git & GitHub, Docker básico, Postman, Linux (bash), Despliegues en Vercel y Railway." }
       ],
       softSkills: [
-        { name: "Autonomía & Curiosidad de Aprendizaje", desc: "Capacidad de dominar nuevas herramientas y documentación técnica de forma ágil." },
+        { name: "Autonomía de Aprendizaje", desc: "Capacidad de dominar nuevas herramientas y documentación técnica de forma ágil." },
         { name: "Trabajo Colaborativo", desc: "Coordinación efectiva en sprints universitarios y dinámicas de pair programming." },
         { name: "Comunicación Asertiva", desc: "Presentación clara de avances técnicos a profesores y compañeros no técnicos." },
-        { name: "Resolución Estructurada de Problemas", desc: "Desglose algorítmico y depuración sistemática de bugs y casos de uso." }
+        { name: "Resolución Estructurada", desc: "Desglose algorítmico y depuración sistemática de bugs y casos de uso." }
       ],
       executiveTraining: [
-        "Platzi: Escuela de Desarrollo Web & JavaScript (Fundamentos y Arquitectura Frontend).",
+        "Platzi: Escuela de Desarrollo Web & JavaScript (Frontend Architecture).",
         "Certificación CS50: Introduction to Computer Science (Harvard Online)."
       ],
       languages: [
         { name: "Español", level: "Nativo" },
-        { name: "Inglés", level: "B2 Profesional Técnico (Lectura fluida de documentación técnica y redacción)." }
+        { name: "Inglés", level: "B2 Profesional Técnico (Lectura fluida de documentación y redacción)." }
       ],
       community: [
-        { name: "Club Universitario de Programación Competitiva", desc: "Miembro activo; resolución semanal de retos algorítmicos en LeetCode/HackerRank." },
-        { name: "Voluntariado en Alfabetización Digital", desc: "Facilitadora en talleres comunitarios de computación básica para adultos mayores." }
+        { name: "Club de Programación Competitiva", desc: "Miembro activo; resolución semanal de retos algorítmicos en LeetCode/HackerRank." },
+        { name: "Voluntariado en Alfabetización Digital", desc: "Facilitadora en talleres de computación básica para adultos mayores." }
       ],
       experience: [
         {
-          role: "Líder Técnica & Desarrolladora Frontend (Proyecto de Titulación / Práctica)",
+          role: "Líder Técnica & Desarrolladora Frontend (Proyecto de Titulación)",
           company: "Plataforma Universitaria de Gestión de Tutorías",
           period: "2025 – Presente | Proyecto Académico",
           bullets: [
-            "Diseñé y programé la interfaz web responsiva en React y Tailwind CSS, utilizada en pruebas piloto por más de 180 estudiantes y docentes.",
-            "Construí componentes reutilizables y formularios dinámicos con validación en tiempo real, reduciendo la tasa de errores de captura en un 35%.",
+            "Diseñé y programé la interfaz web responsiva en React y Tailwind CSS, utilizada en pruebas piloto por más de 180 estudiantes.",
+            "Construí componentes reutilizables y formularios dinámicos con validación en tiempo real, reduciendo la tasa de errores en un 35%.",
             "Colaboré en la integración con el backend RESTful en Node.js mediante endpoints seguros con autenticación JWT."
           ]
         },
         {
-          role: "Desarrolladora Web & Soporte a Proyectos (Servicio Social / Freelance)",
+          role: "Desarrolladora Web & Soporte (Servicio Social)",
           company: "Laboratorio de Innovación Educativa",
           period: "2024 – 2025 | Guadalajara, MX",
           bullets: [
-            "Automaticé el sistema de reservación de laboratorios mediante un script en Python y base de datos SQLite, eliminando cruces de horarios en un 100%.",
+            "Automaticé el sistema de reservación de laboratorios mediante un script en Python y SQLite, eliminando cruces de horarios en un 100%.",
             "Elaboré manuales de usuario y documentación técnica de arquitectura para facilitar el mantenimiento por futuros estudiantes."
           ]
         }
       ],
       hackathons: [
         {
-          title: "Hackathon Universitario de Innovación Abierta (2° Lugar)",
+          title: "Hackathon de Innovación Abierta (2° Lugar)",
           desc: "Desarrollo en equipo de 4 personas de un prototipo de asistente escolar con IA en 36 horas continuas."
-        },
-        {
-          title: "Taller Intensivo de Desarrollo Ágil (Scrum Alliance)",
-          desc: "Certificación práctica simulando ceremonias ágiles, historias de usuario y estimación por story points."
         }
       ],
       education: [
@@ -85,13 +81,13 @@ const ARCHETYPES = {
           school: "Universidad de Guadalajara — CUCEI",
           period: "2022 – 2026 (7° Semestre)",
           badge: "Promedio: 94.5 / 100",
-          details: "Materias clave: Estructuras de Datos, Algoritmos Avanzados, Arquitectura de Software, Bases de Datos Relacionales y Redes."
+          details: "Materias clave: Estructuras de Datos, Algoritmos Avanzados, Arquitectura de Software, Bases de Datos y Redes."
         }
       ]
     },
     en: {
       fullName: "Sofia Valeria Morales",
-      headline: "Software Engineering Student · Web & Cloud Development · Seeking Software Engineering Internship",
+      headline: "Software Engineering Student · Web & Cloud Development · Seeking Internship",
       contact: {
         location: "Guadalajara, Jalisco, Mexico",
         email: "sofia.morales.dev@email.com",
@@ -101,18 +97,18 @@ const ARCHETYPES = {
         github: "https://github.com/sofiamorales-dev",
         githubUser: "github.com/sofiamorales-dev"
       },
-      about: "Senior Software Engineering student with high academic standing. Passionate about full-stack web development, cloud architectures, and distributed systems. Hands-on experience developing collaborative academic projects and competing in hackathons using Agile (Scrum), Git version control, and automated unit testing. Seeking a Software Engineering Internship to apply solid fundamentals in JavaScript, Python, and SQL databases while contributing immediately to production software and accelerating technical growth.",
+      about: "Senior Software Engineering student with high academic standing. Passionate about full-stack web development, cloud architectures, and distributed systems. Hands-on experience developing collaborative academic projects and competing in hackathons using Agile (Scrum), Git version control, and automated testing. Seeking a Software Engineering Internship to apply solid fundamentals in JavaScript, Python, and SQL databases while contributing immediately to production software and accelerating technical growth.",
       skills: [
         { title: "Frontend & UI", desc: "Semantic HTML5, CSS3, Modern JavaScript (ES6+), React.js, Tailwind CSS, Responsive Design." },
-        { title: "Backend & APIs", desc: "Node.js, Express, Python (FastAPI), RESTful API Design & Consumption, JWT Authentication." },
-        { title: "Databases", desc: "PostgreSQL, MySQL, MongoDB, Relational Data Modeling, Query Optimization with SQL." },
+        { title: "Backend & APIs", desc: "Node.js, Express, Python (FastAPI), RESTful API Design & Consumption, JWT Auth." },
+        { title: "Databases", desc: "PostgreSQL, MySQL, MongoDB, Relational Data Modeling, SQL Query Optimization." },
         { title: "Tools & DevOps", desc: "Git & GitHub, Docker fundamentals, Postman, Linux (bash), Deployments on Vercel and Railway." }
       ],
       softSkills: [
-        { name: "Continuous Learning & Curiosity", desc: "Proven ability to rapidly master new frameworks, libraries, and technical documentation." },
-        { name: "Team Collaboration & Pair Programming", desc: "Effective coordination in academic sprints, active listener in code reviews." },
+        { name: "Continuous Learning", desc: "Proven ability to rapidly master new frameworks, libraries, and technical documentation." },
+        { name: "Team Collaboration", desc: "Effective coordination in academic sprints, active listener in code reviews." },
         { name: "Clear Communication", desc: "Translating technical milestones into clear summaries for non-technical stakeholders." },
-        { name: "Structured Problem Solving", desc: "Algorithmic thinking and systematic debugging of edge cases and defects." }
+        { name: "Structured Debugging", desc: "Algorithmic thinking and systematic root-cause debugging of edge cases." }
       ],
       executiveTraining: [
         "Platzi: Web Development & JavaScript Academy (Frontend Architecture & Standards).",
@@ -128,21 +124,21 @@ const ARCHETYPES = {
       ],
       experience: [
         {
-          role: "Tech Lead & Frontend Developer (Capstone Project / Internship)",
+          role: "Tech Lead & Frontend Developer (Capstone Project)",
           company: "University Tutoring Management Platform",
           period: "2025 – Present | Academic Project",
           bullets: [
-            "Architected and developed a responsive web interface in React and Tailwind CSS, piloted across 180+ university students and faculty members.",
-            "Engineered reusable UI components and dynamic forms with real-time validation, cutting form submission error rates by 35%.",
+            "Architected and developed a responsive web interface in React and Tailwind CSS, piloted across 180+ university students.",
+            "Engineered reusable UI components and dynamic forms with real-time validation, cutting submission error rates by 35%.",
             "Collaborated on RESTful backend integration with Node.js endpoints secured via JWT token authentication."
           ]
         },
         {
-          role: "Web Developer & Project Assistant (Social Service / Freelance)",
+          role: "Web Developer & Project Assistant (Social Service)",
           company: "Educational Innovation Laboratory",
           period: "2024 – 2025 | Guadalajara, MX",
           bullets: [
-            "Automated laboratory resource scheduling using a Python automation script and SQLite database, eliminating schedule conflicts by 100%.",
+            "Automated laboratory resource scheduling using a Python automation script and SQLite database, eliminating conflicts by 100%.",
             "Authored comprehensive user documentation and architectural guides to ensure seamless handoff to future students."
           ]
         }
@@ -151,10 +147,6 @@ const ARCHETYPES = {
         {
           title: "University Open Innovation Hackathon (2nd Place)",
           desc: "Built an AI-assisted campus study guide prototype with a 4-person team within a 36-hour sprint."
-        },
-        {
-          title: "Intensive Agile Software Workshop (Scrum Alliance)",
-          desc: "Hands-on simulation covering sprint planning, user story decomposition, and story point velocity estimation."
         }
       ],
       education: [
@@ -169,7 +161,7 @@ const ARCHETYPES = {
     }
   },
 
-  // ARQUETIPO 2: DESARROLLADOR DE SOFTWARE / TECH & AI (MID / JUNIOR)
+  // 2. DESARROLLADOR TECH & AI
   tech: {
     es: {
       fullName: "Carlos Eduardo Mendoza",
@@ -183,7 +175,7 @@ const ARCHETYPES = {
         github: "https://github.com/carlosmendoza-code",
         githubUser: "github.com/carlosmendoza-code"
       },
-      about: "Ingeniero de Software con más de 3 años de experiencia diseñando y desplegando aplicaciones web escalables, arquitecturas de microservicios y APIs de alto tráfico en entornos cloud. Especialista en TypeScript, Node.js, React, Docker y bases de datos relacionales y NoSQL. Historial probado de optimización de rendimiento: he reducido tiempos de respuesta de APIs en un 40% y disminuido costos de infraestructura en un 25% mediante caching inteligente y refactorización orientada a buenas prácticas. Apasionado por la integración de modelos de lenguaje e inteligencia artificial para automatizar procesos empresariales. Enfocado en aportar código limpio, mantenible y valor directo al negocio bajo metodologías ágiles.",
+      about: "Ingeniero de Software con más de 3 años de experiencia diseñando y desplegando aplicaciones web escalables, arquitecturas de microservicios y APIs de alto tráfico en entornos cloud. Especialista en TypeScript, Node.js, React, Docker y bases de datos relacionales y NoSQL. Historial probado de optimización de rendimiento: he reducido tiempos de respuesta de APIs en un 40% y disminuido costos de infraestructura en un 25% mediante caching inteligente y refactorización orientada a buenas prácticas. Apasionado por la integración de modelos de lenguaje e inteligencia artificial para automatizar procesos empresariales.",
       skills: [
         { title: "Frontend & Frameworks", desc: "TypeScript, React.js, Next.js, Redux Toolkit, Tailwind CSS, Jest, Cypress, Microfrontends." },
         { title: "Backend & Microservicios", desc: "Node.js, Express, NestJS, Python, RESTful APIs, GraphQL, gRPC, Arquitectura Hexagonal." },
@@ -192,10 +184,10 @@ const ARCHETYPES = {
         { title: "IA Aplicada & Agentes", desc: "Integración de OpenAI API, Anthropic, LangChain, embeddings vectoriales (Pinecone), automatizaciones agénticas." }
       ],
       softSkills: [
-        { name: "Resolución Metódica & Root-Cause Analysis", desc: "Diagnóstico profundo y solución eficaz de incidentes críticos en producción." },
-        { name: "Mentalidad Orientada a Producto", desc: "Priorización de características técnicas basada en métricas de retención y valor de negocio." },
-        { name: "Liderazgo Técnico & Mentoring", desc: "Capacitación a desarrolladores junior y facilitación de revisiones de código exhaustivas." },
-        { name: "Colaboración Ágil (Scrum/Kanban)", desc: "Gestión rigurosa de sprints, estimaciones precisas y entregas continuas sin fricciones." }
+        { name: "Resolución Root-Cause", desc: "Diagnóstico profundo y solución eficaz de incidentes críticos en producción." },
+        { name: "Orientación a Producto", desc: "Priorización de deuda técnica vs features basada en métricas de retención y valor de negocio." },
+        { name: "Liderazgo Técnico", desc: "Capacitación a desarrolladores junior y facilitación de revisiones de código exhaustivas." },
+        { name: "Colaboración Ágil", desc: "Gestión rigurosa de sprints (Scrum), estimaciones precisas y entregas continuas sin fricciones." }
       ],
       executiveTraining: [
         "AWS Certified Solutions Architect – Associate (Credencial Oficial).",
@@ -227,8 +219,7 @@ const ARCHETYPES = {
           period: "2021 – 2023 | Guadalajara, MX",
           bullets: [
             "Construí más de 15 paneles administrativos dinámicos con React y REST APIs en Node.js para clientes de e-commerce y logística.",
-            "Optimicé consultas complejas en PostgreSQL mediante reindexación estratégica y particionamiento, disminuyendo el tiempo de reportes diarios en un 60%.",
-            "Implementé suites de pruebas unitarias y de integración alcanzando 85% de cobertura en componentes centrales del sistema."
+            "Optimicé consultas complejas en PostgreSQL mediante reindexación estratégica y particionamiento, disminuyendo el tiempo de reportes diarios en un 60%."
           ]
         }
       ],
@@ -236,10 +227,6 @@ const ARCHETYPES = {
         {
           title: "Global AI Hackathon (Top 5 Finalist)",
           desc: "Creación de un copiloto agéntico para análisis predictivo de fraudes bancarios en 48 horas."
-        },
-        {
-          title: "Reto de Ciberseguridad & Resiliencia Cloud",
-          desc: "Auditoría automatizada de vulnerabilidades OWASP en arquitecturas contenerizadas."
         }
       ],
       education: [
@@ -264,7 +251,7 @@ const ARCHETYPES = {
         github: "https://github.com/carlosmendoza-code",
         githubUser: "github.com/carlosmendoza-code"
       },
-      about: "Software Engineer with 3+ years of experience designing and deploying scalable web applications, microservices architectures, and high-throughput APIs in cloud environments. Specialist in TypeScript, Node.js, React, Docker, and relational/NoSQL databases. Proven track record of performance engineering: reduced API response latency by 40% and cut cloud infrastructure costs by 25% through distributed caching and clean architecture refactoring. Passionate about LLM integration and agentic workflows to automate mission-critical business processes. Dedicated to writing clean, maintainable code delivering direct business value within Agile teams.",
+      about: "Software Engineer with 3+ years of experience designing and deploying scalable web applications, microservices architectures, and high-throughput APIs in cloud environments. Specialist in TypeScript, Node.js, React, Docker, and relational/NoSQL databases. Proven track record of performance engineering: reduced API response latency by 40% and cut cloud infrastructure costs by 25% through distributed caching and clean architecture refactoring. Passionate about LLM integration and agentic workflows.",
       skills: [
         { title: "Frontend & Frameworks", desc: "TypeScript, React.js, Next.js, Redux Toolkit, Tailwind CSS, Jest, Cypress, Microfrontends." },
         { title: "Backend & Microservices", desc: "Node.js, Express, NestJS, Python, RESTful APIs, GraphQL, gRPC, Hexagonal Architecture." },
@@ -273,10 +260,10 @@ const ARCHETYPES = {
         { title: "Applied AI & Agents", desc: "OpenAI API integration, Anthropic, LangChain, vector embeddings (Pinecone), autonomous agent workflows." }
       ],
       softSkills: [
-        { name: "Root-Cause Analysis & Debugging", desc: "Deep diagnostic skill and rapid resolution of critical production outages." },
-        { name: "Product-Driven Engineering", desc: "Prioritizing technical debt vs features according to customer retention metrics." },
+        { name: "Root-Cause Analysis", desc: "Deep diagnostic skill and rapid resolution of critical production outages." },
+        { name: "Product Ownership", desc: "Prioritizing technical debt vs features according to customer retention metrics." },
         { name: "Technical Mentorship", desc: "Mentoring junior engineers and conducting high-standard, constructive code reviews." },
-        { name: "Agile Ownership (Scrum/Kanban)", desc: "Disciplined sprint delivery, accurate time estimation, and reliable production releases." }
+        { name: "Agile Ownership", desc: "Disciplined sprint delivery (Scrum), accurate time estimation, and reliable production releases." }
       ],
       executiveTraining: [
         "AWS Certified Solutions Architect – Associate (Official Credential).",
@@ -308,8 +295,7 @@ const ARCHETYPES = {
           period: "2021 – 2023 | Guadalajara, MX",
           bullets: [
             "Constructed 15+ dynamic enterprise admin dashboards with React and Node.js REST APIs for e-commerce and logistics clients.",
-            "Optimized high-volume PostgreSQL queries via strategic partial indexing and table partitioning, slashing daily reporting execution time by 60%.",
-            "Instituted comprehensive unit and integration test suites, raising test coverage across core system services to 85%."
+            "Optimized high-volume PostgreSQL queries via strategic partial indexing and table partitioning, slashing daily reporting execution time by 60%."
           ]
         }
       ],
@@ -317,10 +303,6 @@ const ARCHETYPES = {
         {
           title: "Global AI Hackathon (Top 5 Finalist)",
           desc: "Engineered an agentic copilot for predictive fraud detection on streaming financial transactions in 48 hours."
-        },
-        {
-          title: "Cybersecurity & Cloud Resilience Challenge",
-          desc: "Automated vulnerability scanning pipeline targeting OWASP Top 10 exploits across containerized microservices."
         }
       ],
       education: [
@@ -335,7 +317,7 @@ const ARCHETYPES = {
     }
   },
 
-  // ARQUETIPO 3: CAMBIO DE CARRERA / PERFIL HÍBRIDO MULTIDISCIPLINARIO
+  // 3. CAMBIO DE CARRERA / HÍBRIDO
   career_change: {
     es: {
       fullName: "Mariana Ruiz Delgado",
@@ -349,7 +331,7 @@ const ARCHETYPES = {
         github: "https://github.com/marianaruiz-data",
         githubUser: "github.com/marianaruiz-data"
       },
-      about: "Profesional analítica con sólida trayectoria previa en finanzas corporativas y administración de negocios, complementada con formación rigurosa en ciencia de datos, SQL analítico, Python y visualización estratégica con Power BI. Mi valor diferencial radica en tender un puente natural entre la profundidad técnica de los datos y las decisiones ejecutivas de negocio: no solo construyo modelos y tableros, sino que identifico las palancas exactas de rentabilidad y reducción de costos. Experiencia comprobada transformando millones de registros dispersos en dashboards automatizados que ahorran más de 20 horas semanales de reportería manual y permiten proyecciones financieras fiables.",
+      about: "Profesional analítica con sólida trayectoria previa en finanzas corporativas y administración de negocios, complementada con formación rigurosa en ciencia de datos, SQL analítico, Python y visualización estratégica con Power BI. Mi valor diferencial radica en tender un puente natural entre la profundidad técnica de los datos y las decisiones ejecutivas de negocio: no solo construyo modelos y tableros, sino que identifico las palancas exactas de rentabilidad y reducción de costos.",
       skills: [
         { title: "Análisis de Datos & Programación", desc: "Python (Pandas, NumPy, Scikit-Learn), SQL Analítico avanzado (Window functions, CTEs), R básico." },
         { title: "Business Intelligence & Tableros", desc: "Power BI (DAX, Power Query), Tableau, Google Data Studio, Storytelling de Datos, Diseño UX para directivos." },
@@ -357,10 +339,10 @@ const ARCHETYPES = {
         { title: "Bases de Datos & ETLs", desc: "PostgreSQL, BigQuery, Snowflake, Automatización de pipelines de extracción y limpieza de datos." }
       ],
       softSkills: [
-        { name: "Traducción de Datos a Negocio (Storytelling)", desc: "Facilidad para comunicar insights analíticos complejos a comités ejecutivos y directores." },
-        { name: "Pensamiento Estratégico & Comercial", desc: "Comprensión integral de cuentas de resultados (P&L), flujos de caja y márgenes de utilidad." },
-        { name: "Gestión del Cambio & Adaptabilidad", desc: "Capacidad demostrada de reinvención profesional y adopción acelerada de tecnologías emergentes." },
-        { name: "Negociación con Stakeholders", desc: "Alineación de expectativas entre áreas de tecnología, ventas, finanzas y operaciones." }
+        { name: "Storytelling con Datos", desc: "Facilidad para comunicar insights analíticos complejos a comités ejecutivos y directores." },
+        { name: "Pensamiento Comercial", desc: "Comprensión integral de cuentas de resultados (P&L), flujos de caja y márgenes de utilidad." },
+        { name: "Gestión del Cambio", desc: "Capacidad demostrada de reinvención profesional y adopción acelerada de tecnologías emergentes." },
+        { name: "Alineación de Stakeholders", desc: "Alineación de expectativas entre áreas de tecnología, ventas, finanzas y operaciones." }
       ],
       executiveTraining: [
         "Bootcamp de Data Analytics & Machine Learning (450 horas prácticas con proyectos reales).",
@@ -368,21 +350,19 @@ const ARCHETYPES = {
       ],
       languages: [
         { name: "Español", level: "Nativo" },
-        { name: "Inglés", level: "B2+ Profesional (Negociación comercial y presentaciones ejecutivas internacionales)." }
+        { name: "Inglés", level: "B2+ Profesional (Negociación comercial y presentaciones ejecutivas)." }
       ],
       community: [
-        { name: "Comunidad Women in Data / PyLadies", desc: "Participante activa y mentora en talleres introductorios de análisis de datos con Python." },
-        { name: "Club de Inversiones & Finanzas Personales", desc: "Co-organizadora de sesiones mensuales sobre evaluación de activos e indicadores macroeconómicos." }
+        { name: "Comunidad Women in Data / PyLadies", desc: "Participante activa y mentora en talleres introductorios de análisis de datos con Python." }
       ],
       experience: [
         {
-          role: "Analista de Business Intelligence & Datos (Transición Tecnológica)",
+          role: "Analista de Business Intelligence & Datos",
           company: "FinTech & Analytics Consulting Group",
           period: "2024 – Presente | Guadalajara, MX",
           bullets: [
             "Construí y automaticé el pipeline de reportes financieros en SQL y Power BI, reduciendo el tiempo de generación de informes mensuales de 5 días a 15 minutos.",
-            "Diseñé un modelo analítico de segmentación de clientes con Python (clustering k-means) que incrementó la tasa de conversión de campañas en un 28%.",
-            "Estandaricé los diccionarios de métricas clave (MRR, churn rate, retention cohorts) para alinear a los equipos de Marketing y Finanzas."
+            "Diseñé un modelo analítico de segmentación de clientes con Python (clustering k-means) que incrementó la tasa de conversión de campañas en un 28%."
           ]
         },
         {
@@ -391,8 +371,7 @@ const ARCHETYPES = {
           period: "2020 – 2024 | Guadalajara, MX",
           bullets: [
             "Gestioné presupuestos anuales superiores a $35M MXN, identificando desviaciones operativas y generando ahorros en compras del 12%.",
-            "Lideré la transición de hojas de cálculo manuales dispersas a un ERP consolidado, capacitando a más de 25 colaboradores de diferentes departamentos.",
-            "Elaboré análisis de sensibilidad y proyecciones de flujo de caja para comités directivos de toma de decisiones de inversión."
+            "Lideré la transición de hojas de cálculo manuales dispersas a un ERP consolidado, capacitando a más de 25 colaboradores."
           ]
         }
       ],
@@ -404,18 +383,18 @@ const ARCHETYPES = {
       ],
       education: [
         {
-          degree: "Diploma Especializado en Data Science & Business Intelligence",
+          degree: "Diploma Especializado en Data Science & BI",
           school: "Tech Institute & Platzi",
           period: "2024",
           badge: "Acreditado con Excelencia",
           details: "Formación intensiva en extracción de datos con SQL, análisis exploratorio con Python y visualización ejecutiva."
         },
         {
-          degree: "Licenciatura en Administración de Empresas y Finanzas",
+          degree: "Licenciatura en Administración y Finanzas",
           school: "Universidad de Guadalajara",
           period: "2016 – 2020",
           badge: "Titulada",
-          details: "Enfoque en finanzas corporativas, auditoría interna, microeconomía y formulación de proyectos de inversión."
+          details: "Enfoque en finanzas corporativas, auditoría interna, microeconomía y proyectos de inversión."
         }
       ]
     },
@@ -431,7 +410,7 @@ const ARCHETYPES = {
         github: "https://github.com/marianaruiz-data",
         githubUser: "github.com/marianaruiz-data"
       },
-      about: "Analytical professional blending a solid foundation in corporate finance and business administration with rigorous training in data science, advanced SQL, Python, and strategic Power BI visualization. My core differentiator is building a seamless bridge between technical data depth and executive decision-making: I translate raw tabular datasets into high-impact operational dashboards and predictive insights that directly drive profitability and cost savings. Proven record of transforming fragmented enterprise databases into automated reporting systems that save 20+ hours of manual reporting per week while enabling reliable cash flow forecasting.",
+      about: "Analytical professional blending a solid foundation in corporate finance and business administration with rigorous training in data science, advanced SQL, Python, and strategic Power BI visualization. My core differentiator is building a seamless bridge between technical data depth and executive decision-making: I translate raw tabular datasets into high-impact operational dashboards and predictive insights that directly drive profitability and cost savings.",
       skills: [
         { title: "Data Analysis & Programming", desc: "Python (Pandas, NumPy, Scikit-Learn), Advanced Analytical SQL (Window functions, CTEs), basic R." },
         { title: "Business Intelligence & Dashboards", desc: "Power BI (DAX, Power Query), Tableau, Google Looker Studio, Executive Data Storytelling, UX." },
@@ -439,10 +418,10 @@ const ARCHETYPES = {
         { title: "Databases & ETL Pipelines", desc: "PostgreSQL, BigQuery, Snowflake, Automated ingestion and data hygiene pipelines." }
       ],
       softSkills: [
-        { name: "Executive Data Storytelling", desc: "Synthesizing complex quantitative conclusions into crisp, actionable executive decisions." },
-        { name: "Strategic Business Acumen", desc: "Holistic understanding of balance sheets, operating margins, and profit levers." },
-        { name: "Career Adaptability & Resilience", desc: "Demonstrated capacity for rapid technical reinvention and mastering modern data stacks." },
-        { name: "Cross-Functional Stakeholder Alignment", desc: "Fostering alignment between engineering, finance, marketing, and business operations." }
+        { name: "Executive Storytelling", desc: "Synthesizing complex quantitative conclusions into crisp, actionable executive decisions." },
+        { name: "Strategic Acumen", desc: "Holistic understanding of balance sheets, operating margins, and profit levers." },
+        { name: "Career Adaptability", desc: "Demonstrated capacity for rapid technical reinvention and mastering modern data stacks." },
+        { name: "Stakeholder Alignment", desc: "Fostering alignment between engineering, finance, marketing, and business operations." }
       ],
       executiveTraining: [
         "Data Analytics & Machine Learning Bootcamp (450 intensive project hours).",
@@ -453,18 +432,16 @@ const ARCHETYPES = {
         { name: "English", level: "B2+ Full Professional (Executive business negotiation and cross-border client presentations)." }
       ],
       community: [
-        { name: "Women in Data & PyLadies Chapter", desc: "Active member and mentor in introductory data analysis workshops with Python." },
-        { name: "Investment & Economics Club", desc: "Co-host of monthly sessions dissecting macroeconomic trends and valuation models." }
+        { name: "Women in Data & PyLadies Chapter", desc: "Active member and mentor in introductory data analysis workshops with Python." }
       ],
       experience: [
         {
-          role: "Business Intelligence & Data Analyst (Tech Career Transition)",
+          role: "Business Intelligence & Data Analyst",
           company: "FinTech & Analytics Consulting Group",
           period: "2024 – Present | Guadalajara, MX",
           bullets: [
             "Architected and automated financial reporting pipelines in SQL and Power BI, reducing monthly executive report delivery from 5 business days to under 15 minutes.",
-            "Designed a predictive customer segmentation model in Python (k-means clustering), lifting target marketing conversion rates by 28%.",
-            "Standardized enterprise metric dictionaries (MRR, net churn rate, retention cohorts) across marketing and finance leadership teams."
+            "Designed a predictive customer segmentation model in Python (k-means clustering), lifting target marketing conversion rates by 28%."
           ]
         },
         {
@@ -473,8 +450,7 @@ const ARCHETYPES = {
           period: "2020 – 2024 | Guadalajara, MX",
           bullets: [
             "Supervised annual operating budgets exceeding $2M USD, isolating vendor cost overruns and securing 12% in procurement savings.",
-            "Spearheaded enterprise migration from legacy disconnected spreadsheets to an ERP system, training 25+ cross-department users.",
-            "Built sensitivity analysis and discounted cash flow models for executive board investment reviews."
+            "Spearheaded enterprise migration from legacy disconnected spreadsheets to an ERP system, training 25+ cross-department users."
           ]
         }
       ],
@@ -486,14 +462,14 @@ const ARCHETYPES = {
       ],
       education: [
         {
-          degree: "Applied Data Science & Business Intelligence Diploma",
+          degree: "Applied Data Science & BI Diploma",
           school: "Tech Institute & Platzi",
           period: "2024",
           badge: "Graduated with Honors",
           details: "Intensive training in SQL data engineering, exploratory data analysis with Python, and executive dashboards."
         },
         {
-          degree: "B.S. in Business Administration & Corporate Finance",
+          degree: "B.S. in Business Administration & Finance",
           school: "Universidad de Guadalajara",
           period: "2016 – 2020",
           badge: "Licensed & Graduated",
@@ -503,7 +479,593 @@ const ARCHETYPES = {
     }
   },
 
-  // ARQUETIPO 4: PLANTILLA EN BLANCO (BLANK / CUSTOM)
+  // 4. ADMINISTRACIÓN & VENTAS
+  admin_sales: {
+    es: {
+      fullName: "Alejandro Torres Navarro",
+      headline: "Coordinador de Operaciones Comerciales & Ventas B2B · CRM HubSpot · Gestión de Cuentas",
+      contact: {
+        location: "Zapopan, Jalisco, México",
+        email: "alejandro.torres.sales@email.com",
+        phone: "+52 33 7654 3210",
+        linkedin: "https://linkedin.com/in/alejandro-torres-sales",
+        linkedinUser: "in/alejandro-torres-sales"
+      },
+      about: "Profesional en administración y operaciones comerciales con 4 años de experiencia liderando procesos de ventas B2B, atención a clientes corporativos y optimización de flujos de trabajo en CRM. Especialista en prospección consultiva, seguimiento de embudos comerciales y negociación de contratos. Historial probado de superación de metas trimestrales en un 120% promedio y reducción de tiempos de ciclo de venta mediante automatización de propuestas y cotizaciones.",
+      skills: [
+        { title: "Gestión Comercial & CRM", desc: "HubSpot CRM, Salesforce, PipeDrive, Gestión de Pipeline, Lead Scoring, Prospección Consultiva." },
+        { title: "Herramientas de Productividad", desc: "Excel Avanzado (Tablas Dinámicas, BuscarV, Macros), Google Workspace, Notion, Slack." },
+        { title: "Contratos & Facturación", desc: "Facturación electrónica CFDI 4.0, Cobranza preventiva, Control presupuestal y conciliación." }
+      ],
+      softSkills: [
+        { name: "Negociación & Cierre", desc: "Cierre efectivo de cuentas clave con ticket promedio de $150K MXN anuales." },
+        { name: "Escucha Activa", desc: "Detección precisa de puntos de dolor del cliente para formular propuestas personalizadas." },
+        { name: "Orientación a Metas", desc: "Superación constante de cuotas trimestrales de facturación durante 8 periodos consecutivos." }
+      ],
+      executiveTraining: [
+        "Certificación HubSpot: Inbound Sales & Pipeline Management.",
+        "Diplomado en Finanzas para No Financieros (Cámara de Comercio)."
+      ],
+      languages: [
+        { name: "Español", level: "Nativo" },
+        { name: "Inglés", level: "B2 Profesional (Capaz de sostener negociaciones y redactar correos ejecutivos)." }
+      ],
+      community: [
+        { name: "Cámara de Comercio de Guadalajara", desc: "Participante habitual en encuentros de networking y comisiones de jóvenes empresarios." }
+      ],
+      experience: [
+        {
+          role: "Coordinador de Ventas B2B & Cuentas Clave",
+          company: "Distribuidora Industrial del Bajío",
+          period: "2023 – Presente | Zapopan, MX",
+          bullets: [
+            "Lideré el equipo comercial de 4 ejecutivos, alcanzando un incremento en ventas netas del 27% interanual mediante reestructuración del embudo.",
+            "Implementé la migración a HubSpot CRM para más de 1,200 contactos, reduciendo el tiempo de seguimiento de cotizaciones de 48 horas a 3 horas.",
+            "Negocié y cerré acuerdos marco con 14 empresas medianas, aportando una cartera recurrente de $4.8M MXN anuales."
+          ]
+        },
+        {
+          role: "Ejecutivo de Atención a Clientes & Administración",
+          company: "Soluciones Logísticas Integrales",
+          period: "2021 – 2023 | Guadalajara, MX",
+          bullets: [
+            "Atendí una cartera de 65 clientes empresariales, elevando el índice de satisfacción (CSAT) del 82% al 96% en 12 meses.",
+            "Automaticé la emisión de reportes diarios de embarques, ahorrando 8 horas semanales de captura manual al departamento de operaciones."
+          ]
+        }
+      ],
+      education: [
+        {
+          degree: "Licenciatura en Administración de Empresas",
+          school: "Universidad de Guadalajara — CUCEA",
+          period: "2017 – 2021",
+          badge: "Titulado",
+          details: "Especialización en Estrategia de Mercadotecnia, Administración de Operaciones y Finanzas Corporativas."
+        }
+      ]
+    },
+    en: {
+      fullName: "Alejandro Torres Navarro",
+      headline: "Commercial Operations & B2B Sales Coordinator · HubSpot CRM · Key Account Management",
+      contact: {
+        location: "Zapopan, Jalisco, Mexico",
+        email: "alejandro.torres.sales@email.com",
+        phone: "+52 33 7654 3210",
+        linkedin: "https://linkedin.com/in/alejandro-torres-sales",
+        linkedinUser: "in/alejandro-torres-sales"
+      },
+      about: "Business administration professional with 4 years of experience driving B2B sales cycles, corporate client relationships, and CRM pipeline automation. Expert in consultative prospecting, proposal negotiation, and sales funnel velocity. Proven track record of exceeding quarterly quotas by an average of 120% and reducing contract closing cycles through streamlined quoting workflows.",
+      skills: [
+        { title: "Sales Management & CRM", desc: "HubSpot CRM, Salesforce, PipeDrive, Pipeline Management, Lead Scoring, Consultative Selling." },
+        { title: "Productivity & Operations", desc: "Advanced Excel (Pivot Tables, VLOOKUP, Automation), Google Workspace, Notion, Slack." },
+        { title: "Contracts & Invoicing", desc: "Corporate Invoicing, Accounts Receivable management, Budget tracking and audits." }
+      ],
+      softSkills: [
+        { name: "Deal Negotiation & Closing", desc: "Consistent closure of key accounts with average annual contract value of $10K+ USD." },
+        { name: "Active Client Listening", desc: "Uncovering operational bottlenecks to deliver customized commercial proposals." },
+        { name: "Quota-Driven Mindset", desc: "Consistently exceeded quarterly revenue targets for 8 consecutive quarters." }
+      ],
+      executiveTraining: [
+        "HubSpot Certified: Inbound Sales & Pipeline Management.",
+        "Certificate in Corporate Finance for Business Leaders (Chamber of Commerce)."
+      ],
+      languages: [
+        { name: "Spanish", level: "Native" },
+        { name: "English", level: "B2 Professional (Executive emails, presentations, and contract negotiations)." }
+      ],
+      community: [
+        { name: "Chamber of Commerce Business Circle", desc: "Active participant in regional B2B networking forums and youth entrepreneurship councils." }
+      ],
+      experience: [
+        {
+          role: "B2B Sales & Key Account Coordinator",
+          company: "Industrial Logistics & Supply Co.",
+          period: "2023 – Present | Zapopan, MX",
+          bullets: [
+            "Led a commercial squad of 4 account executives, lifting net regional revenue by 27% year-over-year through pipeline re-engineering.",
+            "Spearheaded HubSpot CRM migration across 1,200 enterprise contacts, cutting quote turnaround time from 48 hours to under 3 hours.",
+            "Negotiated long-term service level agreements with 14 corporate clients, generating $250K+ USD in recurring annual revenue."
+          ]
+        },
+        {
+          role: "Corporate Customer Success Specialist",
+          company: "Integrated Logistics Solutions",
+          period: "2021 – 2023 | Guadalajara, MX",
+          bullets: [
+            "Managed dedicated support for 65 corporate accounts, elevating Customer Satisfaction (CSAT) score from 82% to 96% in 12 months.",
+            "Automated daily shipment status reporting, saving 8 hours of manual weekly data entry across dispatch operations."
+          ]
+        }
+      ],
+      education: [
+        {
+          degree: "B.S. in Business Administration",
+          school: "Universidad de Guadalajara — CUCEA",
+          period: "2017 – 2021",
+          badge: "Licensed & Graduated",
+          details: "Specialization in Marketing Strategy, Operations Management, and Corporate Financial Planning."
+        }
+      ]
+    }
+  },
+
+  // 5. OFICIOS & SERVICIOS
+  trades: {
+    es: {
+      fullName: "Roberto Sánchez Gómez",
+      headline: "Técnico en Mantenimiento Industrial & Electromecánica · Certificación DC-3 · Seguridad Operativa",
+      contact: {
+        location: "El Salto, Jalisco, México",
+        email: "roberto.sanchez.tec@email.com",
+        phone: "+52 33 8765 4321"
+      },
+      about: "Técnico electromecánico con 6 años de experiencia en mantenimiento preventivo, correctivo y predictivo de líneas de producción industrial, motores trifásicos, bombas hidráulicas y sistemas neumáticos. Certificado con constancias DC-3 en trabajos en alturas, espacios confinados y seguridad eléctrica. Comprometido con la cultura de cero accidentes, la reducción de paros no programados y el cumplimiento estricto de normas NOM-STPS e ISO 9001.",
+      skills: [
+        { title: "Mantenimiento & Mecánica", desc: "Mantenimiento predictivo, preventivo y correctivo, Alineación láser de motores, Rodamientos, Bombas centrífugas." },
+        { title: "Electricidad & Control", desc: "Subestaciones eléctricas, Tableros de control (220V/440V), Interpretación de planos eléctricos, Variadores de frecuencia (VFD)." },
+        { title: "Normatividad & Seguridad", desc: "Constancias DC-3 (Trabajos en alturas, Espacios confinados, Electricidad), Protocolos LOTO (Bloqueo/Etiquetado)." }
+      ],
+      softSkills: [
+        { name: "Respuesta Rápida a Fallas", desc: "Disminución del tiempo de respuesta ante paros críticos a menos de 10 minutos." },
+        { name: "Cultura de Seguridad Cero Accidentes", desc: "Más de 1,200 días sin incidentes laborales registrables en el área asignada." },
+        { name: "Trabajo en Equipo Operativo", desc: "Coordinación fluida con operadores de línea, supervisores y personal de calidad." }
+      ],
+      executiveTraining: [
+        "Certificación DC-3: Seguridad en Trabajos con Electricidad y Alturas (STPS).",
+        "Curso Especializado en Detección de Fallas mediante Termografía y Análisis de Vibraciones."
+      ],
+      languages: [
+        { name: "Español", level: "Nativo" },
+        { name: "Inglés", level: "Básico Técnico (Lectura de manuales de maquinaria, diagramas y códigos de error)." }
+      ],
+      experience: [
+        {
+          role: "Técnico Electromecánico de Mantenimiento",
+          company: "Planta Manufacturera del Parque Industrial El Salto",
+          period: "2022 – Presente | El Salto, MX",
+          bullets: [
+            "Ejecuté programas de mantenimiento preventivo para 12 líneas de empaque automatizado, reduciendo paros no programados en un 22%.",
+            "Diagnosticé y reparé fallas eléctricas y neumáticas en prensas y bandas transportadoras, manteniendo una disponibilidad de equipo del 98.5%.",
+            "Lideré la inspección semanal de bloqueo y etiquetado (LOTO), asegurando 0 accidentes de trabajo durante 3 años consecutivos."
+          ]
+        },
+        {
+          role: "Técnico Mecánico de Soporte en Taller",
+          company: "Servicios Industriales & Maquinados",
+          period: "2019 – 2022 | Guadalajara, MX",
+          bullets: [
+            "Realicé el ajuste, desensamble y embobinado de motores eléctricos trifásicos de hasta 50 HP cumpliendo tolerancias de fábrica.",
+            "Reconstruí más de 40 bombas centrífugas e hidráulicas logrando una reducción de costos de refaccionamiento del 30%."
+          ]
+        }
+      ],
+      education: [
+        {
+          degree: "Técnico Superior Universitario en Mantenimiento Industrial",
+          school: "Universidad Tecnológica de Jalisco (UTJ)",
+          period: "2017 – 2019",
+          badge: "Titulado con Cédula",
+          details: "Formación práctica en máquinas herramientas, control lógico programable (PLC básico), soldadura y neumática."
+        }
+      ]
+    },
+    en: {
+      fullName: "Roberto Sanchez Gomez",
+      headline: "Industrial Electromechanical Maintenance Technician · Certified DC-3 · Operational Safety",
+      contact: {
+        location: "El Salto, Jalisco, Mexico",
+        email: "roberto.sanchez.tec@email.com",
+        phone: "+52 33 8765 4321"
+      },
+      about: "Industrial technician with 6 years of experience in preventive, corrective, and predictive maintenance across automated manufacturing lines, three-phase motors, hydraulic pumps, and pneumatic systems. Certified in occupational safety (heights, confined spaces, and high-voltage protocols). Committed to zero-accident safety cultures, lowering unscheduled production downtime, and adhering to strict ISO 9001 and OSHA standards.",
+      skills: [
+        { title: "Mechanical Maintenance", desc: "Predictive, preventive and emergency repairs, Laser motor alignment, Bearings, Centrifugal pumps." },
+        { title: "Electrical & Instrumentation", desc: "Industrial control panels (220V/440V), Electrical blueprints interpretation, Variable Frequency Drives (VFDs)." },
+        { title: "Safety & Compliance", desc: "LOTO procedures (Lockout/Tagout), Confined Space & High-altitude work safety certified." }
+      ],
+      softSkills: [
+        { name: "Rapid Fault Response", desc: "Reduced mean time to response during critical line outages to under 10 minutes." },
+        { name: "Zero-Accident Safety Record", desc: "Over 1,200 consecutive workdays without lost-time incidents across assigned shifts." },
+        { name: "Cross-Shift Teamwork", desc: "Seamless communication with line operators, shift supervisors, and quality teams." }
+      ],
+      executiveTraining: [
+        "Certified Industrial Electrical Safety & Work-at-Heights Credential.",
+        "Specialized Course in Thermal Imaging & Vibration Analysis Diagnostics."
+      ],
+      languages: [
+        { name: "Spanish", level: "Native" },
+        { name: "English", level: "Technical Basic (Reading machinery equipment manuals, wiring diagrams, and error codes)." }
+      ],
+      experience: [
+        {
+          role: "Industrial Electromechanical Technician",
+          company: "Manufacturing Plant — El Salto Industrial Park",
+          period: "2022 – Present | El Salto, MX",
+          bullets: [
+            "Executed preventive maintenance plans across 12 automated packaging lines, slashing unscheduled line shutdowns by 22%.",
+            "Diagnosed and repaired electrical and pneumatic defects on hydraulic presses and conveyor belts, sustaining 98.5% equipment uptime.",
+            "Conducted weekly LOTO compliance audits, ensuring zero electrical safety incidents across 3 consecutive operational years."
+          ]
+        },
+        {
+          role: "Mechanical Shop Maintenance Specialist",
+          company: "Industrial Machinery & Tooling Services",
+          period: "2019 – 2022 | Guadalajara, MX",
+          bullets: [
+            "Overhauled, disassembled, and rewound three-phase electric motors up to 50 HP according to strict manufacturer tolerances.",
+            "Reconditioned 40+ industrial centrifugal and hydraulic pumps, securing a 30% reduction in spare part replacement expenditure."
+          ]
+        }
+      ],
+      education: [
+        {
+          degree: "Associate Degree in Industrial Maintenance Engineering",
+          school: "Universidad Tecnológica de Jalisco (UTJ)",
+          period: "2017 – 2019",
+          badge: "Licensed Technician",
+          details: "Hands-on training in machine tools, fundamental PLC troubleshooting, TIG/MIG welding, and industrial pneumatics."
+        }
+      ]
+    }
+  },
+
+  // 6. CREATIVOS & DISEÑO
+  creative: {
+    es: {
+      fullName: "Camila Estrada Ponce",
+      headline: "Diseñadora UX/UI & Product Designer · Figma, Design Systems & Prototipado Interactivo",
+      contact: {
+        location: "Guadalajara, Jalisco, México",
+        email: "camila.estrada.design@email.com",
+        phone: "+52 33 6543 2109",
+        linkedin: "https://linkedin.com/in/camila-estrada-ux",
+        linkedinUser: "in/camila-estrada-ux",
+        github: "https://behance.net/camilaestrada",
+        githubUser: "behance.net/camilaestrada"
+      },
+      about: "Diseñadora de producto digital y UX/UI con 3 años de experiencia creando experiencias centradas en el usuario para aplicaciones web y móviles. Especialista en investigación de usuarios, wireframing, prototipado interactivo en Figma y construcción de Sistemas de Diseño escalables. Historial de colaboración estrecha con equipos de ingeniería para elevar tasas de conversión en un 30% y reducir tiempos de diseño a desarrollo en un 40%.",
+      skills: [
+        { title: "Diseño UX & Research", desc: "User Research, Pruebas de usabilidad, Mapas de empatía, User Personas, Arquitectura de Información." },
+        { title: "Herramientas de UI & Prototipado", desc: "Figma (Auto Layout, Tokens, Componentes con variantes), Adobe XD, Illustrator, Photoshop, Protopie." },
+        { title: "Design Systems & Hand-off", desc: "Creación de Design Systems con Atomic Design, Tokens de diseño, Documentación técnica para Frontend (HTML/CSS)." }
+      ],
+      softSkills: [
+        { name: "Empatía con el Usuario", desc: "Habilidad para traducir necesidades reales del usuario en soluciones visuales intuitivas." },
+        { name: "Colaboración Interdisciplinaria", desc: "Alineación ágil y respetuosa con Product Managers y desarrolladores frontend." },
+        { name: "Pensamiento Crítico Visual", desc: "Defensa fundamentada de decisiones de diseño con base en métricas y usabilidad." }
+      ],
+      executiveTraining: [
+        "Google UX Design Professional Certificate (Coursera).",
+        "Bootcamp de Diseño de Sistemas Escalables en Figma."
+      ],
+      languages: [
+        { name: "Español", level: "Nativo" },
+        { name: "Inglés", level: "B2+ Profesional (Presentaciones de diseño a clientes en EE.UU. y entrevistas de usuario)." }
+      ],
+      experience: [
+        {
+          role: "UX/UI Designer",
+          company: "Studio Digital Creativo & Tech",
+          period: "2023 – Presente | Guadalajara, MX",
+          bullets: [
+            "Diseñé de extremo a extremo la app móvil para una fintech de microcréditos, incrementando la retención de usuarios en un 32% en los primeros 60 días.",
+            "Construí y documenté un Sistema de Diseño con más de 200 componentes en Figma, acelerando la entrega de nuevos módulos en un 40%.",
+            "Coordiné 18 sesiones de pruebas de usabilidad moderadas, identificando y resolviendo 5 puntos críticos de fricción en el checkout."
+          ]
+        }
+      ],
+      education: [
+        {
+          degree: "Licenciatura en Diseño para la Comunicación Gráfica",
+          school: "Universidad de Guadalajara — CUAAD",
+          period: "2018 – 2022",
+          badge: "Titulada",
+          details: "Especialización en interfaces digitales, tipografía aplicada, semiótica visual y diseño de identidad de marca."
+        }
+      ]
+    },
+    en: {
+      fullName: "Camila Estrada Ponce",
+      headline: "UX/UI & Product Designer · Figma, Design Systems & Interactive Prototyping",
+      contact: {
+        location: "Guadalajara, Jalisco, Mexico",
+        email: "camila.estrada.design@email.com",
+        phone: "+52 33 6543 2109",
+        linkedin: "https://linkedin.com/in/camila-estrada-ux",
+        linkedinUser: "in/camila-estrada-ux",
+        github: "https://behance.net/camilaestrada",
+        githubUser: "behance.net/camilaestrada"
+      },
+      about: "Product and UX/UI Designer with 3 years of experience crafting intuitive, user-centered digital experiences for web and mobile products. Specialist in generative user research, wireframing, high-fidelity Figma prototyping, and multi-brand Design System architecture. Proven partner to engineering squads: boosted target conversion rates by 32% and shortened design-to-development handoff cycles by 40%.",
+      skills: [
+        { title: "UX Design & Research", desc: "User Research, Usability Testing, Empathy Mapping, User Journey Mapping, Information Architecture." },
+        { title: "UI Tooling & Prototyping", desc: "Figma (Auto Layout, Design Tokens, Interactive Components), Adobe Creative Suite, Protopie." },
+        { title: "Design Systems & Hand-off", desc: "Atomic Design methodology, Design Tokens, Developer documentation for frontend handoff (HTML/CSS basics)." }
+      ],
+      softSkills: [
+        { name: "User-Centered Empathy", desc: "Translating ambiguous user pain points into elegant, frictionless interface solutions." },
+        { name: "Cross-Functional Collaboration", desc: "Close partnership with Product Managers and software engineers under agile sprints." },
+        { name: "Evidence-Based Design", desc: "Articulating design rationale backed by usability testing data and business KPIs." }
+      ],
+      executiveTraining: [
+        "Google UX Design Professional Certificate (Coursera).",
+        "Advanced Design Systems & UI Tokenization Bootcamp."
+      ],
+      languages: [
+        { name: "Spanish", level: "Native" },
+        { name: "English", level: "B2+ Professional (Presenting UI specifications and conducting user interviews in English)." }
+      ],
+      experience: [
+        {
+          role: "UX/UI Designer",
+          company: "Creative Digital Studio & Labs",
+          period: "2023 – Present | Guadalajara, MX",
+          bullets: [
+            "Spearheaded end-to-end UX/UI redesign for a regional fintech mobile app, boosting 60-day user retention by 32%.",
+            "Constructed and published a comprehensive Figma Design System with 200+ modular components, slashing sprint delivery times by 40%.",
+            "Conducted 18 moderated usability interviews, diagnosing and eliminating 5 critical checkout dropout friction points."
+          ]
+        }
+      ],
+      education: [
+        {
+          degree: "B.A. in Visual Communication & Graphic Design",
+          school: "Universidad de Guadalajara — CUAAD",
+          period: "2018 – 2022",
+          badge: "Graduated with Honors",
+          details: "Specialized in digital interaction design, applied web typography, and brand identity systems."
+        }
+      ]
+    }
+  },
+
+  // 7. SALUD & BIENESTAR
+  health: {
+    es: {
+      fullName: "Dra. Valeria Jiménez Ramos",
+      headline: "Médica General & Coordinadora de Salud Ocupacional · NOM-035 · Medicina Preventiva",
+      contact: {
+        location: "Guadalajara, Jalisco, México",
+        email: "valeria.jimenez.med@email.com",
+        phone: "+52 33 5432 1098",
+        linkedin: "https://linkedin.com/in/valeria-jimenez-med",
+        linkedinUser: "in/valeria-jimenez-med"
+      },
+      about: "Médica titulada con Cédula Profesional y 4 años de experiencia en consulta de primer contacto, medicina preventiva y coordinación de programas de salud ocupacional en el sector industrial. Experta en evaluación médica periódica, cumplimiento de normas de la Secretaría de Salud y STPS (NOM-030, NOM-035), diseño de campañas de bienestar y gestión de emergencias médicas en sitio.",
+      skills: [
+        { title: "Medicina Clínica & Preventiva", desc: "Consulta médica general, Manejo de enfermedades crónico-degenerativas, Urgencias básicas y triage." },
+        { title: "Salud Ocupacional & Normativa", desc: "NOM-030-STPS, NOM-035-STPS, Exámenes médicos de ingreso y periódicos, Dictámenes de aptitud laboral." },
+        { title: "Gestión Hospitalaria & Expedientes", desc: "Expediente clínico electrónico (NOM-004), Control epidemiológico, Campañas de vacunación masivas." }
+      ],
+      softSkills: [
+        { name: "Empatía Clínica", desc: "Trato cálido, respetuoso y ético a más de 20 pacientes atendidos por turno." },
+        { name: "Manejo de Crisis", desc: "Control de situaciones de urgencia médica en planta con apego a protocolos BLS." },
+        { name: "Liderazgo en Salud", desc: "Capacitación continua en primeros auxilios a brigadas internas de protección civil." }
+      ],
+      executiveTraining: [
+        "Certificación BLS (Basic Life Support) por la American Heart Association (AHA).",
+        "Diplomado en Toxicología y Salud en el Trabajo."
+      ],
+      languages: [
+        { name: "Español", level: "Nativo" },
+        { name: "Inglés", level: "B2 Médico Profesional (Lectura de literatura clínica indexada en PubMed y consulta médica)." }
+      ],
+      experience: [
+        {
+          role: "Médica Encargada de Salud Ocupacional",
+          company: "Grupo Industrial Manufacturero",
+          period: "2023 – Presente | Guadalajara, MX",
+          bullets: [
+            "Coordiné el programa de salud para 450 colaboradores, reduciendo el índice de ausentismo médico en un 24% a través de prevención activa.",
+            "Realicé más de 380 exámenes médicos periódicos anuales con 100% de cumplimiento ante auditorías de inspección de la STPS.",
+            "Diseñé e impartí talleres de ergonomía y salud psicosocial que disminuyeron en 40% las consultas por fatiga muscular."
+          ]
+        }
+      ],
+      education: [
+        {
+          degree: "Médica Cirujana y Partera",
+          school: "Universidad de Guadalajara — CUCS",
+          period: "2016 – 2022",
+          badge: "Cédula Profesional Registrada",
+          details: "Internado médico de pregrado y servicio social acreditados con mención honorífica en hospital público de segundo nivel."
+        }
+      ]
+    },
+    en: {
+      fullName: "Dr. Valeria Jimenez Ramos",
+      headline: "General Physician & Occupational Health Lead · Preventive Medicine · Worksite Safety",
+      contact: {
+        location: "Guadalajara, Jalisco, Mexico",
+        email: "valeria.jimenez.med@email.com",
+        phone: "+52 33 5432 1098",
+        linkedin: "https://linkedin.com/in/valeria-jimenez-med",
+        linkedinUser: "in/valeria-jimenez-med"
+      },
+      about: "Licensed Medical Doctor with 4 years of clinical experience in outpatient care, preventive medicine, and industrial occupational health programs. Specialist in employee health evaluations, public health regulatory compliance (OSHA/STPS), workplace wellness initiatives, and emergency triage. Proven success reducing workplace absenteeism by 24% through proactive health screenings and ergonomic interventions.",
+      skills: [
+        { title: "Clinical & Preventive Medicine", desc: "Primary care consultation, Chronic disease management (hypertension/diabetes), Emergency triage, First Aid." },
+        { title: "Occupational Health Standards", desc: "Pre-employment and periodic physical evaluations, Fitness-for-duty certificates, Industrial hygiene protocols." },
+        { title: "Health Information & Records", desc: "Electronic Health Record (EHR) governance, Epidemiological tracking, Workplace immunization drives." }
+      ],
+      softSkills: [
+        { name: "Clinical Empathy", desc: "Patient-centered compassionate care delivered to 20+ consultations per shift." },
+        { name: "Emergency Crisis Management", desc: "Rapid, composed response to workplace medical emergencies under BLS protocols." },
+        { name: "Preventive Education", desc: "Designing and leading hands-on CPR and first-responder training for workplace emergency brigades." }
+      ],
+      executiveTraining: [
+        "AHA Basic Life Support (BLS) Certification (American Heart Association).",
+        "Postgraduate Diploma in Occupational Health & Toxicology."
+      ],
+      languages: [
+        { name: "Spanish", level: "Native" },
+        { name: "English", level: "B2 Medical English (Reading clinical research in PubMed and conducting patient consultations)." }
+      ],
+      experience: [
+        {
+          role: "Occupational Health Physician Lead",
+          company: "Manufacturing Industrial Enterprise",
+          period: "2023 – Present | Guadalajara, MX",
+          bullets: [
+            "Administered dedicated on-site healthcare operations for 450 plant workers, cutting medical absenteeism by 24% via preventive screenings.",
+            "Conducted 380+ annual comprehensive physical examinations, sustaining 100% regulatory audit compliance.",
+            "Instituted ergonomic assessment workshops, achieving a 40% reduction in muscular strain complaints on manufacturing lines."
+          ]
+        }
+      ],
+      education: [
+        {
+          degree: "Doctor of Medicine (M.D.)",
+          school: "Universidad de Guadalajara — CUCS",
+          period: "2016 – 2022",
+          badge: "Licensed Medical Practitioner",
+          details: "Clinical internship and community medical service completed with honors at a recognized regional hospital."
+        }
+      ]
+    }
+  },
+
+  // 8. EDUCACIÓN & DOCENCIA
+  education: {
+    es: {
+      fullName: "Mtro. Fernando Navarro Ruiz",
+      headline: "Docente Universitario & Diseñador Curricular · Pedagogía Activa · Tecnologías Educativas (EdTech)",
+      contact: {
+        location: "Guadalajara, Jalisco, México",
+        email: "fernando.navarro.edu@email.com",
+        phone: "+52 33 4321 0987",
+        linkedin: "https://linkedin.com/in/fernando-navarro-edu",
+        linkedinUser: "in/fernando-navarro-edu"
+      },
+      about: "Docente e investigador universitario con 5 años de experiencia impartiendo cátedra en educación superior, diseño de programas académicos por competencias y gestión de aulas virtuales. Especialista en metodologías activas (Aprendizaje Basado en Proyectos, Aula Invertida) e integración de plataformas EdTech. Con un récord probado de retención estudiantil superior al 95% y evaluaciones docentes de excelencia institucional.",
+      skills: [
+        { title: "Metodologías de Aprendizaje", desc: "Aprendizaje Basado en Proyectos (ABP), Gamificación educativa, Aula Invertida, Rúbricas analíticas." },
+        { title: "Plataformas EdTech & LMS", desc: "Canvas LMS, Moodle, Google Classroom, Edpuzzle, Genially, H5P, Creación de Objetos de Aprendizaje." },
+        { title: "Diseño Curricular & Evaluación", desc: "Planeación didáctica institucional, Diseño de reactivos bajo estándares CENEVAL, Tutoría académica." }
+      ],
+      softSkills: [
+        { name: "Comunicación Pedagógica", desc: "Transmisión clara, motivante y empática de conceptos complejos a grupos de 40+ alumnos." },
+        { name: "Adaptabilidad Docente", desc: "Ajuste dinámico de estrategias según los estilos de aprendizaje detectados en el aula." },
+        { name: "Mentoría Vocacional", desc: "Acompañamiento personalizado a estudiantes en riesgo de deserción, recuperando el 85% de los casos." }
+      ],
+      executiveTraining: [
+        "Diplomado en Docencia Universitaria basada en Competencias (UdeG).",
+        "Certificación Educador Google Nivel 1 y 2."
+      ],
+      languages: [
+        { name: "Español", level: "Nativo" },
+        { name: "Inglés", level: "C1 Avanzado (Docencia bilingüe, publicación de papers y ponencias internacionales)." }
+      ],
+      experience: [
+        {
+          role: "Profesor de Asignatura (Nivel Licenciatura)",
+          company: "Universidad de Guadalajara",
+          period: "2021 – Presente | Guadalajara, MX",
+          bullets: [
+            "Diseñé e impartí 4 cursos semestrales para más de 160 alumnos, obteniendo una evaluación de satisfacción docente promedio de 98/100.",
+            "Transformé la asignatura a modalidad híbrida utilizando Canvas LMS, elevando la tasa de acreditación en primer intento del 78% al 93%.",
+            "Coordiné el coloquio estudiantil de proyectos de titulación, asesorando con éxito a 12 tesis de licenciatura."
+          ]
+        }
+      ],
+      education: [
+        {
+          degree: "Maestría en Educación con Enfoque en Innovación",
+          school: "Universidad de Guadalajara",
+          period: "2019 – 2021",
+          badge: "Titulado con Mención Honorífica",
+          details: "Investigación sobre el impacto del aprendizaje activo en el rendimiento de estudiantes de primer ingreso."
+        },
+        {
+          degree: "Licenciatura en Pedagogía y Ciencias de la Educación",
+          school: "Universidad de Guadalajara",
+          period: "2014 – 2018",
+          badge: "Titulado",
+          details: "Formación en psicología del aprendizaje, didáctica general, estadística educativa y diseño curricular."
+        }
+      ]
+    },
+    en: {
+      fullName: "Prof. Fernando Navarro Ruiz",
+      headline: "University Lecturer & Curriculum Designer · Active Learning · Educational Technology (EdTech)",
+      contact: {
+        location: "Guadalajara, Jalisco, Mexico",
+        email: "fernando.navarro.edu@email.com",
+        phone: "+52 33 4321 0987",
+        linkedin: "https://linkedin.com/in/fernando-navarro-edu",
+        linkedinUser: "in/fernando-navarro-edu"
+      },
+      about: "Higher education lecturer and curriculum designer with 5 years of university teaching experience, competency-based course authoring, and virtual learning environment administration. Expert in active learning methodologies (Project-Based Learning, Flipped Classroom) and EdTech integration. Track record of sustaining 95%+ student retention rates and top-percentile peer and student teaching evaluation scores.",
+      skills: [
+        { title: "Pedagogical Methodologies", desc: "Project-Based Learning (PBL), Educational Gamification, Flipped Classroom, Analytic Rubrics." },
+        { title: "LMS & EdTech Tooling", desc: "Canvas LMS, Moodle, Google Classroom, Edpuzzle, Genially, Interactive Learning Objects (H5P)." },
+        { title: "Curriculum Design & Assessment", desc: "Syllabus engineering, Formative/Summative assessment, Standardized testing design, Academic Advising." }
+      ],
+      softSkills: [
+        { name: "Instructional Clarity", desc: "Engaging delivery of complex intellectual frameworks to large lecture halls of 40+ students." },
+        { name: "Differentiated Instruction", desc: "Modifying instructional strategies dynamically based on formative classroom feedback." },
+        { name: "Student Mentorship", desc: "Personalized academic coaching for at-risk students, achieving an 85% course recovery rate." }
+      ],
+      executiveTraining: [
+        "Diploma in Higher Education Competency-Based Pedagogy (UdeG).",
+        "Google Certified Educator Level 1 & 2."
+      ],
+      languages: [
+        { name: "Spanish", level: "Native" },
+        { name: "English", level: "C1 Advanced (Bilingual course delivery, peer-reviewed publications, and conference talks)." }
+      ],
+      experience: [
+        {
+          role: "Adjunct Professor (Undergraduate Level)",
+          company: "Universidad de Guadalajara",
+          period: "2021 – Present | Guadalajara, MX",
+          bullets: [
+            "Authored and delivered 4 semester-long courses for 160+ students, earning a cumulative student evaluation score of 98/100.",
+            "Converted course modules into blended learning paths in Canvas LMS, raising first-attempt pass rates from 78% to 93%.",
+            "Directed the annual undergraduate research symposium, mentoring 12 senior capstone theses to successful defense."
+          ]
+        }
+      ],
+      education: [
+        {
+          degree: "M.Ed. in Educational Innovation",
+          school: "Universidad de Guadalajara",
+          period: "2019 – 2021",
+          badge: "Graduated with Highest Honors",
+          details: "Master's thesis focused on the measured impact of active learning on retention among freshman undergraduates."
+        },
+        {
+          degree: "B.A. in Education Sciences",
+          school: "Universidad de Guadalajara",
+          period: "2014 – 2018",
+          badge: "Licensed & Graduated",
+          details: "Core focus in learning psychology, instructional design, educational statistics, and curriculum development."
+        }
+      ]
+    }
+  },
+
+  // 9. PLANTILLA EN BLANCO
   blank: {
     es: {
       fullName: "Tu Nombre Completo",
@@ -517,7 +1079,7 @@ const ARCHETYPES = {
         github: "https://github.com/tu-usuario",
         githubUser: "github.com/tu-usuario"
       },
-      about: "Escribe aquí tu perfil profesional en primera persona (5 a 7 líneas). Explica quién eres, tus fortalezas técnicas y humanas clave, y qué valor tangible aportarás al equipo o empresa a la que aplicas. Según la metodología Platzi, sé conciso y evita frases genéricas como 'orientado a resultados'; mejor demuestra tus capacidades con ejemplos concretos.",
+      about: "Escribe aquí tu perfil profesional en primera persona (5 a 7 líneas). Explica quién eres, tus fortalezas técnicas y humanas clave, y qué valor tangible aportarás al equipo o empresa a la que aplicas. Según la metodología Platzi, sé conciso y demuestra tus capacidades con ejemplos concretos.",
       skills: [
         { title: "Área Técnica Principal", desc: "Herramienta 1, Herramienta 2, Herramienta 3, Lenguaje o Framework clave." },
         { title: "Herramientas de Soporte", desc: "Software, bases de datos o plataformas que dominas con solvencia." }
@@ -625,31 +1187,196 @@ const ARCHETYPES = {
 };
 
 // ==========================================
-// ESTADO GLOBAL DE LA APLICACIÓN
+// 2. BIBLIOTECA DE VIÑETAS PRE-ESCRITAS
 // ==========================================
 
-let currentArchetype = 'student'; // 'student', 'tech', 'career_change', 'blank'
-let currentLang = 'es';          // 'es' or 'en'
+const SNIPPETS_LIBRARY = {
+  tech: [
+    { text: "Diseñé e implementé APIs RESTful seguras en Node.js, reduciendo los tiempos de respuesta en un 35%.", role: "Backend Developer" },
+    { text: "Construí componentes reutilizables en React con Tailwind CSS, aumentando la velocidad de carga de página en un 40%.", role: "Frontend Developer" },
+    { text: "Automaticé pipelines de integración y despliegue continuo (CI/CD) con GitHub Actions, reduciendo el ciclo de release a 10 minutos.", role: "DevOps / Cloud" },
+    { text: "Optimicé consultas analíticas en PostgreSQL mediante indexación estratégica, disminuyendo el tiempo de ejecución en un 60%.", role: "Database Engineer" },
+    { text: "Integré modelos de lenguaje (LLMs) y flujos agénticos para automatizar la extracción de datos, ahorrando 15 horas de trabajo manual semanal.", role: "AI / Machine Learning" }
+  ],
+  sales: [
+    { text: "Superé la cuota de ventas trimestral en un 125% promedio durante 6 trimestres consecutivos mediante prospección consultiva.", role: "Ejecutivo Comercial" },
+    { text: "Implementé la automatización de seguimiento de prospectos en CRM HubSpot, reduciendo el tiempo de primera respuesta de 24 horas a 20 minutos.", role: "Operaciones de Ventas" },
+    { text: "Negocié y cerré acuerdos comerciales con 12 cuentas corporativas clave con un ticket promedio de $200K MXN anuales.", role: "Key Account Manager" },
+    { text: "Automaticé la conciliación de reportes de facturación y cobranza en Excel mediante tablas dinámicas, ahorrando 6 horas semanales.", role: "Administración / Finanzas" }
+  ],
+  trades: [
+    { text: "Ejecuté programas de mantenimiento preventivo y correctivo en 8 líneas de producción, reduciendo paros no programados en un 25%.", role: "Mantenimiento Industrial" },
+    { text: "Diagnostiqué y reparé fallas eléctricas y neumáticas en maquinaria pesada con 0 incidentes de seguridad laboral durante 2 años.", role: "Electromecánico" },
+    { text: "Supervisé el control de inventarios de refacciones e insumos críticos, reduciendo el tiempo de espera por piezas en un 30%.", role: "Almacén y Logística" },
+    { text: "Coordiné rutas de entrega y logística de última milla alcanzando una tasa de entregas a tiempo (OTD) del 98.5%.", role: "Transporte y Logística" }
+  ],
+  health: [
+    { text: "Coordiné programas de medicina preventiva para más de 400 colaboradores, disminuyendo el ausentismo laboral por enfermedad en un 20%.", role: "Salud Ocupacional" },
+    { text: "Atendí más de 25 consultas clínicas diarias manteniendo un índice de satisfacción de pacientes superior al 95%.", role: "Atención Médica" },
+    { text: "Implementé protocolos de triaje y respuesta a emergencias médicas en sitio, asegurando atención en menos de 5 minutos.", role: "Urgencias / Paramédico" },
+    { text: "Diseñé planes de intervención nutricional y acondicionamiento personalizados para 80 pacientes con 85% de adherencia.", role: "Nutrición y Bienestar" }
+  ],
+  education: [
+    { text: "Diseñé e impartí programas académicos en modalidad híbrida para 140 alumnos, elevando la tasa de acreditación del 75% al 92%.", role: "Docente Universitario" },
+    { text: "Integré herramientas EdTech y gamificación interactiva en el aula, aumentando la participación activa de los estudiantes en un 45%.", role: "Innovación Educativa" },
+    { text: "Elaboré rúbricas de evaluación analíticas por competencias alineadas a estándares institucionales para 6 asignaturas.", role: "Diseño Curricular" }
+  ],
+  creative: [
+    { text: "Diseñé la interfaz móvil y web de extremo a extremo en Figma, incrementando la conversión del embudo de registro en un 28%.", role: "Product / UX Designer" },
+    { text: "Construí y documenté un Sistema de Diseño con más de 150 componentes escalables, acelerando las entregas de frontend en un 35%.", role: "UI Designer" },
+    { text: "Creé y gestioné campañas de contenido digital multicanal que aumentaron el engagement orgánico de la marca en un 120% en 6 meses.", role: "Marketing Digital" }
+  ]
+};
 
-// Load initial archetype
+// ==========================================
+// 3. ESTADO GLOBAL DE LA APLICACIÓN
+// ==========================================
+
+const LOCAL_STORAGE_KEY = 'cv_alto_impacto_v2_draft';
+
+let currentArchetype = 'student';
+let currentLang = 'es';
+let currentTheme = 'corporate';
+let currentFont = 'inter';
+let qrEnabled = true;
+let qrTarget = 'linkedin';
+let customQrUrl = '';
+
 let state = {
   lang: currentLang,
   archetype: currentArchetype,
+  theme: currentTheme,
+  font: currentFont,
   profile: JSON.parse(JSON.stringify(ARCHETYPES[currentArchetype][currentLang]))
 };
 
 // ==========================================
-// INICIALIZACIÓN AL CARGAR EL DOM
+// 4. INICIALIZACIÓN
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
+  loadFromLocalStorage();
   setupArchetypeSelector();
+  setupThemeSelector();
+  setupFontSelector();
+  setupEventListeners();
   initFormBindings();
   renderPreview();
-  setupEventListeners();
+  updateCompletenessScore();
+  filterSnippets('tech');
+  setupConfettiCanvas();
 });
 
-// Selector de Arquetipos
+// ==========================================
+// 5. LOCAL STORAGE & PERSISTENCIA
+// ==========================================
+
+function saveToLocalStorage() {
+  readFormIntoState();
+  const payload = {
+    state,
+    timestamp: new Date().toISOString()
+  };
+  try {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(payload));
+    updateSaveIndicator(true);
+  } catch (e) {
+    console.warn('LocalStorage error:', e);
+  }
+}
+
+function loadFromLocalStorage() {
+  try {
+    const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (!raw) return;
+    const parsed = JSON.parse(raw);
+    if (parsed && parsed.state && parsed.state.profile) {
+      state = parsed.state;
+      currentLang = state.lang || 'es';
+      currentArchetype = state.archetype || 'student';
+      currentTheme = state.theme || 'corporate';
+      currentFont = state.font || 'inter';
+
+      applyTheme(currentTheme);
+      applyFont(currentFont);
+      
+      const archetypeSelect = document.getElementById('select-archetype');
+      if (archetypeSelect) archetypeSelect.value = currentArchetype;
+
+      const themeSelect = document.getElementById('select-theme');
+      if (themeSelect) themeSelect.value = currentTheme;
+
+      const fontSelect = document.getElementById('select-font');
+      if (fontSelect) fontSelect.value = currentFont;
+
+      showToast('⚡ Borrador guardado restaurado automáticamente');
+    }
+  } catch (e) {
+    console.warn('Could not restore draft:', e);
+  }
+}
+
+function updateSaveIndicator(saved) {
+  const textEl = document.getElementById('save-status-text');
+  if (!textEl) return;
+  const now = new Date();
+  const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  textEl.textContent = saved ? `Guardado local (${timeStr})` : 'Guardando...';
+}
+
+// Debounce helper
+let saveTimeout = null;
+function debouncedSave() {
+  clearTimeout(saveTimeout);
+  saveTimeout = setTimeout(() => {
+    saveToLocalStorage();
+  }, 400);
+}
+
+// ==========================================
+// 6. THEMES & FONTS
+// ==========================================
+
+function setupThemeSelector() {
+  const select = document.getElementById('select-theme');
+  if (!select) return;
+  select.value = currentTheme;
+  select.addEventListener('change', (e) => {
+    currentTheme = e.target.value;
+    state.theme = currentTheme;
+    applyTheme(currentTheme);
+    debouncedSave();
+  });
+}
+
+function applyTheme(themeName) {
+  document.body.setAttribute('data-theme', themeName);
+  const sheet = document.querySelector('.cv-sheet');
+  if (sheet) sheet.setAttribute('data-theme', themeName);
+}
+
+function setupFontSelector() {
+  const select = document.getElementById('select-font');
+  if (!select) return;
+  select.value = currentFont;
+  select.addEventListener('change', (e) => {
+    currentFont = e.target.value;
+    state.font = currentFont;
+    applyFont(currentFont);
+    debouncedSave();
+  });
+}
+
+function applyFont(fontName) {
+  document.body.setAttribute('data-font', fontName);
+  const sheet = document.querySelector('.cv-sheet');
+  if (sheet) sheet.setAttribute('data-font', fontName);
+}
+
+// ==========================================
+// 7. ARQUETIPOS & SELECTOR
+// ==========================================
+
 function setupArchetypeSelector() {
   const selectEl = document.getElementById('select-archetype');
   if (selectEl) {
@@ -668,59 +1395,109 @@ function loadArchetype(archetypeKey) {
   
   populateFormFromState();
   renderPreview();
-  
-  const archetypeNames = {
-    student: state.lang === 'en' ? 'Student / Entry-Level Template' : 'Plantilla: Estudiante / Primer Empleo',
-    tech: state.lang === 'en' ? 'Tech Developer & AI Template' : 'Plantilla: Desarrollador / Perfil Tech & AI',
-    career_change: state.lang === 'en' ? 'Career Transition Template' : 'Plantilla: Cambio de Carrera / Híbrido',
-    blank: state.lang === 'en' ? 'Blank Clean Template' : 'Plantilla en Blanco'
-  };
-  showToast(`✨ ${archetypeNames[archetypeKey] || 'Plantilla cargada'}`);
+  updateCompletenessScore();
+  debouncedSave();
+  showToast(`✨ Plantilla de rol cargada`);
 }
 
-// Configuración de botones y eventos de la barra superior
+// ==========================================
+// 8. EVENTOS DE LA BARRA SUPERIOR
+// ==========================================
+
 function setupEventListeners() {
-  // Cambio de Idioma
+  // Idioma
   document.getElementById('btn-lang-es')?.addEventListener('click', () => switchLanguage('es'));
   document.getElementById('btn-lang-en')?.addEventListener('click', () => switchLanguage('en'));
 
-  // Botón Imprimir / PDF
-  document.getElementById('btn-print')?.addEventListener('click', () => {
-    window.print();
-  });
-
-  // Exportar HTML, Copiar MD, Guardar/Cargar JSON
+  // Exportaciones
+  document.getElementById('btn-print')?.addEventListener('click', () => window.print());
   document.getElementById('btn-download-html')?.addEventListener('click', downloadHTML);
   document.getElementById('btn-copy-md')?.addEventListener('click', copyMarkdown);
   document.getElementById('btn-save-json')?.addEventListener('click', saveJSON);
   document.getElementById('input-load-json')?.addEventListener('change', loadJSON);
 
-  // Modal Guía Platzi
-  const btnModal = document.getElementById('btn-platzi-guide');
-  const modal = document.getElementById('platzi-modal');
-  const btnCloseModal = document.getElementById('btn-close-modal');
-
-  btnModal?.addEventListener('click', () => {
-    modal?.classList.remove('hidden');
+  // Modales
+  document.getElementById('btn-platzi-guide')?.addEventListener('click', () => {
+    document.getElementById('platzi-modal')?.classList.remove('hidden');
   });
-  btnCloseModal?.addEventListener('click', () => {
-    modal?.classList.add('hidden');
-  });
-  modal?.addEventListener('click', (e) => {
-    if (e.target === modal) modal.classList.add('hidden');
+  document.getElementById('btn-close-modal')?.addEventListener('click', () => {
+    document.getElementById('platzi-modal')?.classList.add('hidden');
   });
 
-  // Limpiar Formulario
+  document.getElementById('btn-open-snippets')?.addEventListener('click', () => {
+    document.getElementById('snippets-modal')?.classList.remove('hidden');
+  });
+
+  document.getElementById('btn-open-ats')?.addEventListener('click', () => {
+    document.getElementById('ats-modal')?.classList.remove('hidden');
+  });
+  document.getElementById('btn-run-ats')?.addEventListener('click', runATSAnalysis);
+
+  document.getElementById('btn-open-qr')?.addEventListener('click', () => {
+    document.getElementById('qr-modal')?.classList.remove('hidden');
+  });
+
+  document.getElementById('check-enable-qr')?.addEventListener('change', (e) => {
+    qrEnabled = e.target.checked;
+    renderPreview();
+    debouncedSave();
+  });
+
+  document.getElementById('select-qr-target')?.addEventListener('change', (e) => {
+    qrTarget = e.target.value;
+    const customInput = document.getElementById('field-custom-qr-url');
+    if (customInput) {
+      if (qrTarget === 'custom') customInput.classList.remove('hidden');
+      else customInput.classList.add('hidden');
+    }
+    renderPreview();
+    debouncedSave();
+  });
+
+  document.getElementById('field-custom-qr-url')?.addEventListener('input', (e) => {
+    customQrUrl = e.target.value;
+    renderPreview();
+    debouncedSave();
+  });
+
+  // Confetti Test
+  document.getElementById('btn-test-confetti')?.addEventListener('click', () => {
+    triggerConfetti();
+    showToast('🎉 ¡Felicitaciones por avanzar en tu CV!');
+  });
+
+  // Limpiar
   document.getElementById('btn-reset-form')?.addEventListener('click', () => {
-    if (confirm(state.lang === 'en' ? 'Are you sure you want to load a blank template?' : '¿Deseas reiniciar el formulario a una plantilla limpia?')) {
+    if (confirm(state.lang === 'en' ? 'Reset form to a clean template?' : '¿Reiniciar formulario a una plantilla limpia?')) {
       const selectEl = document.getElementById('select-archetype');
       if (selectEl) selectEl.value = 'blank';
       loadArchetype('blank');
     }
   });
+
+  // Mobile Toggle Button
+  const mobileToggleBtn = document.getElementById('btn-mobile-toggle');
+  if (mobileToggleBtn) {
+    mobileToggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('mobile-preview-active');
+      const isActive = document.body.classList.contains('mobile-preview-active');
+      const textEl = document.getElementById('mobile-toggle-text');
+      const iconEl = document.getElementById('mobile-toggle-icon');
+      if (isActive) {
+        textEl.textContent = 'Editar Formulario';
+        iconEl.textContent = '✏️';
+      } else {
+        textEl.textContent = 'Ver Vista Previa';
+        iconEl.textContent = '👁️';
+      }
+    });
+  }
 }
 
-// Alternar Idioma (ES / EN)
+// ==========================================
+// 9. IDIOMA (ES / EN)
+// ==========================================
+
 function switchLanguage(targetLang) {
   if (state.lang === targetLang) return;
   
@@ -728,29 +1505,32 @@ function switchLanguage(targetLang) {
   state.lang = targetLang;
   currentLang = targetLang;
 
-  // Si existe traducción oficial del arquetipo activo, la cargamos; si el usuario modificó campos, respetamos
   if (ARCHETYPES[currentArchetype] && ARCHETYPES[currentArchetype][targetLang]) {
     state.profile = JSON.parse(JSON.stringify(ARCHETYPES[currentArchetype][targetLang]));
   }
 
-  // Actualizar estilos de los botones de idioma
   const btnEs = document.getElementById('btn-lang-es');
   const btnEn = document.getElementById('btn-lang-en');
 
   if (targetLang === 'es') {
-    btnEs.className = 'px-3 py-1.5 text-xs font-bold rounded-md bg-sky-600 text-white shadow-sm';
-    btnEn.className = 'px-3 py-1.5 text-xs font-medium rounded-md text-slate-300 hover:text-white';
+    btnEs.className = 'px-2.5 py-1 text-xs font-bold rounded-md bg-sky-600 text-white shadow-sm';
+    btnEn.className = 'px-2.5 py-1 text-xs font-medium rounded-md text-slate-300 hover:text-white';
   } else {
-    btnEn.className = 'px-3 py-1.5 text-xs font-bold rounded-md bg-sky-600 text-white shadow-sm';
-    btnEs.className = 'px-3 py-1.5 text-xs font-medium rounded-md text-slate-300 hover:text-white';
+    btnEn.className = 'px-2.5 py-1 text-xs font-bold rounded-md bg-sky-600 text-white shadow-sm';
+    btnEs.className = 'px-2.5 py-1 text-xs font-medium rounded-md text-slate-300 hover:text-white';
   }
 
   populateFormFromState();
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
   showToast(targetLang === 'en' ? 'Switched to English 🇺🇸' : 'Cambiado a Español 🇪🇸');
 }
 
-// Leer datos del formulario en el estado
+// ==========================================
+// 10. LECTURA Y POBLADO DE FORMULARIO
+// ==========================================
+
 function readFormIntoState() {
   if (!state.profile) return;
   state.profile.fullName = document.getElementById('field-fullName')?.value || '';
@@ -763,7 +1543,6 @@ function readFormIntoState() {
   state.profile.contact.linkedin = document.getElementById('field-linkedin')?.value || '';
   state.profile.contact.github = document.getElementById('field-github')?.value || '';
   
-  // Format clean handles for URLs
   if (state.profile.contact.linkedin) {
     const parts = state.profile.contact.linkedin.replace(/\/$/, '').split('/');
     state.profile.contact.linkedinUser = 'in/' + parts[parts.length - 1];
@@ -776,7 +1555,6 @@ function readFormIntoState() {
   state.profile.about = document.getElementById('field-about')?.value || '';
 }
 
-// Llenar controles del formulario a partir del estado
 function populateFormFromState() {
   const p = state.profile;
   if (!p) return;
@@ -805,7 +1583,6 @@ function setInputValue(id, val) {
   if (el) el.value = val;
 }
 
-// Bindings reactivos en tiempo real
 function initFormBindings() {
   populateFormFromState();
 
@@ -820,11 +1597,12 @@ function initFormBindings() {
       el.addEventListener('input', () => {
         readFormIntoState();
         renderPreview();
+        updateCompletenessScore();
+        debouncedSave();
       });
     }
   });
 
-  // Botones para agregar elementos dinámicos
   document.getElementById('btn-add-exp')?.addEventListener('click', addExperienceItem);
   document.getElementById('btn-add-edu')?.addEventListener('click', addEducationItem);
   document.getElementById('btn-add-skill')?.addEventListener('click', addSkillCategoryItem);
@@ -836,10 +1614,419 @@ function initFormBindings() {
 }
 
 // ==========================================
-// RENDERIZADO DE LISTAS EN EL FORMULARIO (EDITOR)
+// 11. GAMIFIED COMPLETENESS SCORE & "NEXT ACTION"
 // ==========================================
 
-// 1. EXPERIENCIA
+let lastScore = 0;
+
+function updateCompletenessScore() {
+  const p = state.profile;
+  if (!p) return;
+
+  let score = 0;
+  let nextAction = { title: "¡Excelente!", text: "Tu CV tiene un nivel de alto impacto listo para postular." };
+
+  // 1. Contact (Max 15)
+  let contactScore = 0;
+  if (p.fullName && p.fullName.trim().length > 3) contactScore += 5;
+  if (p.headline && p.headline.trim().length > 5) contactScore += 4;
+  if (p.contact?.email && p.contact.email.includes('@')) contactScore += 3;
+  if (p.contact?.phone && p.contact.phone.trim().length > 6) contactScore += 3;
+  score += contactScore;
+
+  // 2. About Me (Max 15)
+  let aboutScore = 0;
+  if (p.about && p.about.trim().length >= 80) aboutScore = 15;
+  else if (p.about && p.about.trim().length > 20) aboutScore = 8;
+  score += aboutScore;
+
+  // 3. Experience & Metrics (Max 30)
+  let expScore = 0;
+  if (p.experience && p.experience.length > 0) {
+    expScore += 10;
+    // Check for metrics/numbers in bullets (% / $ / numbers / hours / metrics)
+    const hasMetrics = p.experience.some(e => 
+      (e.bullets || []).some(b => /[\d%$\+]/.test(b))
+    );
+    if (hasMetrics) expScore += 15;
+    if (p.experience.length >= 2) expScore += 5;
+  }
+  score += expScore;
+
+  // 4. Education (Max 15)
+  let eduScore = 0;
+  if (p.education && p.education.length > 0) {
+    eduScore += 10;
+    if (p.education.some(e => e.badge || e.details)) eduScore += 5;
+  }
+  score += eduScore;
+
+  // 5. Skills (Max 15)
+  let skillsScore = 0;
+  if (p.skills && p.skills.length >= 2) skillsScore = 15;
+  else if (p.skills && p.skills.length === 1) skillsScore = 8;
+  score += skillsScore;
+
+  // 6. Languages / Extras (Max 10)
+  let extraScore = 0;
+  if (p.languages && p.languages.length >= 1) extraScore += 5;
+  if (p.softSkills && p.softSkills.length >= 2) extraScore += 5;
+  score += extraScore;
+
+  score = Math.min(100, Math.round(score));
+
+  // Determine Next Best Action
+  if (contactScore < 12) {
+    nextAction = {
+      title: "Completa tus Datos de Contacto",
+      text: "Agrega tu correo profesional, teléfono y enlace de LinkedIn para que los reclutadores puedan contactarte."
+    };
+  } else if (aboutScore < 10) {
+    nextAction = {
+      title: "Fortalece tu 'Sobre Mí'",
+      text: "Escribe de 5 a 7 líneas en primera persona destacando tus fortalezas técnicas y qué valor aportas al equipo."
+    };
+  } else if (expScore < 20) {
+    nextAction = {
+      title: "Agrega Métricas Cuantificables",
+      text: "Incluye números (%, $, horas ahorradas o usuarios) en las viñetas de tu experiencia según la fórmula Platzi."
+    };
+  } else if (skillsScore < 10) {
+    nextAction = {
+      title: "Categoriza tus Habilidades Técnicas",
+      text: "Agrega al menos 2 categorías de herramientas clave que domines (ej. Frontend, Bases de Datos, CRM)."
+    };
+  } else if (eduScore < 10) {
+    nextAction = {
+      title: "Añade tu Educación Formal",
+      text: "Registra tu carrera, universidad y periodo o promedio sobresaliente."
+    };
+  } else if (score < 90) {
+    nextAction = {
+      title: "Agrega Idiomas y Certificaciones",
+      text: "Incluye tu nivel de inglés (ej. B2) y cursos recientes para llegar a la categoría de Alto Impacto."
+    };
+  }
+
+  // Update DOM elements
+  const scoreNumEl = document.getElementById('score-number');
+  const scoreBarEl = document.getElementById('score-circle-bar');
+  const badgeEl = document.getElementById('score-badge');
+  const actionTitleEl = document.getElementById('next-action-title');
+  const actionTextEl = document.getElementById('next-action-text');
+
+  if (scoreNumEl) scoreNumEl.textContent = `${score}%`;
+  if (scoreBarEl) {
+    // Circumference: 2 * PI * 15.9155 = 100
+    const offset = 100 - score;
+    scoreBarEl.style.strokeDashoffset = offset;
+    
+    // Color gradient based on score
+    if (score < 35) scoreBarEl.style.stroke = '#94a3b8'; // Slate
+    else if (score < 65) scoreBarEl.style.stroke = '#f59e0b'; // Amber
+    else if (score < 90) scoreBarEl.style.stroke = '#0ea5e9'; // Sky
+    else scoreBarEl.style.stroke = '#10b981'; // Emerald
+  }
+
+  if (badgeEl) {
+    if (score < 30) {
+      badgeEl.textContent = 'Borrador';
+      badgeEl.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-700 uppercase';
+    } else if (score < 60) {
+      badgeEl.textContent = 'En Construcción';
+      badgeEl.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 uppercase';
+    } else if (score < 85) {
+      badgeEl.textContent = 'Competitivo';
+      badgeEl.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-sky-100 text-sky-800 uppercase';
+    } else {
+      badgeEl.textContent = 'Alto Impacto 🌟';
+      badgeEl.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 uppercase';
+    }
+  }
+
+  if (actionTitleEl) actionTitleEl.textContent = nextAction.title;
+  if (actionTextEl) actionTextEl.textContent = nextAction.text;
+
+  // Mini checks
+  updateCheckIndicator('check-contact', contactScore >= 12);
+  updateCheckIndicator('check-about', aboutScore >= 10);
+  updateCheckIndicator('check-exp', expScore >= 20);
+  updateCheckIndicator('check-edu', eduScore >= 10);
+  updateCheckIndicator('check-skills', skillsScore >= 10);
+  updateCheckIndicator('check-lang', extraScore >= 5);
+
+  // Trigger celebration on crossing 90%
+  if (score >= 90 && lastScore < 90) {
+    triggerConfetti();
+    showToast('🎉 ¡Felicidades! Tu CV alcanzó el nivel de Alto Impacto');
+  }
+  lastScore = score;
+}
+
+function updateCheckIndicator(elementId, isComplete) {
+  const el = document.getElementById(elementId);
+  if (!el) return;
+  if (isComplete) {
+    el.className = 'p-1 rounded bg-emerald-50 text-emerald-700 font-bold border border-emerald-200';
+  } else {
+    el.className = 'p-1 rounded bg-slate-50 text-slate-400';
+  }
+}
+
+// ==========================================
+// 12. PURE CANVAS CONFETTI (ZERO-DEPENDENCY)
+// ==========================================
+
+let confettiCanvas = null;
+let confettiCtx = null;
+let confettiParticles = [];
+let confettiAnimationId = null;
+
+function setupConfettiCanvas() {
+  confettiCanvas = document.getElementById('confetti-canvas');
+  if (!confettiCanvas) return;
+  confettiCtx = confettiCanvas.getContext('2d');
+  resizeConfettiCanvas();
+  window.addEventListener('resize', resizeConfettiCanvas);
+}
+
+function resizeConfettiCanvas() {
+  if (!confettiCanvas) return;
+  confettiCanvas.width = window.innerWidth;
+  confettiCanvas.height = window.innerHeight;
+}
+
+function triggerConfetti() {
+  if (!confettiCanvas || !confettiCtx) return;
+  resizeConfettiCanvas();
+  
+  const colors = ['#0284c7', '#10b981', '#f59e0b', '#ec4899', '#8b5cf6', '#3b82f6'];
+  confettiParticles = [];
+  
+  for (let i = 0; i < 90; i++) {
+    confettiParticles.push({
+      x: window.innerWidth / 2,
+      y: window.innerHeight / 2 - 50,
+      w: Math.random() * 8 + 4,
+      h: Math.random() * 6 + 3,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      vx: (Math.random() - 0.5) * 16,
+      vy: (Math.random() - 0.8) * 16,
+      rotation: Math.random() * 360,
+      vRotation: (Math.random() - 0.5) * 12,
+      opacity: 1
+    });
+  }
+
+  if (confettiAnimationId) cancelAnimationFrame(confettiAnimationId);
+  renderConfettiFrame();
+}
+
+function renderConfettiFrame() {
+  if (!confettiCtx) return;
+  confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+
+  let active = 0;
+  confettiParticles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += 0.35; // Gravity
+    p.vx *= 0.98; // Drag
+    p.rotation += p.vRotation;
+    p.opacity -= 0.009;
+
+    if (p.opacity > 0) {
+      active++;
+      confettiCtx.save();
+      confettiCtx.globalAlpha = Math.max(0, p.opacity);
+      confettiCtx.translate(p.x, p.y);
+      confettiCtx.rotate((p.rotation * Math.PI) / 180);
+      confettiCtx.fillStyle = p.color;
+      confettiCtx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      confettiCtx.restore();
+    }
+  });
+
+  if (active > 0) {
+    confettiAnimationId = requestAnimationFrame(renderConfettiFrame);
+  } else {
+    confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+  }
+}
+
+// ==========================================
+// 13. BIBLIOTECA DE VIÑETAS (SNIPPETS MODAL)
+// ==========================================
+
+window.openSnippetsModal = function(category) {
+  filterSnippets(category || 'tech');
+  document.getElementById('snippets-modal')?.classList.remove('hidden');
+};
+
+window.filterSnippets = function(category) {
+  const container = document.getElementById('snippets-list-container');
+  if (!container) return;
+  
+  // Highlight tab
+  const tabs = document.querySelectorAll('#snippets-category-tabs button');
+  tabs.forEach(t => {
+    t.className = 'px-3 py-1 font-medium rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700';
+  });
+  event?.target?.classList?.remove('bg-slate-100', 'text-slate-700');
+  event?.target?.classList?.add('bg-sky-600', 'text-white', 'font-bold');
+
+  const items = SNIPPETS_LIBRARY[category] || SNIPPETS_LIBRARY['tech'];
+  container.innerHTML = items.map((item, idx) => `
+    <div class="p-2.5 bg-slate-50 border border-slate-200 rounded-lg hover:border-sky-300 transition flex items-start justify-between gap-3">
+      <div>
+        <span class="text-[10px] font-bold uppercase text-sky-700 block mb-0.5">${escapeHtml(item.role)}</span>
+        <p class="text-slate-800 leading-snug">${escapeHtml(item.text)}</p>
+      </div>
+      <div class="flex items-center gap-1 flex-shrink-0">
+        <button onclick="insertSnippetText('${escapeHtml(item.text)}')" class="px-2 py-1 bg-sky-600 hover:bg-sky-500 text-white font-bold rounded text-[11px] shadow-sm">
+          + Insertar
+        </button>
+      </div>
+    </div>
+  `).join('');
+};
+
+window.insertSnippetText = function(text) {
+  if (!state.profile.experience || state.profile.experience.length === 0) {
+    addExperienceItem();
+  }
+  // Append to first experience bullets
+  if (!state.profile.experience[0].bullets) state.profile.experience[0].bullets = [];
+  state.profile.experience[0].bullets.push(text);
+  renderExperienceFormList();
+  renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
+  showToast('✅ Viñeta insertada en tu experiencia');
+  document.getElementById('snippets-modal')?.classList.add('hidden');
+};
+
+// ==========================================
+// 14. CLIENT-SIDE ATS KEYWORD CHECKER
+// ==========================================
+
+const STOP_WORDS = new Set([
+  'de', 'la', 'que', 'el', 'en', 'y', 'a', 'los', 'del', 'se', 'las', 'por', 'un', 'para', 'con', 'no', 'una', 'su',
+  'al', 'lo', 'como', 'más', 'pero', 'sus', 'le', 'ya', 'o', 'este', 'sí', 'porque', 'esta', 'son', 'entre', 'está',
+  'the', 'and', 'to', 'of', 'a', 'in', 'is', 'that', 'for', 'it', 'as', 'was', 'with', 'on', 'be', 'at', 'by', 'this',
+  'we', 'you', 'or', 'an', 'are', 'from', 'at', 'our', 'will', 'your', 'all', 'can', 'has', 'have', 'more', 'work'
+]);
+
+function runATSAnalysis() {
+  const jdText = document.getElementById('ats-job-desc')?.value || '';
+  if (jdText.trim().length < 40) {
+    alert('Por favor pega una descripción de vacante de al menos 40 caracteres.');
+    return;
+  }
+
+  // Tokenize JD
+  const jdTokens = jdText.toLowerCase()
+    .replace(/[^\wáéíóúüñ\s]/g, ' ')
+    .split(/\s+/)
+    .filter(w => w.length > 3 && !STOP_WORDS.has(w));
+
+  // Word frequency
+  const freq = {};
+  jdTokens.forEach(w => { freq[w] = (freq[w] || 0) + 1; });
+
+  // Top 20 keywords from JD
+  const topKeywords = Object.keys(freq)
+    .sort((a, b) => freq[b] - freq[a])
+    .slice(0, 20);
+
+  // Combine entire CV text
+  const cvText = [
+    state.profile.headline,
+    state.profile.about,
+    ...(state.profile.skills || []).map(s => s.title + ' ' + s.desc),
+    ...(state.profile.experience || []).flatMap(e => [e.role, e.company, ...(e.bullets || [])]),
+    ...(state.profile.education || []).map(e => e.degree + ' ' + (e.details || ''))
+  ].join(' ').toLowerCase();
+
+  const found = [];
+  const missing = [];
+
+  topKeywords.forEach(kw => {
+    if (cvText.includes(kw)) {
+      found.push(kw);
+    } else {
+      missing.push(kw);
+    }
+  });
+
+  const matchPercent = Math.round((found.length / topKeywords.length) * 100);
+
+  // Render results
+  const resultsBox = document.getElementById('ats-results-box');
+  const scoreBadge = document.getElementById('ats-score-badge');
+  const foundContainer = document.getElementById('ats-found-keywords');
+  const missingContainer = document.getElementById('ats-missing-keywords');
+
+  if (resultsBox) resultsBox.classList.remove('hidden');
+  if (scoreBadge) {
+    scoreBadge.textContent = `${matchPercent}%`;
+    scoreBadge.className = matchPercent >= 70 ? 'text-2xl font-black text-emerald-600' : 'text-2xl font-black text-amber-600';
+  }
+
+  if (foundContainer) {
+    foundContainer.innerHTML = found.length > 0 
+      ? found.map(k => `<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold">✓ ${escapeHtml(k)}</span>`).join('')
+      : '<span class="text-slate-400">Ninguna palabra clave clave coincidente aún.</span>';
+  }
+
+  if (missingContainer) {
+    missingContainer.innerHTML = missing.length > 0
+      ? missing.map(k => `<button onclick="addKeywordToSkills('${escapeHtml(k)}')" class="px-2 py-0.5 rounded bg-rose-100 hover:bg-rose-200 text-rose-800 font-medium transition cursor-pointer" title="Clic para agregar a tus habilidades">+ ${escapeHtml(k)}</button>`).join('')
+      : '<span class="text-emerald-600 font-bold">¡Excelente! Tu CV cubre todas las palabras clave prioritarias.</span>';
+  }
+}
+
+window.addKeywordToSkills = function(word) {
+  if (!state.profile.skills || state.profile.skills.length === 0) {
+    addSkillCategoryItem();
+  }
+  state.profile.skills[0].desc += `, ${word}`;
+  renderSkillsFormList();
+  renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
+  showToast(`✅ Palabra "${word}" agregada a tus habilidades`);
+};
+
+// ==========================================
+// 15. CLIENT-SIDE QR GENERATOR (MINIMAL SVG)
+// ==========================================
+
+function getQrCodeUrl() {
+  if (qrTarget === 'custom' && customQrUrl.trim().length > 0) {
+    return customQrUrl.trim();
+  }
+  if (qrTarget === 'github' && state.profile.contact?.github) {
+    return state.profile.contact.github;
+  }
+  return state.profile.contact?.linkedin || state.profile.contact?.github || 'https://cv-alto-impacto-production.up.railway.app';
+}
+
+function renderQrSvgMarkup(url) {
+  // Uses QuickChart or Google Chart public QR image API without heavy dependencies
+  const encoded = encodeURIComponent(url);
+  return `
+    <div class="cv-qr-box">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${encoded}&margin=2" alt="QR Contacto" loading="lazy">
+      <span class="cv-qr-label">Escanear Perfil</span>
+    </div>
+  `;
+}
+
+// ==========================================
+// 16. FORM LIST RENDERS
+// ==========================================
+
 function renderExperienceFormList() {
   const container = document.getElementById('exp-list-container');
   if (!container) return;
@@ -882,33 +2069,41 @@ function renderExperienceFormList() {
 window.updateExpField = function(idx, field, val) {
   state.profile.experience[idx][field] = val;
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
 };
 
 window.updateExpBullets = function(idx, val) {
   state.profile.experience[idx].bullets = val.split('\n').filter(b => b.trim().length > 0);
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
 };
 
 window.addExperienceItem = function() {
   if (!state.profile.experience) state.profile.experience = [];
   state.profile.experience.unshift({
-    role: state.lang === 'en' ? "Software Developer Intern" : "Desarrollador Web / Becario",
-    company: state.lang === 'en' ? "Tech Company or Capstone Project" : "Empresa o Proyecto Universitario",
-    period: state.lang === 'en' ? "2025 – Present | City, Country" : "2025 – Presente | Ciudad, País",
+    role: state.lang === 'en' ? "Professional Role" : "Puesto / Rol",
+    company: state.lang === 'en' ? "Company or Project" : "Empresa o Proyecto",
+    period: state.lang === 'en' ? "2024 – Present | City, Country" : "2024 – Presente | Ciudad, País",
     bullets: [
       state.lang === 'en' 
-        ? "Engineered responsive web modules using React and Tailwind CSS, increasing page speed by 40%."
-        : "Diseñé e implementé módulos web en React y Tailwind CSS, incrementando la velocidad de carga en un 40%."
+        ? "Engineered [technical solution] utilizing [key tools], boosting productivity by 35%."
+        : "Diseñé e implementé [solución técnica] utilizando [herramientas], incrementando la productividad en un 35%."
     ]
   });
   renderExperienceFormList();
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
 };
 
 window.removeExperienceItem = function(idx) {
   state.profile.experience.splice(idx, 1);
   renderExperienceFormList();
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
 };
 
 // 2. EDUCACIÓN
@@ -957,28 +2152,34 @@ function renderEducationFormList() {
 window.updateEduField = function(idx, field, val) {
   state.profile.education[idx][field] = val;
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
 };
 
 window.addEducationItem = function() {
   if (!state.profile.education) state.profile.education = [];
   state.profile.education.push({
-    degree: state.lang === 'en' ? "B.S. in Computer Science" : "Licenciatura en Ingeniería de Software",
-    school: state.lang === 'en' ? "University Name" : "Universidad de Guadalajara",
+    degree: state.lang === 'en' ? "Degree / Major" : "Licenciatura o Grado",
+    school: state.lang === 'en' ? "University / Institute" : "Universidad / Institución",
     period: state.lang === 'en' ? "2023 – In progress" : "2023 – En curso",
     badge: state.lang === 'en' ? "GPA: 95/100" : "Promedio: 95/100",
-    details: state.lang === 'en' ? "Core focus in software architecture, databases, and algorithms." : "Enfoque en arquitectura de software, bases de datos y algoritmos."
+    details: state.lang === 'en' ? "Specialized academic training." : "Especialización y materias relevantes."
   });
   renderEducationFormList();
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
 };
 
 window.removeEducationItem = function(idx) {
   state.profile.education.splice(idx, 1);
   renderEducationFormList();
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
 };
 
-// 3. HABILIDADES TÉCNICAS (HARD SKILLS)
+// 3. HABILIDADES TÉCNICAS
 function renderSkillsFormList() {
   const container = document.getElementById('skills-list-container');
   if (!container) return;
@@ -1010,25 +2211,31 @@ function renderSkillsFormList() {
 window.updateSkillField = function(idx, field, val) {
   state.profile.skills[idx][field] = val;
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
 };
 
 window.addSkillCategoryItem = function() {
   if (!state.profile.skills) state.profile.skills = [];
   state.profile.skills.push({
-    title: state.lang === 'en' ? "Cloud & DevOps" : "Cloud & DevOps",
-    desc: state.lang === 'en' ? "Docker, Git, CI/CD, Linux (bash), AWS basics." : "Docker, Git, CI/CD, Linux (bash), AWS básico."
+    title: state.lang === 'en' ? "Technical Category" : "Nueva Categoría",
+    desc: state.lang === 'en' ? "Tool 1, Tool 2, Tool 3." : "Herramienta 1, Herramienta 2, Herramienta 3."
   });
   renderSkillsFormList();
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
 };
 
 window.removeSkillItem = function(idx) {
   state.profile.skills.splice(idx, 1);
   renderSkillsFormList();
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
 };
 
-// 4. COMPETENCIAS BLANDAS (SOFT SKILLS)
+// 4. COMPETENCIAS BLANDAS
 function renderSoftSkillsFormList() {
   const container = document.getElementById('soft-list-container');
   if (!container) return;
@@ -1058,6 +2265,8 @@ function renderSoftSkillsFormList() {
 window.updateSoftField = function(idx, field, val) {
   state.profile.softSkills[idx][field] = val;
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
 };
 
 window.addSoftSkillItem = function() {
@@ -1068,12 +2277,16 @@ window.addSoftSkillItem = function() {
   });
   renderSoftSkillsFormList();
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
 };
 
 window.removeSoftSkillItem = function(idx) {
   state.profile.softSkills.splice(idx, 1);
   renderSoftSkillsFormList();
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
 };
 
 // 5. IDIOMAS
@@ -1101,6 +2314,8 @@ function renderLanguagesFormList() {
 window.updateLanguageField = function(idx, field, val) {
   state.profile.languages[idx][field] = val;
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
 };
 
 window.addLanguageItem = function() {
@@ -1111,15 +2326,19 @@ window.addLanguageItem = function() {
   });
   renderLanguagesFormList();
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
 };
 
 window.removeLanguageItem = function(idx) {
   state.profile.languages.splice(idx, 1);
   renderLanguagesFormList();
   renderPreview();
+  updateCompletenessScore();
+  debouncedSave();
 };
 
-// 6. FORMACIÓN CONTINUA & CERTIFICACIONES
+// 6. CERTIFICACIONES
 function renderTrainingFormList() {
   const container = document.getElementById('training-list-container');
   if (!container) return;
@@ -1141,26 +2360,29 @@ function renderTrainingFormList() {
 window.updateTrainingField = function(idx, val) {
   state.profile.executiveTraining[idx] = val;
   renderPreview();
+  debouncedSave();
 };
 
 window.addTrainingItem = function() {
   if (!state.profile.executiveTraining) state.profile.executiveTraining = [];
   state.profile.executiveTraining.push(
     state.lang === 'en' 
-      ? "Platzi / Cloud Academy: Certified Cloud Associate." 
-      : "Platzi: Certificación en Arquitectura de Software y DevOps."
+      ? "Academy / Institution: Professional Certificate." 
+      : "Platzi: Certificación Profesional."
   );
   renderTrainingFormList();
   renderPreview();
+  debouncedSave();
 };
 
 window.removeTrainingItem = function(idx) {
   state.profile.executiveTraining.splice(idx, 1);
   renderTrainingFormList();
   renderPreview();
+  debouncedSave();
 };
 
-// 7. HACKATONES, RETOS & PROYECTOS
+// 7. HACKATONES
 function renderHackathonsFormList() {
   const container = document.getElementById('hack-list-container');
   if (!container) return;
@@ -1175,7 +2397,7 @@ function renderHackathonsFormList() {
         <button type="button" class="text-rose-500 hover:text-rose-700 font-bold" onclick="removeHackItem(${idx})">✕ Eliminar</button>
       </div>
       <div>
-        <label class="block text-[11px] font-semibold text-slate-600">Nombre del Hackathon / Reto / Proyecto</label>
+        <label class="block text-[11px] font-semibold text-slate-600">Nombre del Hackathon / Reto</label>
         <input type="text" value="${escapeHtml(h.title)}" oninput="updateHackField(${idx}, 'title', this.value)" class="w-full text-xs p-1.5 border border-slate-300 rounded bg-white">
       </div>
       <div>
@@ -1190,25 +2412,28 @@ function renderHackathonsFormList() {
 window.updateHackField = function(idx, field, val) {
   state.profile.hackathons[idx][field] = val;
   renderPreview();
+  debouncedSave();
 };
 
 window.addHackathonItem = function() {
   if (!state.profile.hackathons) state.profile.hackathons = [];
   state.profile.hackathons.push({
-    title: state.lang === 'en' ? "Innovation Hackathon (Finalist)" : "Hackathon de Innovación (Finalista)",
-    desc: state.lang === 'en' ? "Developed an AI MVP with cloud deployment in 36 hours." : "Desarrollo de un MVP funcional con IA y despliegue en la nube en 36 horas."
+    title: state.lang === 'en' ? "Innovation Challenge (Finalist)" : "Reto de Innovación (Finalista)",
+    desc: state.lang === 'en' ? "Developed a functional solution under a 36-hour sprint." : "Desarrollo de una solución funcional en un sprint de 36 horas."
   });
   renderHackathonsFormList();
   renderPreview();
+  debouncedSave();
 };
 
 window.removeHackItem = function(idx) {
   state.profile.hackathons.splice(idx, 1);
   renderHackathonsFormList();
   renderPreview();
+  debouncedSave();
 };
 
-// 8. COMUNIDAD & VOLUNTARIADO
+// 8. COMUNIDAD
 function renderCommunityFormList() {
   const container = document.getElementById('comm-list-container');
   if (!container) return;
@@ -1238,26 +2463,29 @@ function renderCommunityFormList() {
 window.updateCommunityField = function(idx, field, val) {
   state.profile.community[idx][field] = val;
   renderPreview();
+  debouncedSave();
 };
 
 window.addCommunityItem = function() {
   if (!state.profile.community) state.profile.community = [];
   state.profile.community.push({
-    name: state.lang === 'en' ? "Open Source & Student Tech Club" : "Club Tecnológico Estudiantil",
-    desc: state.lang === 'en' ? "Active peer collaborator on technical workshops." : "Colaborador activo en talleres de programación y robótica."
+    name: state.lang === 'en' ? "Professional Tech Community" : "Comunidad Profesional",
+    desc: state.lang === 'en' ? "Active peer collaborator on technical workshops." : "Colaborador activo en talleres y eventos de la industria."
   });
   renderCommunityFormList();
   renderPreview();
+  debouncedSave();
 };
 
 window.removeCommunityItem = function(idx) {
   state.profile.community.splice(idx, 1);
   renderCommunityFormList();
   renderPreview();
+  debouncedSave();
 };
 
 // ==========================================
-// RENDERIZADO EN VIVO DE LA HOJA DEL CV
+// 17. RENDERIZADO EN VIVO DE LA HOJA DEL CV
 // ==========================================
 
 function renderPreview() {
@@ -1269,25 +2497,25 @@ function renderPreview() {
 
   const labels = isEn ? {
     contact: "Contact",
-    techSkills: "Technical Skills",
-    coreComp: "Core Competencies",
+    techSkills: "Core Skills",
+    coreComp: "Competencies",
     execTraining: "Continuous Learning",
     languages: "Languages",
     community: "Community & Impact",
     aboutMe: "Professional Profile",
     experience: "Experience & Projects",
-    hackathons: "Hackathons & Innovation",
+    hackathons: "Achievements & Innovation",
     education: "Formal Education"
   } : {
     contact: "Contacto",
-    techSkills: "Habilidades Técnicas",
+    techSkills: "Habilidades Principales",
     coreComp: "Competencias Clave",
     execTraining: "Formación Continua",
     languages: "Idiomas",
     community: "Comunidad & Impacto",
     aboutMe: "Perfil Profesional",
     experience: "Experiencia & Proyectos",
-    hackathons: "Hackatones & Innovación",
+    hackathons: "Logros & Innovación",
     education: "Educación Formal"
   };
 
@@ -1357,8 +2585,10 @@ function renderPreview() {
     </div>
   `).join('');
 
+  const qrMarkup = qrEnabled ? renderQrSvgMarkup(getQrCodeUrl()) : '';
+
   container.innerHTML = `
-    <div class="cv-sheet">
+    <div class="cv-sheet" data-theme="${currentTheme}" data-font="${currentFont}">
       <!-- SIDEBAR (IZQUIERDA) -->
       <aside class="cv-sidebar">
         <!-- Contact -->
@@ -1414,6 +2644,9 @@ function renderPreview() {
             ${communityHtml}
           </div>
         ` : ''}
+
+        <!-- QR Code -->
+        ${qrMarkup}
       </aside>
 
       <!-- MAIN CONTENT (DERECHA) -->
@@ -1473,10 +2706,9 @@ function formatBulletText(text) {
 }
 
 // ==========================================
-// EXPORTACIÓN & DESCARGA
+// 18. EXPORTACIONES (HTML, MD, JSON)
 // ==========================================
 
-// Descargar HTML independiente
 function downloadHTML() {
   const container = document.getElementById('cv-preview-render');
   if (!container) return;
@@ -1486,7 +2718,7 @@ function downloadHTML() {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV - ${escapeHtml(state.profile.fullName || 'Currículum')}</title>
+  <title>CV - ${escapeHtml(state.profile.fullName || 'Curriculum')}</title>
   <style>
     ${getCSSRules()}
   </style>
@@ -1520,7 +2752,6 @@ function getCSSRules() {
   return cssText;
 }
 
-// Copiar Markdown optimizado para ATS
 function copyMarkdown() {
   const p = state.profile;
   const isEn = state.lang === 'en';
@@ -1549,14 +2780,6 @@ function copyMarkdown() {
     md += `---\n\n`;
   }
 
-  if (p.hackathons && p.hackathons.length > 0) {
-    md += `## ${isEn ? 'HACKATHONS & INNOVATION' : 'HACKATONES & INNOVACIÓN'}\n\n`;
-    p.hackathons.forEach(h => {
-      md += `- **${h.title}:** ${h.desc}\n`;
-    });
-    md += `\n---\n\n`;
-  }
-
   if (p.education && p.education.length > 0) {
     md += `## ${isEn ? 'FORMAL EDUCATION' : 'EDUCACIÓN FORMAL'}\n\n`;
     p.education.forEach(edu => {
@@ -1569,7 +2792,7 @@ function copyMarkdown() {
   }
 
   if (p.skills && p.skills.length > 0) {
-    md += `## ${isEn ? 'TECHNICAL SKILLS' : 'HABILIDADES TÉCNICAS'}\n\n`;
+    md += `## ${isEn ? 'CORE SKILLS' : 'HABILIDADES'}\n\n`;
     p.skills.forEach(s => {
       md += `- **${s.title}:** ${s.desc}\n`;
     });
@@ -1577,7 +2800,7 @@ function copyMarkdown() {
   }
 
   if (p.softSkills && p.softSkills.length > 0) {
-    md += `## ${isEn ? 'CORE COMPETENCIES' : 'COMPETENCIAS CLAVE'}\n\n`;
+    md += `## ${isEn ? 'COMPETENCIES' : 'COMPETENCIAS'}\n\n`;
     p.softSkills.forEach(s => {
       md += `- **${s.name}:** ${s.desc}\n`;
     });
@@ -1587,11 +2810,10 @@ function copyMarkdown() {
   navigator.clipboard.writeText(md).then(() => {
     showToast('📋 Markdown ATS copiado al portapapeles');
   }).catch(() => {
-    showToast('⚠️ No se pudo copiar al portapapeles');
+    showToast('⚠️ No se pudo copiar');
   });
 }
 
-// Guardar en JSON
 function saveJSON() {
   readFormIntoState();
   const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state.profile, null, 2));
@@ -1603,7 +2825,6 @@ function saveJSON() {
   showToast('💾 Datos guardados en archivo JSON');
 }
 
-// Cargar desde JSON
 function loadJSON(e) {
   const file = e.target.files[0];
   if (!file) return;
@@ -1614,6 +2835,8 @@ function loadJSON(e) {
       state.profile = parsed;
       populateFormFromState();
       renderPreview();
+      updateCompletenessScore();
+      debouncedSave();
       showToast('📂 Datos cargados exitosamente');
     } catch (err) {
       alert('Error al leer el archivo JSON: ' + err.message);

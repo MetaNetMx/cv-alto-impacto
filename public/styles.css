@@ -1,5 +1,8 @@
-/* CSS Custom Styling & Print Layout for CV Alto Impacto */
+/* CSS Custom Styling & Print Layout for CV Alto Impacto v2.0 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
 :root {
+  /* Default: Corporate Blue */
   --primary: #0f172a;
   --primary-light: #1e293b;
   --accent: #0284c7;
@@ -13,6 +16,92 @@
   --success-bg: #ecfdf5;
   --success-text: #047857;
   --success-border: #a7f3d0;
+  --cv-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* THEMES */
+[data-theme="graphite"] {
+  --primary: #18181b;
+  --primary-light: #27272a;
+  --accent: #52525b;
+  --accent-dark: #3f3f46;
+  --accent-badge: #f4f4f5;
+  --sidebar-bg: #fafafa;
+  --sidebar-border: #e4e4e7;
+}
+
+[data-theme="emerald"] {
+  --primary: #064e3b;
+  --primary-light: #065f46;
+  --accent: #059669;
+  --accent-dark: #047857;
+  --accent-badge: #d1fae5;
+  --sidebar-bg: #f0fdf4;
+  --sidebar-border: #dcfce7;
+}
+
+[data-theme="burgundy"] {
+  --primary: #4c0519;
+  --primary-light: #881337;
+  --accent: #be123c;
+  --accent-dark: #9f1239;
+  --accent-badge: #ffe4e6;
+  --sidebar-bg: #fff1f2;
+  --sidebar-border: #fecdd3;
+}
+
+[data-theme="indigo"] {
+  --primary: #1e1b4b;
+  --primary-light: #312e81;
+  --accent: #6366f1;
+  --accent-dark: #4f46e5;
+  --accent-badge: #e0e7ff;
+  --sidebar-bg: #eef2ff;
+  --sidebar-border: #e0e7ff;
+}
+
+[data-theme="terracotta"] {
+  --primary: #431407;
+  --primary-light: #7c2d12;
+  --accent: #ea580c;
+  --accent-dark: #c2410c;
+  --accent-badge: #ffedd5;
+  --sidebar-bg: #fff7ed;
+  --sidebar-border: #fed7aa;
+}
+
+[data-theme="forest"] {
+  --primary: #14532d;
+  --primary-light: #166534;
+  --accent: #15803d;
+  --accent-dark: #166534;
+  --accent-badge: #dcfce7;
+  --sidebar-bg: #f7fee7;
+  --sidebar-border: #ecfccb;
+}
+
+[data-theme="minimal-bw"] {
+  --primary: #000000;
+  --primary-light: #1f2937;
+  --accent: #374151;
+  --accent-dark: #111827;
+  --accent-badge: #f3f4f6;
+  --sidebar-bg: #ffffff;
+  --sidebar-border: #e5e7eb;
+}
+
+/* FONTS */
+[data-font="inter"] {
+  --cv-font: 'Inter', sans-serif;
+}
+[data-font="merriweather"] {
+  --cv-font: 'Merriweather', Georgia, serif;
+}
+[data-font="source-sans"] {
+  --cv-font: 'Source Sans 3', sans-serif;
+}
+[data-font="playfair"] {
+  --cv-font: 'Playfair Display', Georgia, serif;
 }
 
 /* Custom Scrollbars */
@@ -46,7 +135,8 @@
   font-size: 12px;
   color: var(--text);
   overflow: hidden;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  font-family: var(--cv-font);
 }
 
 /* Sidebar Inside CV Sheet */
@@ -57,6 +147,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .cv-sidebar-section h3 {
@@ -68,6 +159,7 @@
   border-bottom: 2px solid var(--accent);
   padding-bottom: 3px;
   margin-bottom: 8px;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .cv-contact-list {
@@ -247,8 +339,8 @@ ul.cv-bullets li strong {
 }
 
 .badge-license {
-  background-color: #f1f5f9;
-  color: var(--primary);
+  background-color: var(--accent-badge);
+  color: var(--accent-dark);
   border: 1px solid var(--sidebar-border);
   font-size: 9.5px;
   font-weight: 600;
@@ -256,6 +348,87 @@ ul.cv-bullets li strong {
   border-radius: 4px;
   margin-left: 5px;
   display: inline-block;
+}
+
+/* QR Code Container in CV Sheet */
+.cv-qr-box {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px dashed var(--sidebar-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+.cv-qr-box svg, .cv-qr-box img {
+  width: 76px;
+  height: 76px;
+  border: 1px solid var(--sidebar-border);
+  padding: 3px;
+  background: white;
+  border-radius: 4px;
+}
+.cv-qr-label {
+  font-size: 9px;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* GAMIFIED SCORE CIRCLE ANIMATION */
+.score-circle-svg {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+.score-circle-bg {
+  stroke: #e2e8f0;
+}
+.score-circle-progress {
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.4s ease;
+}
+
+/* CONFETTI CANVAS */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* PULSE ACTIVE SAVE BADGE */
+.pulse-save-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
+  display: inline-block;
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+/* MOBILE RESPONSIVE ADAPTATIONS */
+@media (max-width: 1023px) {
+  .mobile-preview-active #form-panel {
+    display: none !important;
+  }
+  .mobile-preview-active #preview-panel {
+    display: flex !important;
+  }
+  #preview-panel {
+    display: none;
+  }
+  .cv-sheet {
+    transform-origin: top center;
+    max-width: 100%;
+  }
 }
 
 /* PRINT MEDIA QUERY FOR DIRECT PDF EXPORT */
@@ -266,7 +439,7 @@ ul.cv-bullets li strong {
     padding: 0 !important;
   }
 
-  .no-print {
+  .no-print, #confetti-canvas, #toast-container, header, footer {
     display: none !important;
   }
 
